@@ -1,0 +1,229 @@
+/* Background tapas pattern */
+.bg-pattern {
+  background-image: url('../ke-kilohana/img/optimized/pattern-kk.png');
+}
+
+$bg-min-height: 650px;
+$container-height: 100vh;
+$container-height-mobile: 650px;
+
+/* background heading images */
+.bg-css {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bg-heading-image {
+  @extend .bg-css;
+  min-height: $bg-min-height;
+  height: $container-height;
+}
+
+/* opaque background images */
+.bg-image {
+  position: relative;
+  z-index: 1;
+  min-height: $bg-min-height;
+  height: $container-height;
+  /* IE9 and 10  */
+  content: 'viewport-units-buggyfill;'
+           'height: 100vh;';
+}
+
+/* Responsive Container Controls
+@media screen and (min-width: 300px) and (max-width: 999px){
+  .bg-heading-image {
+    height: $container-height-mobile;
+  }
+  .bg-image {
+    height: $container-height-mobile;
+  }
+}*/
+
+.bg-image-extension {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  // opacity: 0.25;
+  @extend .bg-css;
+}
+
+/* homepage */
+
+#landingpage-hp-bg  {
+  background-image: url('../ke-kilohana/img/optimized/hp_img-skylanai.jpg');
+  @extend .bg-image-extension;
+}
+
+#kekilohana-hp-bg  {
+  background-image: url('../ke-kilohana/img/optimized/hp_img-bedroom.jpg');
+  @extend .bg-image-extension;
+}
+
+#wardvillage-hp-bg  {
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_wardvillage.jpg');
+  @extend .bg-image-extension;
+}
+
+#villagelife-hp-bg {
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_villagelife.jpg');
+  @extend .bg-image-extension;
+}
+#building-hp-bg {
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_building.jpg');
+  @extend .bg-image-extension;
+}
+#residenceguide-hp-bg {
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_residence.jpg');
+  @extend .bg-image-extension;
+}
+#availability-hp-bg {
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_pricing.jpg');
+  @extend .bg-image-extension;
+}
+#brochures-hp-bg {
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_brochures.jpg');
+  @extend .bg-image-extension;
+}
+#gallery-hp-bg {
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_gallery.jpg');
+  @extend .bg-image-extension;
+}
+#salesprocess-hp-bg {
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_salesprocess.jpg');
+  @extend .bg-image-extension;
+}
+
+
+
+/* Residence Guide */
+#residence-guide {
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_residences.jpg');
+  @extend .bg-heading-image;
+}
+#features-bg {
+  @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_residences_features.jpg');
+}
+#floor-plans-bg {
+  @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_residences_floorplan.jpg');
+}
+
+/* The building */
+
+#building {
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_building_intro.jpg');
+  @extend .bg-heading-image;
+}
+#keaomelemele-bg {
+@extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_building_keaumelemele.jpg');
+}
+#designforward-bg {
+@extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_building_design.jpg');
+}
+#amenities-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_building_amenities.jpg');
+}
+
+/* Village Life  */
+#villagelife {   @extend .bg-heading-image;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_vl_intro.jpg');
+}
+#unlimitedfun-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_vl_fun.jpg');
+}
+#endlessactivities-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_vl_activities.jpg');
+}
+#foreveryappetite-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_vl_appetitie.jpg');
+}
+#hazelgo-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_vl_hazel.jpg');
+}
+#anthonyvallejosanderson-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_vl_anthony.jpg');
+}
+#glenndelacruz-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_vl_glenn.jpg');
+}
+
+
+/* Ward Village  */
+#wardvillage {   @extend .bg-heading-image;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_wv_intro.jpg');
+}
+#evolution-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_wv_evolution.jpg');
+}
+#masterplan-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_wv_masterplan.jpg');
+}
+#heartoftown-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_wv_heart.jpg');
+}
+#howardhughes-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_wv_howardhughes.jpg');
+}
+
+
+/* Homepage  */
+#homeintro {   @extend .bg-heading-image;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_intro.jpg');
+}
+#hwardvillage-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_wardvillage.jpg');
+}
+#villagelife-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_villagelife.jpg');
+}
+#building-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_building.jpg');
+}
+#residence-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_residence.jpg');
+}
+#pricing-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_pricing.jpg');
+}
+#brochures-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_brochures.jpg');
+}
+#salesprocess-bg {   @extend .bg-image-extension;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_hp_salesprocess.jpg');
+}
+
+/* Reserved Housing (formerly Sales Process) */
+#reserved-housing {   @extend .bg-heading-image;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_salesprocess.jpg');
+}
+
+/* Brochures */
+#brochures {   @extend .bg-heading-image;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_brochures.jpg');
+}
+
+/* Thank You */
+
+#thank-you {   @extend .bg-heading-image;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_404.jpg');
+}
+
+#page-not-found {   @extend .bg-heading-image;
+  background-image: url('../ke-kilohana/img/optimized/HHKK_30745_404.jpg');
+}
+
+/* Contact Us */
+#brochures {   @extend .bg-heading-image;
+    // background-image:
+}
+#acf-map {   @extend .bg-heading-image;
+  // z-index: 0;
+}

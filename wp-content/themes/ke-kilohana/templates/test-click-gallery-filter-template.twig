@@ -1,0 +1,30 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+  <h2>test click gallery filter</h2>
+
+  <p>
+    To view amenities images,
+      <a onclick="clickGalleryFilter('amenities')" href="test-gallery-filter" target="_blank">click here</a>.
+  </p>
+
+  <button type="button" name="button" id="galleryButton">view village life</button>
+
+  <!-- <script>
+    $('#galleryButton').click(function() {
+      console.log('gallery filter clicked');
+      // Set filter value for page-specific calls-to-action
+      localStorage.setItem('galleryFilter', 'village-life');
+      // TODO change window url
+      window.open('../gallery');
+    });
+  </script> -->
+
+  <script src="{{ function('get_stylesheet_directory_uri') }}/js/set-gallery-filter-value.js"></script>
+  <script>
+    console.log('test script');
+    setGalleryFilterValue('#galleryButton', 'village-life');
+  </script>
+
+  {% endblock %}

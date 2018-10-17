@@ -1,0 +1,196 @@
+{% extends "base.twig" %}
+    {% block content %}
+  <style type="text/css">
+  .gallery-white-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    background-color: #ffffff;
+    z-index: 1;
+    opacity: 0.75;
+  }
+  .full-width { padding-left: 0; }
+  /* Adjust overall body text for mobile. */
+  @media screen and (min-width: 300px) and (max-width: 699px){
+    .gallery-white-bar {
+      height: 65px;
+    }
+  }
+  @media screen and (min-width: 700px) and (max-width: 1199px){
+    .gallery-white-bar {
+      height: 75px;
+    }
+  }
+  @media screen and (min-width: 1200px){
+    .gallery-white-bar {
+      height: 75px;
+    }
+  }
+  .warning {display:block;}
+
+</style>
+<div class="gallery-white-bar"></div>
+  <div class="container add-vh extra-tall" style="padding-top:90px;">
+    <div class="row">
+          <!-- Display floor plan result -->
+          <div class="col-sm-12">
+            <h1>Residence #{{ unit.title }}</h1>
+            <div class="floor_plan_summary col-no-margin">
+              <div class="details-bar">
+                  #<span id="unit-id-summary">{{ unit.unit_id }}</span>, <span id="bedrooms-summary">{{ floor.bd_ba | slice(0,1) }} BR / {{ floor.bd_ba | slice(2) }} BA</span>
+                  <span class="span_spacer"></span>
+                  <span id="floor-plan-title">FLOOR PLAN: </span> <span id="floor-id-summary">{{ floor.floor_plan_id }}</span>
+                    <span class="span_spacer"></span>
+                  <span id="square-footage-summary">{{ floor.square_footage }}</span> SQ FT
+                    <span class="span_spacer"></span>
+                  <span id="facing-title">FACING: </span> <span id="view-direction-summary">{{ floor.direction }}</span>
+                    <span class="span_spacer"></span>
+                  <span id="floor-title">FLOOR: </span> <span id="view-elevation-summary">{{ unit.level }} </span>
+                  <!-- Changed from price to unit type -->
+                  <span id="price-summary">{{ unit.hide | unit_type }}</span>
+                  <span id="price-summary-single" > | {{ unit.price  }}</span>
+              </div>
+              <div class="col-sm-6">
+              <h3 class="floor_plans">FLOOR PLAN:</h3>
+                <img class="flex-img" src="{{ Image(floor.floor_plan_image).src }}" alt="" id="floor-plan-summary-image" />
+              </div>
+              <div class="col-sm-6">
+                <div class="view-plane-container">
+                  <h3 class="floor_plans">VIEW:</h3>
+                  <a href="/residence-guide#views" target="_blank" id="view-plane-summary-link"><img class="flex-img" src="" alt="" id="view-plane-summary-image" /></a>
+                </div>
+                <div class="floor-map-container">
+                  <h3 class="floor_plans">FLOOR MAP:</h3>
+                  <img class="flex-img half" src="{{ Image(floor.floor_plan_map).src }}" alt="" id="floor-map-summary-image" />
+                </div>
+              </div>
+              <!-- TODO replace text with image -->
+              <!-- <p class="view-planes-thumbnail">image thumbnail click :<span id="view-planes-thumbnail-summary"></span></p> -->
+            </div>
+            <div class="col-sm-12" style="margin-top: 20px;">
+              {% if (unit.regulated_term == '2') or (unit.regulated_term == '5') %}
+              <div class="regulated-term">
+                <span id="regulated-term-title">Regulated Term: </span><span id="regulated-term-summary">{{ unit.regulated_term }}</span> Years
+              </div>
+              {% endif %}
+              <div class="legal-links"><a href="/disclaimer"><sup>*</sup>Views and Floor Plans are approximate and remain subject to change.  See Views and Floor Plans disclaimer.</a></div>
+            </div>
+            <div class="col-sm-12">
+              <div class="intro_text_bottom_container">
+                <p>{{ finder_home.intro_text_bottom }}</p>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12">
+              <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#emailFloorPlansModal">EMAIL HOME</a>
+            </div>
+          </div>
+    </div>
+  </div>
+
+  <!-- Email Floor Plans Modal -->
+  <div class="nav-modal modal modal-fullscreen fade" id="emailFloorPlansModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">
+        <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png" srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x, {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" />
+      </span>
+    </button>
+    <div class="modal-dialog nav-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3>Email Residence #{{ unit.title }}</span></h3>
+          <p>
+            Enter your email address plus the recipient’s email address with a short message (optional).
+          </p>
+          <form class="" id="email-floorplans-form" action="https://salesforce.ringlead.com/cgi-bin/4762/7/dedup.pl" method="post" novalidate>
+          <input name="retURL" id="retURL" type="hidden"  />
+          <input name="pagetoshare" id="pagetoshare" type="hidden" value="{{ site.url }}/units/{{ unit.title }}" />
+          <input name="recordType" type="hidden" value="012i0000000mPgm" />
+          <input name="Campaign_ID" type="hidden" value="701i0000001XfjK" />
+          <input name="lead_source" type="hidden" value="W2L: Kilohana Single Unit Share" />
+          <input name="member_status" type="hidden" value="Requested Information" />
+          <input type="hidden" id="00Ni000000GsQj9" name="00Ni000000GsQj9" value="" />
+          <input type="hidden" id="00Ni000000GsQj4" name="00Ni000000GsQj4" value="" />
+          <input type="hidden" id="00Ni000000GsQjO" name="00Ni000000GsQjO" value="" />
+          <input type="hidden" id="00Ni000000GsQjJ" name="00Ni000000GsQjJ" value="" />
+          <input type="hidden" id="00Ni000000GsQjE" name="00Ni000000GsQjE" value="" />
+          <input type="hidden" id="00Ni000000GsQiz" name="00Ni000000GsQiz" value="" />
+          <input type="hidden" id="00Ni000000GsQjT" name="00Ni000000GsQjT" value="" />
+          <input type="hidden" id="00Ni000000GsQjY" name="00Ni000000GsQjY" value="" />
+            <div class="container-fluid">
+              <div class="row">
+                <!-- Input From -->
+                <div class="col-md-6 full-width">
+                  <div class="form-group"> <!-- Your salutation selection -->
+                    <input name="from" type="email" autocomplete="off" class="form-control" placeholder="From: youremail@yourdomain.com" id="from" required data-validation-required-message="Please enter your email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <!-- Input To -->
+                <div class="col-md-6 full-width">
+                  <div class="form-group"> <!-- Your salutation selection -->
+                    <input name="to" type="email" autocomplete="off" class="form-control" placeholder="To: friendemail@frienddomain.com" id="to" required data-validation-required-message="Please enter an email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Input Short Message -->
+                <div class="col-md-12 full-width">
+                  <input name="short-message" type="text" autocomplete="off" class="form-control" placeholder="Short Message" value=" " id="short-message">
+                </div>
+              </div>
+              <!-- Submit -->
+                <button type="submit" class="button_sliding" id="email-share-unit-submit">SUBMIT</button>
+            </div>
+          </form>
+          <script>
+            function showValues() {  $( "#retURL" ).val( '' );
+              var str = $( "form" ).serialize();
+              $( "#retURL" ).val( '{{ site.url }}/thank-you-for-sharing?' +str );
+            }
+            $( "input[type='text']",  "input[type='checkbox'], input[type='radio']" ).on( "click", showValues );
+            $( "input[type='text']").on( "keyup", showValues );
+            showValues();
+          </script>
+        </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <!-- validation script -->
+    <script src="{{function('get_stylesheet_directory_uri')}}/js/bootstrap-validation/emailformvalidation.js"></script>
+  <!-- Get elevation result from unit floor level data -->
+  <script src="{{ function('get_stylesheet_directory_uri') }}/js/get-elevations.js"></script>
+  <!-- Get view plane thumbnail_pano image -->
+  <script>
+    // View_planes post data, for web storage on viewer planes widget
+    var unitElevation = getElevations(Number('{{ unit.level }}'));
+    {% for view_plane in view_planes %}
+      if ( ( '{{view_plane.view_elevation}}' == unitElevation) &&
+          ('{{ view_plane.view_direction }}' == '{{ floor.direction }}') ) {
+        var unitViewDirection = '{{ view_plane.view_direction }}',
+            unitViewElevation = '{{ view_plane.view_elevation }}';
+        if ( '{{ floor.floor_plan_id }}' == '1B-C2' ) {
+          // Override view planes thumbnail with alternative Ewa thumbnail image
+          $('#view-plane-summary-image').attr('src', '../../wp-content/uploads/2016/02/HHKK_30745_THUMBNAIL_ewa-b_' + unitViewElevation + '.jpg');
+        } else {
+          $('#view-plane-summary-image').attr('src', '{{ Image(view_plane.thumbnail_pano).src }}');
+        }
+        $('#view-plane-summary-image').attr('alt', unitViewDirection + ' view');
+      }
+    {% endfor %}
+
+    // Open view plane slideshow
+    $('#view-plane-summary-link').click(function() {
+      // Set storage data for viewer planes widget
+      localStorage.setItem('viewDirectionSlideshow', unitViewDirection);
+      localStorage.setItem('viewElevationSlideshow', unitViewElevation);
+      // window.open('/residence-guide#views');
+    });
+
+  </script>
+
+
+{% endblock %}

@@ -1,0 +1,203 @@
+{% extends 'base-raw.twig' %}
+
+  {% block content %}
+
+  {% spaceless %}
+
+  <!-- Styles for floating nav -->
+  {% include 'css/floating-nav-active-colors.twig' %}
+  <style>
+  form {font-family: "Gotham A","Gotham B";}
+  @media screen and (min-width: 992px) {
+    .col-md-3 {
+        width: 23%;
+    }
+  }
+  .warning {display:block;}
+
+
+  .container{
+      height: 800px;
+      overflow: scroll;
+      font-family: Montserrat, "Helvetica Neue", sans-serif;
+    }
+
+
+
+    .chatbox{
+      width: 100%;
+      /*height: 350px;
+      overflow-y:scroll;*/
+      /*background: rgba(146, 121, 110, 0.26);*/
+      border-radius: 0px;
+      border: solid 0px #BDBDBD;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 15px;
+      margin: 0px !important;
+
+    }
+    .chatbox li{
+      clear: both;
+      margin-bottom: 10px;
+      text-decoration: none;
+      list-style-type: none;
+      margin: 20px 0px 0px 20px;
+    }
+    .actual_msg{
+      float: left;
+      display: inline-block;
+      margin-right: 20px;
+      padding: 25px 34px;
+      min-width: 160px;
+      min-height: 10px;
+      max-width: 510px;
+      border-radius: 5px;
+      box-shadow: 0px 3px 3px rgba(172, 172, 172, 0.73);
+      line-height: 1.4;
+      word-wrap: break-word;
+      color: #1A1A1A;
+      background-color: rgba(0, 0, 0, 0.11);
+    }
+    .lotterytablecontainer {
+    height: 25px;
+    padding-left: 4px;
+    font-family: Gothic821CondensedBT-Regular;
+  }
+  .lotterytableheader{
+    width: 400px;
+    /*height: 350px;
+    overflow-y:scroll;*/
+    /*background: rgba(146, 121, 110, 0.26);*/
+    border-radius: 0px;
+    border: solid 0px #BDBDBD;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin: 0px 0px 0px 11px !important;
+  }
+
+  .lotterytableheader li {
+    clear: both;
+    /*margin-bottom: 10px;*/
+    text-decoration: none;
+    list-style-type: none;
+    /*margin: 20px 0px 0px 20px;*/
+  }
+
+
+  .lotterytableheader div {
+    margin-bottom: 10px;
+    display: inline-block;
+
+  }
+
+  .lotterytable div {
+    margin-bottom: 1px;
+    display: inline-block;
+
+  }
+  .leftdiv { width:85px;padding-left: 4px;
+
+  }
+  .rightdiv {width:170px;padding-left: 4px;
+
+
+  }
+    .lotterytable{
+      width: 100%;
+height: 500px;
+overflow-y: scroll;
+
+
+      /*height: 350px;
+      overflow-y:scroll;*/
+      /*background: rgba(146, 121, 110, 0.26);*/
+      border-radius: 0px;
+      border: solid 0px #BDBDBD;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 15px;
+      margin: 0px !important;
+    }
+
+
+    .lotterytable li{
+      clear: both;
+      /*margin-bottom: 10px;*/
+      text-decoration: none;
+      list-style-type: none;
+      /*margin: 20px 0px 0px 20px;*/
+      font-family: Gothic821CondensedBT-Regular;
+    }
+    .lottery_actual_msg{
+      width: :100%
+      float: left;
+      display: inline-block;
+      margin-right: 0px;
+      padding: 0px 1px;
+      min-width: 160px;
+      min-height: 10px;
+      max-width: 510px;
+      border:1px;
+      border-radius: 0px;
+      /*box-shadow: 0px 3px 3px rgba(172, 172, 172, 0.73);*/
+      line-height: 1.4;
+      word-wrap: break-word;
+      color: #1A1A1A;
+      background-color: rgba(255, 255, 255, 1);
+      text-align:left;float:left;
+    }
+
+
+  .date{
+      font-size: 9px;
+      float: left;
+      margin-top: 10px;
+  }
+  </style>
+  <!-- Floating nav -->
+  <!-- <div class="floating-nav-container">
+    <ul id="sales-process-nav-ul">
+
+    </ul>
+  </div> -->
+
+  <div id="sales-process-nav-wrapper">
+
+
+
+    <div class="container lotterytablecontainer">
+
+        <ul class="lotterytableheader" id="lotterytableheader">
+          <li ><div class="leftdiv"  >Order #</div><div class="rightdiv">Lottery #</div><li>
+        </ul>
+
+    </div>
+    <div class="container" >
+
+      <ul class="lotterytable" id="lotterytable">
+      </ul>
+
+    </div>
+
+  </div>
+</div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+  <!-- Script for setting active list items on scroll, jquery only -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/floating-nav-jquery.js"></script>
+  <script>
+    showActiveNav('#sales-process-nav-ul', '#sales-process-nav-wrapper');
+  </script>
+
+  <!-- Script for animating content on scroll -->
+  <script src="{{ function('get_stylesheet_directory_uri') }}/js/animate-content.js"></script>
+
+
+  {% endspaceless %}
+
+  {% endblock %}

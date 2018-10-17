@@ -1,0 +1,66 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+    <style>
+    #container-sales-process {
+      background-image: url({{ TimberImage(post.get_field('sales_process_sidebar_image')).src }});
+    }
+    #sales-bg {
+      background-color: #F3F3F3;
+      padding-bottom: 40px;
+    }
+    #sales-bg h1 { text-align: left;}
+
+    </style>
+
+    <div class="container-fluid" id="sales-bg"><!-- container -->
+      <div class="row">
+         <div class="col-md-11 col-md-offset-1 col-sm-11 col-sm-offset-1 col-xs-12">
+          <h1>{{ post.post_title }}</h1>
+          {% if post.get_field('sales_process_content') %}
+               <p>{{ post.sales_process_content }}</p>
+          {% endif %}
+        </div>
+        <div class="col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-12 center-img">
+          <img class="img-responsive" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/infographic-01.png" />
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-12 center-img">
+          <img class="img-responsive" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/infographic-02.png" />
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-12 center-img">
+          <img class="img-responsive" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/infographic-03.png" />
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-12 center-img">
+          <img class="img-responsive" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/infographic-04.png" />
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-12 center-img">
+          <img class="img-responsive" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/infographic-05.png" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-12 center-img">
+          <img class="img-responsive" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/infographic-06.png" />
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-12 center-img">
+          <img class="img-responsive" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/infographic-07.png" />
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-12 center-img">
+          <img class="img-responsive" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/infographic-08.png" />
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-12 center-img">
+          <img class="img-responsive" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/infographic-09.png" />
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-12 center-img">
+          <img class="img-responsive" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/infographic-10.png" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          {{ post.get_content }}
+          <br/><br/><br/><br/><br/><br/>
+        </div>
+      </div>
+    </div>
+
+ {% endblock %}

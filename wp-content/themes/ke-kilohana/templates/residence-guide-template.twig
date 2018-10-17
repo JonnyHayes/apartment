@@ -1,0 +1,272 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+  {% spaceless %}
+
+  <!-- Styles for floating nav -->
+  {% include 'css/floating-nav-active-colors.twig' %}
+<style>
+.warning {display:block}
+.full-width { padding-left: 0; }
+</style>
+  <!-- Floating nav -->
+  <div class="floating-nav-container">
+    <ul id="residence-guide-nav-ul" class="capitalize">
+      <li class="floating-nav active"><a href="#residence-guide">Residence Guide</a></li>
+      <li class="floating-nav"><a href="#views">Views</a></li>
+      <li class="floating-nav"><a href="#features">Features</a></li>
+      <li class="floating-nav"><a href="#floor-plans">Floor Plans</a></li>
+    </ul>
+  </div>
+
+  <div id="residence-guide-nav-wrapper">
+    <!-- Residence Guide heading -->
+    <div id="residence-guide" class="bg-image">
+      <div class="container h-center">
+        <div class="row">
+          <div class="content-text-wrapper">
+            <div class="col-sm-4 col-md-4 col-xs-12 title-h1-container">
+              <div class="heading-bar-top white-text"></div>
+              <h1 class="white-text">{{ residence_guide.title }}</h1>
+              <div class="heading-bar-bottom white-text"></div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-xs-12" id="residence-guide-template-title">
+              <h3 class="white-text default">Your home</h3>
+              <p class="white-text">
+                {{ residence_guide.intro_text }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bottom-row down-arrow-container first-section">
+        <div class="col-md-12 last-column">
+          <div class="last-column-wrapper">
+            <p class="text-center white-text italic-text">
+              <a href="#views">
+              Views<br />
+              <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View Planes Widget -->
+    <div id="views" class="bg-pattern h-center extra-tall" style="height: 100%;">
+      {% include 'view-planes-widget.twig' %}
+      <div class="row down-arrow-container">
+        <div class="col-md-12 last-column">
+          <div class="last-column-wrapper">
+            <p class="text-center italic-text">
+              <a href="#features">
+              Features & Finishes<br />
+              <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features and finishes section -->
+    <div id="features" class="bg-image">
+      <div id="features-bg" class="fade-in-first"></div>
+      <div class="container h-center">
+        <div class="content-text-wrapper">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-xs-12">
+              <h2 class="fade-in">Features & Finishes</h2>
+              <div class="yellow-bar-divider"></div>
+            </div>
+            <div class="col-sm-10 col-md-10 col-xs-12 fade-up">
+
+                {{ residence_guide.get_field('features_finishes') }}
+
+                  <!-- Button trigger modal -->
+                  <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#renderingsModal">
+                    view renderings
+                  </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bottom-row down-arrow-container fade-up">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper">
+              <p class="text-center italic-text">
+                <a href="#floor-plans">
+                Floor Plans<br />
+                <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Floor plans section -->
+    <div id="floor-plans" class="bg-image">
+      <div id="floor-plans-bg" class="fade-in-first"></div>
+      <div class="container h-center">
+        <div class="row">
+          <div class="content-text-wrapper">
+            <div class="col-sm-4 col-md-4">
+              <h2 class="fade-in">Floor Plans</h2>
+              <div class="yellow-bar-divider"></div>
+            </div>
+            <div class="col-sm-6 col-md-5 fade-up">
+              <p>
+                {{ residence_guide.floor_plans }}
+              </p>
+              <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#emailfloorplansModal">
+                email floor plans
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="row bottom-row down-arrow-container fade-up">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper"></div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Availability Widget -->
+    <div id="availability" style="min-height: 650px; display:none !important;">
+      <div class="container" >
+        <div class="row">
+          <div class="col-sm-3">
+            <h2 class="fade-in">Availability</h2>
+            <div class="yellow-bar-divider"></div>
+          </div>
+          <div class="col-sm-6 col-sm-offset-1 fade-up">
+            <p style="margin-top: 15px;">
+             {{ residence_guide.pricing_availability }}
+            </p>
+          </div>
+        </div>
+      </div>
+      {% include 'availability-widget-template.twig' %}
+    </div>
+  </div>
+
+  <!-- View Renderings Modal -->
+  <div class="nav-modal modal modal-fullscreen fade" id="renderingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+                srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+                {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+        </button>
+    <div class="modal-dialog nav-dialog">
+      <div class="modal-content">
+        <div class="modal-body" id="renderingsGalleryModal">
+          <div class="royalSlider kekilohana" id="renderingsGallery">
+            {% for image in residence_guide.features_finishes_gallery %}
+              <img class="rsImg" src="{{ Image(image).src }}" alt="{{ Image(image).title }}" />
+            {% endfor %}
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+ <!-- email floor plans Modal -->
+  <div class="nav-modal modal modal-fullscreen fade" id="emailfloorplansModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+                srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+                {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+        </button>
+    <div class="modal-dialog nav-dialog">
+      <div class="modal-content">
+        <div class="modal-body" id="emailfloorplansModalBody">
+         <h3>Email Floor Plans</h3>
+          <p>You’ll find a variety of floor plans with connected living, kitchen and dining spaces that match your needs. These units offer a design with simple clean lines and quality finishes and fixtures.</p>
+
+          <form class="" id="email-floorplans-form" action="https://salesforce.ringlead.com/cgi-bin/4762/7/dedup.pl" method="post" novalidate>
+          <input name="retURL" id="retURL" type="hidden"  />
+          <input name="pagetoshare" id="pagetoshare" type="hidden" value="{{ site.url }}/{{ residence_guide.post_name }}/#floor-plans" />
+          <input name="recordType" type="hidden" value="012i0000000mPgm" />
+          <input name="Campaign_ID" type="hidden" value="701i0000001XfjK" />
+          <input name="lead_source" type="hidden" value="W2L: Kilohana Residence Guide Share" />
+          <input name="member_status" type="hidden" value="Requested Information" />
+          <input type="hidden" id="00Ni000000GsQj9" name="00Ni000000GsQj9" value="" />
+          <input type="hidden" id="00Ni000000GsQj4" name="00Ni000000GsQj4" value="" />
+          <input type="hidden" id="00Ni000000GsQjO" name="00Ni000000GsQjO" value="" />
+          <input type="hidden" id="00Ni000000GsQjJ" name="00Ni000000GsQjJ" value="" />
+          <input type="hidden" id="00Ni000000GsQjE" name="00Ni000000GsQjE" value="" />
+          <input type="hidden" id="00Ni000000GsQiz" name="00Ni000000GsQiz" value="" />
+          <input type="hidden" id="00Ni000000GsQjT" name="00Ni000000GsQjT" value="" />
+          <input type="hidden" id="00Ni000000GsQjY" name="00Ni000000GsQjY" value="" />
+
+            <div class="container-fluid">
+              <div class="row">
+                <!-- Input From -->
+                <div class="col-md-6 full-width">
+                  <div class="form-group"> <!-- Your salutation selection -->
+                    <input name="from" type="email" autocomplete="off" class="form-control" placeholder="From: email" id="from" required data-validation-required-message="Please enter YOUR email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <!-- Input To -->
+                <div class="col-md-6 full-width">
+                  <div class="form-group"> <!-- Your salutation selection -->
+                    <input name="to" type="email" autocomplete="off" class="form-control" placeholder="To: email" id="to" required data-validation-required-message="Please enter a TO email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Input Short Message -->
+                <div class="col-md-12 full-width">
+                  <input name="short-message" type="text" autocomplete="off" class="form-control" placeholder="Short Message" id="short-message">
+                </div>
+              </div>
+              <!-- Submit -->
+                <button type="submit" class="button_sliding" id="email-share-residenceguide-submit">Submit</button>
+            </div>
+          </form>
+          <script>
+            function showValues() {  $( "#retURL" ).val( '' );
+              var str = $( "form" ).serialize();
+              $( "#retURL" ).val( '{{ site.url }}/thank-you-for-sharing?' +str );
+            }
+            $( "input[type='text']",  "input[type='checkbox'], input[type='radio']" ).on( "click", showValues );
+            $( "input[type='text']").on( "keyup", showValues );
+            showValues();
+          </script>
+
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- validation script -->
+  <script src="{{function('get_stylesheet_directory_uri')}}/js/bootstrap-validation/emailformvalidation.js"></script>
+
+
+  <!-- Script for setting active list items on scroll, jquery only -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/floating-nav-jquery.js"></script>
+  <script>
+    showActiveNav('#residence-guide-nav-ul', '#residence-guide-nav-wrapper');
+  </script>
+
+  <!-- Script for animating content on scroll -->
+  <script src="{{ function('get_stylesheet_directory_uri') }}/js/animate-content.js"></script>
+  <script>
+    animateContent('#residence-guide-nav-wrapper');
+  </script>
+
+  <!-- Initialize RoyalSlider -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/initialize-royalslider.js"></script>
+
+  {% endspaceless %}
+
+  {% endblock %}

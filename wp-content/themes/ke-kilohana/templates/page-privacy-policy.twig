@@ -1,0 +1,43 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+  	<style type="text/css">
+ 
+  .gallery-white-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    background-color: #ffffff;
+    z-index: 1;
+    opacity: 0.75;
+  }
+  /* White bar at the top. */
+  @media screen and (min-width: 300px) and (max-width: 699px){
+    .gallery-white-bar {
+      height: 65px;
+    }
+  }
+  @media screen and (min-width: 700px) and (max-width: 1199px){
+    .gallery-white-bar {
+      height: 75px;
+    }
+  }
+  @media screen and (min-width: 1200px){
+    .gallery-white-bar {
+      height: 75px;
+    }
+  }
+
+  </style>
+<div class="gallery-white-bar"></div>
+    <div class="container-fluid" id="privacy-policy-page"><!-- container -->
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1" id="container-privacy-policy">
+          <h1>{{ post.post_title }}</h1>
+           {{ post.get_content }}
+        </div>
+      </div>
+    </div>
+
+ {% endblock %}

@@ -1,0 +1,289 @@
+<!-- Look for matching floor plans, based on selected number of bedrooms -->
+<script>
+function buildFloorNumberButtons() {
+  for (var floorLevel = 9; floorLevel < 43; floorLevel++) {
+    $('#floor_numbers_buttons').append($('<button>')
+      .attr({
+        type: "button",
+        class: "floor_numbers",
+        value: floorLevel.toString(),
+      })
+      .text(floorLevel.toString())
+    );
+  }
+}
+function disableFloorNumberButtons() {
+    // Reset all buttons for floor numbers to be disabled
+
+$('#floor_numbers_buttons button').each(function() {
+    $(this).attr('disabled', true);
+  });
+}
+function disableWarningFloor() {
+  // Reset all buttons for floor numbers to be disabled
+  $('#select-floor-warning').each(function() {
+    $(this).fadeOut('slow');
+  });
+}
+function disableWarningFloorPlan() {
+  // Reset all buttons for floor numbers to be disabled
+  $('#select-floor-plan-warning').each(function() {
+    $(this).fadeOut('slow');
+  });
+}
+function disableWarningRooms() {
+  // Reset all buttons for floor numbers to be disabled
+  $('#select-rooms-warning').each(function() {
+    $(this).fadeOut('slow');
+  });
+}
+function showWarningFloor() {
+  // Reset all buttons for floor numbers to be disabled
+  $('#select-floor-warning').each(function() {
+    $(this).fadeIn(1000);
+  });
+}
+function showWarningFloorPlan() {
+  // Reset all buttons for floor numbers to be disabled
+  $('#select-floor-plan-warning').each(function() {
+    $(this).fadeIn(1000);
+  });
+}
+function showWarningRooms() {
+  // Reset all buttons for floor numbers to be disabled
+  $('#select-rooms-warning').each(function() {
+    $(this).fadeIn(1000);
+  });
+}
+function hideFloorNumberButtons() {
+  // Reset all buttons for floor numbers to be disabled
+  $('#floor_numbers_buttons button').each(function() {
+    $(this).fadeOut('slow');
+  });
+}
+function hideSummary() {
+  // Reset all buttons for floor numbers to be disabled
+  $('.floor_plan_result').each(function() {
+    $(this).fadeOut('slow');
+  });
+}
+function showFloorNumberButtons() {
+  // Reset all buttons for floor numbers to be disabled
+  $('#floor_numbers_buttons button').each(function() {
+    //$(this).show();
+    $(this).fadeIn(1000);
+  });
+}
+function showSummary() {
+  // Reset all buttons for floor numbers to be disabled
+  $('.floor_plan_result').each(function() {
+    //$(this).show();
+    $(this).fadeIn(1000);
+  });
+}
+function clearActiveClassBedrooms() {
+  // Reset all buttons so the active class is removed
+  $('#bedrooms button').each(function() {
+    $(this).removeClass( 'active' );
+  });
+}
+function clearActiveClassFloorPlan() {
+  // Reset all buttons so the active class is removed
+  $('#floor_plan_group button').each(function() {
+    $(this).removeClass( 'active' );
+  });
+}
+function clearActiveClassFloor() {
+  // Reset all buttons so the active class is removed
+  $('#floor_numbers_buttons button').each(function() {
+    $(this).removeClass( 'active' );
+  });
+}
+function clearSummary() {
+  $('.floor_plan_summary').find('span').each(function() {
+    $(this).text('');
+  });
+  $('.floor_plan_summary').find('img').each(function() {
+    $(this).attr({
+      'src': '',
+      'alt': '',
+    });
+  });
+}
+
+$(window).load(function() {
+  // Build out the floor numbers / levels buttons
+  buildFloorNumberButtons();
+  // Automatically disable floor level buttons
+  disableFloorNumberButtons();
+  hideFloorNumberButtons();
+  hideSummary();
+});
+$('.bedrooms').click(function(event) {
+  // Reset previous output of floor plans
+  $('#floor_plan_group button').each(function() {
+    $(this).remove();
+  });
+  $('#choose-floor-plan-title').each(function() {
+    $(this).remove();
+  });
+  disableFloorNumberButtons();
+  clearSummary();
+  clearActiveClassBedrooms();
+  clearActiveClassFloor();
+  hideSummary();
+  disableWarningFloor();
+  disableWarningFloorPlan();
+  disableWarningRooms();
+  showWarningFloorPlan();
+  $(this).addClass('active');
+  $('#floor_plan_group').before( '<h3 class=\"floor_plans\" id=\"choose-floor-plan-title\">Choose a floor plan</h3>');
+  {% for floor in floors %}
+    // Compare clicked value with number of bedrooms in each floor plan
+    if ( $(this).val() == '{{ floor.bd_ba }}' ) {
+      // Output each resulting floor plan.
+      // Value is set to be the floor plan alpha-numeric id,
+      // which will be compared the clicked floor plan
+      // with the matching floor plan post.
+      $('#floor_plan_group').append($('<button>')
+        .attr({
+          type: "button",
+          class: "floor_plan_button",
+          value: "{{ floor.floor_plan_id }}"
+        })
+        .text("{{ floor.floor_plan_id}} | FACING: {{ floor.direction }} | {{ floor.square_footage}} SQ FT")
+      );
+    }
+  {% endfor %}
+});
+// Attach event handler for dynamically-generated floor plan images.
+$('#floor_plan_group').on('click', '.floor_plan_button', function() {
+  disableFloorNumberButtons();
+  clearSummary();
+  $('#choose-floor-title').each(function() {
+    $(this).remove();
+  });
+  showFloorNumberButtons();
+  clearActiveClassFloorPlan();
+  clearActiveClassFloor();
+  hideSummary();
+  //disableWarningFloor();
+  //disableWarningFloorPlan();
+  //disableWarningRooms();
+  //showWarningFloor();
+  $(this).addClass('active');
+  var clickedFloorPlan = $(this).val();
+  $('#floor_numbers_buttons').before( '<h3 class=\"floor_plans\" id=\"choose-floor-title\">Choose a floor</h3>');
+  {% for floor in floors %}
+    // Compare alpha-numeric value with each floor plan id.
+    if ( $(this).val() == '{{ floor.floor_plan_id }}' ) {
+      {% for unit in units %}
+        // Check for units that are available.
+        if ( ('{{ unit.floor_plan_relational}}' == '{{floor.id}}') &&
+            //('{{ unit.available }}' == 'available') &&
+            ('{{ unit.hide }}' == '0') ) {
+          // Handle output of available floors.
+          $('#floor_numbers_buttons button').each(function() {
+            if ( $(this).val() == '{{ unit.level }}') {
+              // Disable floor number buttons with false boolean.
+              $(this).attr('disabled', false);
+            }
+          });
+        }
+      {% endfor %}
+    }
+  {% endfor %}
+
+  $('#floor_numbers_buttons').on('click', '.floor_numbers', function() {
+    var clickedFloorInt = Number($(this).val());
+    var elevationResult = getElevations(clickedFloorInt);
+    // View_planes post data, for web storage on viewer planes widget
+    var resultViewDirection, resultViewElevation;
+    clearActiveClassFloor();
+
+    //disableWarningFloor();
+    //disableWarningFloorPlan();
+    //disableWarningRooms();
+
+    showSummary();
+    $(this).addClass('active');
+    {% for unit in units %}
+      // Look for units with clicked floor number.
+      if ( $(this).val() == '{{ unit.level }}' ) {
+        {% for floor in floors %}
+          // Compare clicked floor plan with output text,
+          // and compare unit's relational field with floor plan post.
+          if ( ('{{ floor.floor_plan_id }}' == clickedFloorPlan) &&
+                ('{{ unit.floor_plan_relational }}' == '{{ floor.id }}') ) {
+            // Set text in the summary output.
+            // Floor post images
+            $('#floor-plan-summary-image').attr('src', '{{ Image(floor.floor_plan_image).src }}');
+            $('#floor-map-summary-image').attr('src', '{{ Image(floor.floor_plan_map).src }}');
+            // Summary text - floors
+            $('#floor-id-summary').text('{{ floor.floor_plan_id }}');
+            $('#bedrooms-summary').text('{{ floor.bd_ba | slice(0,1) }} BR / {{ floor.bd_ba | slice(2)}} BA');
+            $('#square-footage-summary').text('{{ floor.square_footage }}');
+            // Summary text - units
+            $('#unit-id-summary').text('{{ unit.unit_id }}');
+            $('#price-summary').text('{{ unit.price }}');
+            //Static Labels that neeed to be bold
+            $('#floor-title').text('FLOOR: ');
+            $('#facing-title').text('FACING: ');
+            $('#floor-plan-title').text('FLOOR PLAN: ');
+            $('#price-title').text('PRICE: ');
+            $('#regulated-term-title').text('Regulated Term: ');
+            $('#unit-id-summary-modal').text('{{ unit.unit_id }}');
+            $('#pagetoshare').val('{{ site.url }}/units/{{ unit.unit_id }}');
+            // Summary text - view planes
+            $('#view-direction-summary').text('{{ floor.direction }}');
+            $('#view-elevation-summary').text('{{ unit.level }}');
+            // Years for regulated term
+            if ( '{{ unit.regulated_term }}' == 'n/a' ) {
+              // Hide the entire div for regulated term data
+              $('.regulated-term').css({ 'display': 'none' });
+            } else {
+              // Output the number of years for regulated term
+              $('#regulated-term-summary').text('{{ unit.regulated_term }}');
+            }
+
+            if( '{{ unit.sold }}' == '1'){
+                $('#unit-sold').show();
+            }else{
+                $('#unit-sold').hide();
+            }
+          }
+        {% endfor %}
+        // Get the view_planes post
+        {% for view_plane in view_planes %}
+          if ( ('{{ view_plane.view_direction }}' == $('#view-direction-summary').text()) &&
+              ('{{ view_plane.view_elevation }}') == elevationResult ) {
+            resultViewDirection = '{{ view_plane.view_direction }}';
+            resultViewElevation = '{{ view_plane.view_elevation }}';
+            // Check for Ewa direction that has exceptional thumbnail view
+            // Floor plan with alternative Ewa view
+            if ( clickedFloorPlan == '1B-C2' ) {
+              // Override view planes thumbnail with alternative Ewa thumbnail image
+              $('#view-plane-summary-image').attr('src', '../wp-content/uploads/2016/02/HHKK_30745_THUMBNAIL_ewa-b_' + elevationResult + '.jpg');
+            } else {
+              $('#view-plane-summary-image').attr('src', '{{ Image(view_plane.thumbnail_pano).src }}');
+            }
+          }
+        {% endfor %}
+      }
+    {% endfor %}
+
+    // TODO build img src with resultViewDirection, resultViewElevation vars,
+    // and append image to finder summary
+    // var viewPlaneImage = $('<img />').attr('src', 'http://localhost/hhkk-phase2/wp-content/uploads/2015/11/hhkk-lounge.jpg');
+    // $('#view-planes-thumbnail-summary').append(viewPlaneImage);
+
+    // Open view plane slideshow
+    $('#view-plane-summary-link').click(function() {
+      // Set storage data for viewer planes widget
+      localStorage.setItem('viewDirectionSlideshow', resultViewDirection);
+      localStorage.setItem('viewElevationSlideshow', resultViewElevation);
+      // window.open('/residence-guide#views');
+    });
+  });
+});
+</script>

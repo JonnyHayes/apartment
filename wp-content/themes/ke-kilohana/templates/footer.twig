@@ -1,0 +1,43 @@
+{% spaceless %}
+<!-- Footer
+================================================== -->
+<div id="tf-footer">
+    <div class="container-fluid"><!-- container -->
+        <div class="row text-center">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <ul class="list-inline social pull-left text-link">
+                  <li><a href="/privacy-policy/">PRIVACY POLICY</a></li>
+                  <li><a href="/disclaimer/">DISCLAIMER</a></li>
+                </ul>
+            </div>
+             <div class="col-lg-4 col-md-12 col-sm-12">
+                <ul class="list-inline social nested-list">
+                  <li>
+                      <ul class="list-inline social font-awesome">
+                          <li><a href="https://www.facebook.com/kekilohana/" class="fa fa-facebook" title="@KeKilohana looks like an amazing opportunity for Hawaii residents to live that @WardVillage life." target="_blank"></a></li> <!-- facebook link here -->
+                          <li><a href="https://twitter.com/KeKilohana" class="fa fa-twitter tweet" title="@KeKilohana looks like an amazing opportunity for Hawaii residents to live that @WardVillage life." target="_blank"></a></li> <!-- twitter link here -->
+                          <li><a href="https://www.instagram.com/kekilohana/" class="fa fa-instagram" title="@KeKilohana looks like an amazing opportunity for Hawaii residents to live that @WardVillage life." target="_blank"></a></li> <!-- twitter link here -->
+                        </ul>
+                  </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <ul class="list-inline social pull-right text-link">
+                    <li><a href="http://wardvillage.com/" target="_blank"><img style="margin-right: 10px; margin-bottom: 8px;" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/logo_ward-village.png"></a></li>
+                    <li><a href="http://www.howardhughes.com/" target="_blank"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/logo_howard-hughes.png"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div><!-- end container -->
+</div>
+<!-- Google Analytics Salesforce code -->
+<script src="{{function('get_stylesheet_directory_uri')}}/js/gasalesforce.js"></script>
+
+<!-- Google Analytics Vimeo Video Tracker code -->
+<script src="{{function('get_stylesheet_directory_uri')}}/js/vimeo-trackers.js"></script>
+
+<!-- Polyfill tool to help fullscreen and scrolling issues while using the height: 100vh; attribute plugin -->
+<script src="{{function('get_stylesheet_directory_uri')}}/js/viewport-units-buggyfill.js"></script>
+<script src="{{function('get_stylesheet_directory_uri')}}/js/viewport-units-buggyfill.hacks.js"></script>
+<script type="text/javascript">_satellite.pageBottom();</script>
+{% endspaceless %}

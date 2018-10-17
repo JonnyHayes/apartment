@@ -1,0 +1,83 @@
+@media only screen and (max-width: 991px) {
+  /* Hide the image on forms pages */
+    #form-bg {
+      padding-top: 10px;
+    }
+    #container-register-now, #container-seminars { display: none; }
+    /* Hide floating nav on mobile, tablets */
+    .floating-nav-container {
+      display: none;
+    }
+    /* Hide right borders in Brochures */
+    .right-border {
+      border-right: none;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 900px) {
+  // Adjust left and right margins for navbar list items
+  .navbar-nav>li>a {
+    margin-left: 6px;
+    margin-right: 6px;
+    }
+  }
+
+@media (max-width: 768px) {
+    .dropdown-container .dropdown-menu-hover {
+        position: relative;
+        display: block;
+    }
+    #hero-image h1 {
+        font-size: 36px;
+        letter-spacing: 15px;
+    }
+
+    .logo-branding { padding-left: 0px;}
+    #tf-menu { padding: 0px}
+    .register-img img {
+      margin-left: 0px;
+    }
+    #cf {
+      float:none;
+      margin: auto;
+    }
+    h4.count { font-size: 60px; line-height: 60px; }
+
+    body { padding-top: 5px; }
+
+    button.bedrooms { width: 100%; }
+    button.floor_plan_button { width: 100%; }
+
+}
+
+@media only screen and (max-width: 768px) {
+  // Increase space between sales process graphics on mobile
+  .img-responsive {
+    margin-bottom: 20px !important;
+  }
+  .bug-overlay img {
+    margin-bottom: 0 !important;
+  }
+}
+
+
+@media only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* iPhone 5 only */
+     #hero-image h1 {
+        font-size: 36px;
+        letter-spacing: 10px;
+
+}
+
+    .logo-branding { padding-left: 0px;}
+}
+
+@media only screen and (max-width: 1024px) {
+  // Hide sidebar images, in secodnary page layouts
+  #container-contact-us,
+  #container-faqs,
+  #container-sales-process,
+  #container-thank-you {
+    display: none;
+  }
+}

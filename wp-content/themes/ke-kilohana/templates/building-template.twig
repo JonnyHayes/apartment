@@ -1,0 +1,311 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+{% spaceless %}
+
+<!-- Styles for homepage floating nav -->
+{% include 'css/floating-nav-active-colors.twig' %}
+<style type="text/css">
+  body { background-color: #e3e3e3; }
+  #keaomelemele, #designforward, #amenities {
+    background-color: #ffffff;
+  }
+  #amenitiesdeck {
+    padding-top: 100px;
+  }
+</style>
+
+
+    <div class="floating-nav-container">
+      <ul id="building-nav-ul">
+        <li class="floating-nav active"><a href="#building">The Building</a></li>
+        <li class="floating-nav"><a href="#keaomelemele">Keaomelemele</a></li>
+        <li class="floating-nav"><a href="#designforward">Design Forward</a></li>
+        <li class="floating-nav"><a href="#amenities">Amenities</a></li>
+        <li class="floating-nav"><a href="#amenitiesdeck">Amenity Deck</a></li>
+      </ul>
+    </div>
+
+    <div id="building-nav-wrapper">
+      <div id="building" class="bg-image">
+      <div class="container h-center">
+        <div class="row fade-up">
+          <div class="content-text-wrapper">
+            <div class="col-sm-4 col-md-4 col-xs-12 title-h1-container">
+              <div class="heading-bar-top white-text"></div>
+              <h1 class="white-text">{{ building.title }}</h1>
+              <div class="heading-bar-bottom white-text"></div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-xs-12">
+             <h3 class="white-text default">
+              Your Life In The Sky
+              </h3>
+              <p class="white-text top-paragraph">
+              {{ building.intro_paragraph }}
+              </p>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row bottom-row down-arrow-container fade-up first-section">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper">
+              <p class="text-center white-text italic-text">
+                <a href="#keaomelemele">
+                Keaomelemele<br />
+                <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                  srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                  {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+<!-- keaomelemele section -->
+
+  <div id="keaomelemele" class="bg-image">
+    <div id="keaomelemele-bg" class="fade-in-first"></div>
+    <div class="container h-center" >
+      <div class="content-text-wrapper">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="fade-in">Keaomelemele</h2>
+            <div class="yellow-bar-divider"></div>
+          </div>
+        </div>
+        <div class="row fade-up">
+          <div class="col-md-9 col-xs-12">
+            <div class="columns">
+              {{ building.keaomelemele }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row bottom-row down-arrow-container fade-up">
+        <div class="col-md-12 last-column">
+          <div class="last-column-wrapper">
+            <p class="text-center italic-text">
+              <a href="#designforward">
+              Design Forward<br />
+              <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+<!-- Design Forward Section -->
+
+  <div id="designforward" class="bg-image">
+    <div id="designforward-bg" class="fade-in-first"></div>
+    <div class="container h-center" >
+      <div class="content-text-wrapper">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="fade-in">Design Forward</h2>
+            <div class="yellow-bar-divider"></div>
+          </div>
+        </div>
+        <div class="row fade-up">
+          <div class="col-md-9 col-xs-12">
+            <div class="columns">
+            {{ building.design_forward }}
+            </div>
+            <!-- Button trigger modal -->
+            <a class="button_sliding design_forward_btn" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#aboutAcmModal">
+              About A.C. Martin
+            </a>
+            <!-- Button trigger modal -->
+            <a class="button_sliding design_forward_btn" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#aboutCdsModal">
+              About CDS International
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row bottom-row down-arrow-container fade-up">
+        <div class="col-md-12 last-column">
+          <div class="last-column-wrapper">
+            <p class="text-center italic-text">
+              <a href="#amenities">
+              Featured Amenities<br />
+              <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+<!-- Featured Amenities Section -->
+
+    <div id="amenities" class="bg-image">
+      <div id="amenities-bg" class="fade-in-first"></div>
+      <div class="container h-center" >
+        <div class="content-text-wrapper">
+          <div class="row">
+            <div class="col-xs-12">
+              <h2 class="fade-in">Featured Amenities</h2>
+              <div class="yellow-bar-divider"></div>
+            </div>
+          </div>
+          <div class="row fade-up">
+            <div class="col-md-9 col-xs-12">
+              <div class="columns">
+              {{ building.featured_amenities }}
+              </div>
+              <!-- Button trigger modal -->
+              <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#amenitiesModal">
+                View Amenities
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bottom-row down-arrow-container fade-up">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper">
+              <p class="text-center italic-text">
+                <a href="#amenitiesdeck">
+                Amenity Deck<br />
+                <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  <!--  Amenities Deck Section -->
+  <div id="amenitiesdeck">
+    <div class="container">
+      <div class="content-text-wrapper">
+          <div class="row fade-up">
+            <div class="col-md-10 col-sm-12 col-xs-12">
+              <h2 class="fade-in">Featured Amenities</h2>
+              <div class="yellow-bar-divider"></div>
+            </div>
+          </div>
+      </div>
+  </div>
+    <div id="amenity-deck-section" class="fade-in">
+      <div class="col-md-10 col-sm-12 col-xs-12" style="padding:0;">
+        {% include 'building-overlay.twig' %}
+      </div>
+    </div>
+  </div>
+
+
+<!-- View Architects Modal - Slide Show -->
+<div class="modal-slideshow modal modal-fullscreen fade" id="architectsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+      </button>
+  <div class="modal-dialog slideshow-dialog">
+    <div class="modal-content-slideshow">
+      <div class="modal-body-slideshow" id="features_finishes_gallery-modal">
+        <div class="royalSlider kekilohana" id="architectssModalSlideshow">
+          {% for image in building.design_forward_gallery %}
+            <img class="rsImg" src="{{ Image(image).src }}" alt="{{ Image(image).title }}"  />
+          {% endfor %}
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- View Architects Modal - About ACM -->
+<div class="nav-modal modal modal-fullscreen fade" id="aboutAcmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+  </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="aboutAcmModal">
+        <div class="col-xs-12">
+          <h2>A.C. Martin</h2>
+          <div class="yellow-bar-divider"></div>
+          <img class="img-responsive" src='{{ Image(building.acm_content_graphic).src }}' />
+          <h4 class="persona-title big-yellow">ABOUT:</h4>
+          <p>{{ building.acm_about }}</p>
+          <h4 class="persona-title big-yellow">IMAGES (CLOCKWISE):</h4>
+          <p class="italic-text">{{ building.acm_images }}</p>
+        </div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- View Architects Modal - About CDS -->
+<div class="nav-modal modal modal-fullscreen fade" id="aboutCdsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+  </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="aboutCdsModal">
+        <div class="col-xs-12">
+          <h2>CDS International</h2>
+          <div class="yellow-bar-divider"></div>
+          <img class="img-responsive" src='{{ Image(building.cds_content_graphic).src }}' />
+          <h4 class="persona-title big-yellow">ABOUT:</h4>
+          <p>{{ building.cds_about }}</p>
+          <h4 class="persona-title big-yellow">IMAGES (CLOCKWISE):</h4>
+          <p class="italic-text">{{ building.cds_images }}</p>
+        </div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal-slideshow modal nav-modal modal-fullscreen fade" id="amenitiesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+    </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body-slideshow">
+        <div class="royalSlider kekilohana">
+          {% for image in building.featured_amenities_gallery %}
+            <img class="rsImg" src="{{ Image(image).src }}" alt="{{ Image(image).title }}"  />
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Script for setting active list items on scroll, jquery only -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/floating-nav-jquery.js"></script>
+  <script>
+    showActiveNav('#building-nav-ul', '#building-nav-wrapper');
+  </script>
+
+  <!-- Script for animating content on scroll -->
+  <script src="{{ function('get_stylesheet_directory_uri') }}/js/animate-content.js"></script>
+  <script>
+    animateContent('#building-nav-wrapper');
+  </script>
+
+  <!-- Initialize RoyalSlider -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/initialize-royalslider.js"></script>
+
+{% endspaceless %}
+
+{% endblock %}

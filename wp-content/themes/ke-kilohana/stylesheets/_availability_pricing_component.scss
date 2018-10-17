@@ -1,0 +1,255 @@
+/* Width of each building - math should add up to equal what each unit is added up */
+
+.floors--mini {
+  width: 354px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+.floors.floors--diamondhead.floors--mini {
+  width: 263px;
+}
+.floors.floors--ewa.floors--mini {
+  width: 263px;
+}
+.floors.floors--mauka.floors--mini {
+  width: 176px;
+}
+.floors.floors--makai.floors--mini {
+  width: 176px;
+}
+
+.floor {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;
+  /*width: 100%;*/
+}
+
+.floor a {
+  line-height: 0;
+}
+
+/* Building Tops and Bottoms */
+
+#building_top_diamondhead, #building_top_ewa, #building_top_mauka, #building_top_makai, #building_bottom_diamondhead, #building_bottom_ewa, #building_bottom_mauka, #building_bottom_makai {
+  margin: auto;
+  text-align: center;
+}
+
+#building_top_diamondhead { }
+#building_bottom_diamondhead { margin-left: -7px; }
+#building_top_ewa {  }
+#building_bottom_ewa { margin-left: 16px; }
+#building_top_mauka { }
+#building_bottom_mauka { margin-left: -14px; margin-top: -1px; }
+#building_top_makai { }
+#building_bottom_makai { margin-left: 14px; margin-top: -1px; }
+
+.border-bottom {
+  border-bottom: solid 1px #425C6A;
+}
+
+.floor__seat {
+  -webkit-flex: none;
+  flex: none;
+  height: 100%;
+  margin: 0;
+}
+
+/* Floor Indicator that floats off the to right side of each building */
+
+.floor__seat.floor__seat--empty.floor__group {
+  margin-left: 5px;
+  border-left: 0;
+  font-weight: bold;
+  /*position: absolute;
+  left:50%;
+  margin-left: 144px;*/
+  font-family: "Gotham A","Gotham B";
+  font-size: 14px;
+  font-weight: normal;
+  background-color: transparent;
+}
+.floor__seat.floor__seat--empty.floor__group .floors--mini .floor__seat {
+  width: 15px;
+}
+
+/* Responsive Floor Numbers on the right side
+@media screen and (min-width: 300px) and (max-width: 699px){
+  .floor__seat.floor__seat--empty.floor__group {
+    position: absolute;
+    right: 50%;
+    margin-right: 100px;
+  }
+}*/
+.floors--diamondhead.floors--mini .floor__seat.floor__seat--empty.floor__group, .floors--ewa.floors--mini .floor__seat.floor__seat--empty.floor__group {
+    position: absolute;
+    left: 50%;
+    margin-left: 145px;
+}
+
+.floors--mauka.floors--mini .floor .floor__seat--empty.floor__group, .floors--makai.floors--mini .floor .floor__seat--empty.floor__group {
+  position: absolute;
+    left: 50%;
+    margin-left: 95px;
+}
+
+.floors--mini .floor__seat {
+  width: 29px;
+  height: 18px;
+  background: #a0b6bd; /* Old browsers */
+  background: -moz-linear-gradient(90deg, #f1b934 0%, #f9cf76 180%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(90deg, #f1b934 0%,#f9cf76 180%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(0deg, #f1b934 0%,#f9cf76 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  margin: 0px;
+  border-radius: 0px;
+  cursor: pointer;
+  border-left: 1px solid black;
+  border-left-color: black;
+  border-left-width: 1px;
+  border-left-style: solid;
+  float: left;
+}
+.floors--mini .floor__seat.single, .floors--mini .floor__seat.double, .floors--mini .floor__seat.triple {
+  border-bottom: solid 1px #425C6A;
+}
+.floors--mini .floor__seat.double {
+  width: 58px;
+}
+.floors--mini .floor__seat.triple {
+  width: 87px;
+}
+.floor__seat.first-item{
+  border-left: none;
+}
+.lanai_top {
+  border-top: 1px solid black!important;
+  border-right: 1px solid black!important;
+  border-left: 2px solid black!important;
+  border-bottom: none!important;
+}
+.lanai_middle {
+  border-right: 1px solid black!important;
+  border-left: 2px solid black!important;
+  border-bottom: none!important;
+}
+.lanai_bottom {
+  border-left: 2px solid black!important;
+  border-right: 1px solid black!important;
+  border-bottom: 2px solid black!important;
+}
+
+.floors--mini .floor__seat:hover {
+  background: #ffcd33; /* Old browsers */
+  background: -moz-linear-gradient(90deg, #ffcd33 0%, #f8d079 180%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(90deg, #ffcd33 0%,#f8d079 180%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(0deg, #ffcd33 0%,#f8d079 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.floors--mini .unavailable,
+.floors--mini .unavailable:hover {
+  background: #6086a6; /* Old browsers */
+  background: -moz-linear-gradient(90deg, #6086a6 0%, #4f7180 180%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(90deg, #6086a6 0%,#4f7180 180%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(0deg, #6086a6 0%,#4f7180 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.floors--mini .floor__seat--empty,
+.floors--mini .floor__seat--empty:hover {
+  background: #E6E7E7;
+}
+
+.plan {
+  top: 0;
+  right: 0;
+  padding: 0px 20px;
+  position: relative;
+  z-index: 100;
+  min-width: 200px;
+  /* scale avoids flickering */
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+}
+
+.plan__title {
+  text-align: center;
+  font-size: 1em;
+  margin: 0.25em 0 0.5em;
+}
+
+.legend {
+  list-style: none;
+  margin: 1em 0 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.legend__item {
+  margin: 0 9px 0 0;
+  display: inline-block;
+  font-family: "Gotham A","Gotham B";
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.legend__item::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin: 0 5px 0 0;
+  border-radius: 2px;
+  background: #a0b6bd; /* Old browsers */
+  background: -moz-linear-gradient(90deg, #f1b934 0%, #f9cf76 180%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(90deg, #f1b934 0%,#f9cf76 180%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(0deg, #f1b934 0%,#f9cf76 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.legend__item--reserved::before {
+  background: #6086a6; /* Old browsers */
+  background: -moz-linear-gradient(90deg, #6086a6 0%, #4f7180 180%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(90deg, #6086a6 0%,#4f7180 180%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(0deg, #6086a6 0%,#4f7180 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.legend__item--selected::before,
+.floors--mini .floor__seat--selected,
+.floors--mini .floor__seat--selected:hover {
+  background: #FFF;
+  border: 1px solid black;
+}
+
+/* Tooltip */
+.tooltips {
+  position: relative;
+  display: inline-block;
+  opacity: 1;
+}
+
+.tooltip-inner {
+    background-color: #322f31;
+    color: #fff;
+    border-radius: 0;
+    font-family: 'Gotham A', 'Gotham B', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: transparent;
+}
+
+.tooltip.right .tooltip-arrow {
+    border-right-color: transparent;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: transparent;
+}
+
+.tooltip.left .tooltip-arrow {
+    border-left-color: transparent;
+}

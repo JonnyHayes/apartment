@@ -1,0 +1,23 @@
+/* FAQ OVERWRITES */
+.arconix-faq-title {
+    font-size: 21px;
+}
+.arconix-faq-content {
+    padding: 10px 20px;
+}
+.arconix-faq-content p, .arconix-faq-content ol li {
+    font-size: 16px;
+}
+.arconix-faq-wrap {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 0px;
+}
+.arconix-faq-title {
+  background: url('../ke-kilohana/img/optimized/icon-next-ylw_small.png') no-repeat right transparent;
+  font-style: italic;
+}
+.arconix-faq-title.faq-open {
+  background: url('../ke-kilohana/img/optimized/icon-next-ylw_small-reverse.png') no-repeat right transparent;
+}

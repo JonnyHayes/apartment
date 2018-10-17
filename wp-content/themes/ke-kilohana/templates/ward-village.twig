@@ -1,0 +1,276 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+{% spaceless %}
+
+<!-- Styles for homepage floating nav -->
+{% include 'css/floating-nav-active-colors.twig' %}
+
+
+    <div class="floating-nav-container fade-in-left-start">
+      <ul id="wardvillage-nav-ul">
+        <li class="floating-nav active"><a href="#wardvillage">Ward Village</a></li>
+        <li class="floating-nav"><a href="#evolution">The Evolution</a></li>
+        <li class="floating-nav"><a href="#masterplan">Master Plan</a></li>
+        <li class="floating-nav"><a href="#heartoftown">The Heart of Town</a></li>
+        <li class="floating-nav"><a href="#howardhughes">Howard Hughes</a></li>
+      </ul>
+    </div>
+
+    <div id="wardvillage-wrapper">
+      <div id="wardvillage" class="bg-image">
+        <div class="container h-center">
+          <div class="row">
+            <div class="content-text-wrapper">
+              <div class="col-sm-4 col-md-4 col-xs-12 title-h1-container" id="title-container-village-life">
+                <div class="heading-bar-top white-text"></div>
+                <h1 class="white-text" id="village-life-title">{{ wardvillage.title }}</h1>
+                <div class="heading-bar-bottom white-text"></div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-xs-12 fade-up">
+                {{ wardvillage.ward_village }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row bottom-row down-arrow-container first-section">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper">
+              <p class="text-center white-text italic-text">
+                <a href="#evolution">
+                The Evolution<br />
+                <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Evolution section -->
+
+      <div id="evolution" class="bg-image">
+    <div id="evolution-bg" class="fade-in-first"></div>
+    <div class="container h-center">
+      <div class="content-text-wrapper">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="fade-in">The Evolution</h2>
+            <div class="yellow-bar-divider"></div>
+          </div>
+        </div>
+        <div class="row fade-up">
+          <div class="col-md-9 col-xs-12">
+            <div class="columns">
+              {{ wardvillage.the_evolution }}
+            </div>
+            <!-- Button trigger modal -->
+            <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#evolutionModal">
+              See Historical Images
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row bottom-row down-arrow-container fade-up">
+        <div class="col-md-12 last-column">
+          <div class="last-column-wrapper">
+            <p class="text-center italic-text">
+              <a href="#masterplan">
+              Master Plan<br />
+              <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <!-- Master Plan section -->
+
+      <div id="masterplan" class="bg-image">
+    <div id="masterplan-bg" class="fade-in-first"></div>
+    <div class="container h-center" >
+      <div class="content-text-wrapper">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="fade-in">Master Plan</h2>
+            <div class="yellow-bar-divider"></div>
+          </div>
+        </div>
+        <div class="row animated-row fade-up">
+          <div class="col-md-9 col-xs-12">
+            <div class="columns">
+              {{ wardvillage.master_plan }}
+            </div>
+            <!-- Button trigger modal -->
+            <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#masterplanModal">
+              See Masterplan
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row bottom-row down-arrow-container fade-up">
+        <div class="col-md-12 last-column">
+          <div class="last-column-wrapper">
+            <p class="text-center italic-text">
+              <a href="#heartoftown">
+              The Heart of the Town<br />
+              <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <!-- The Heart of the Town section -->
+
+      <div id="heartoftown" class="bg-image">
+    <div id="heartoftown-bg" class="fade-in-first" ></div>
+    <div class="container h-center" >
+      <div class="content-text-wrapper">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="fade-in">The Heart of the Town</h2>
+            <div class="yellow-bar-divider"></div>
+          </div>
+        </div>
+        <div class="row fade-up">
+          <div class="col-md-9 col-xs-12">
+            <div class="columns">
+              {{ wardvillage.the_heart_of_the_town }}
+            </div>
+            <!-- Button trigger modal -->
+            <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#heartoftownModal">
+              See More Images
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row bottom-row down-arrow-container fade-up">
+        <div class="col-md-12 last-column">
+          <div class="last-column-wrapper">
+            <p class="text-center italic-text">
+              <a href="#howardhughes">
+              Howard Hughes Corporation<br />
+              <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <!-- Howard Hughes Corporation section -->
+
+      <div id="howardhughes" class="bg-image">
+    <div id="howardhughes-bg" class="fade-in-first"></div>
+    <div class="container h-center fade-in">
+      <div class="content-text-wrapper">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="fade-in">Howard Hughes Corporation</h2>
+            <div class="yellow-bar-divider"></div>
+          </div>
+        </div>
+        <div class="row fade-up">
+          <div class="col-md-9 col-xs-12">
+            <div class="columns">
+              {{ wardvillage.get_field('howard_hughes_corporation') }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+
+
+<!-- The Evolution Images Modal -->
+<div class="nav-modal modal modal-fullscreen fade" id="evolutionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+      </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="evolutionModal_gallery-modal">
+        <div class="royalSlider kekilohana" id="unlimitedFunModalSlider">
+          {% for image in wardvillage.the_evolution_gallery %}
+            <img class="rsImg" src="{{ Image(image).src }}" alt="{{ Image(image).title }}" />
+          {% endfor %}
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Master Plan Images Modal -->
+<div class="nav-modal modal modal-fullscreen fade" id="masterplanModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+      </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="masterplanModal_gallery-modal">
+        <div class="royalSlider kekilohana" id="masterplanModalSlider">
+          {% for image in wardvillage.master_plan_district_map %}
+            <img class="rsImg" src="{{ Image(image).src }}" alt="{{ Image(image).title }}" />
+          {% endfor %}
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Heart of Town Images Modal -->
+<div class="nav-modal modal modal-fullscreen fade" id="heartoftownModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+      </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="heartoftownModal_gallery-modal">
+        <div class="royalSlider kekilohana" id="heartoftownModalSlider">
+          {% for image in wardvillage.the_heart_of_the_town_gallery %}
+            <img class="rsImg" src="{{ Image(image).src }}" alt="{{ Image(image).title }}" />
+          {% endfor %}
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+  <!-- Script for setting active list items on scroll, jquery only -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/floating-nav-jquery.js"></script>
+  <script>
+    showActiveNav('#wardvillage-nav-ul', '#wardvillage-wrapper');
+  </script>
+
+  <!-- Page Section Animations -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/animate-content.js"></script>
+  <script>
+    animateContent('#wardvillage-wrapper');
+  </script>
+
+  <!-- Initialize RoyalSlider -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/initialize-royalslider.js"></script>
+
+{% endspaceless %}
+
+{% endblock %}

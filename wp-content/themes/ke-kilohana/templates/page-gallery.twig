@@ -1,0 +1,11 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+    <div class="container-fluid" id="gallery-wrapper">
+      <div class="row">
+        <div class="col-xs-12" id="gallery-col-overwrite">
+          {{ post.get_content }}
+        </div>
+      </div>
+    </div>
+  {% endblock %}

@@ -1,0 +1,31 @@
+{
+  "name": "ke-kilohana",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Heather Frantisak <hfrantisak@mvnp.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "modernizr": "~3.2.0",
+    "font-awesome": "fontawesome#~4.4.0",
+    "isotope": "~2.2.2",
+    "underscore": "~1.8.3",
+    "scrollMonitor": "^1.0.12",
+    "node-dateformat": "^1.0.11",
+    "moment": "^2.12.0",
+    "jquery": "~2.2.3"
+  }
+}

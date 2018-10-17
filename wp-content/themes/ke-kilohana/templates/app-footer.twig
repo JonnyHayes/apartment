@@ -1,0 +1,42 @@
+<!-- Footer
+================================================== -->
+
+<!-- Google Analytics Salesforce code --> 
+<script src="{{function('get_stylesheet_directory_uri')}}/js/gasalesforce.js"></script>
+
+
+<!-- Facebook share code -->
+<script src="{{function('get_stylesheet_directory_uri')}}/js/fbshare.js"></script>
+
+<!-- Facebook share code -->
+<script src="{{function('get_stylesheet_directory_uri')}}/js/tweet-share.js"></script>
+<script type="text/javascript">
+$('.fadein').each(function() {
+
+    var std = $(this).attr("src");
+    var hover = std.replace("blk.png", "ylw.png"); 
+    $(this).clone().insertAfter(this).attr('src', hover).removeClass('fadein').siblings().css({
+        position:'absolute'
+    });
+    $(this).mouseenter(function() {
+        $(this).stop().fadeTo(600, 0);
+    }).mouseleave(function() {
+        $(this).stop().fadeTo(600, 1);
+    });
+});
+
+</script>
+
+<script type="text/javascript">
+    document.querySelector( "#nav-toggle" )
+  .addEventListener( "click", function() {
+    this.classList.toggle( "active" );
+  });
+    
+
+</script>
+
+
+
+
+

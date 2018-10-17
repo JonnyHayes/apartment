@@ -1,0 +1,83 @@
+# ignore all files starting with .
+.*
+!.commitid
+!.ebextensions
+!.elasticbeanstalk
+
+# track this file .gitignore (i.e. do NOT ignore it)
+!.gitignore
+
+# track .editorconfig file (i.e. do NOT ignore it)
+!.editorconfig
+
+# track readme.md in the root (i.e. do NOT ignore it)
+!readme.md
+
+!.eslintrc
+!.stylelintrc
+!.htmllintrc
+
+# ignore all files that start with ~
+~*
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.gzip
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ignore everything in the "wp-content" directory, except:
+# "plugins" directory
+# "themes" directory
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+
+# ignore misc.
+mockup
+mt_images
+bin
+searchmockup
+etc
+conf
+
+# Ignore robots.txt
+robots.txt
+
+# Ignore git management scripts
+Git.php
+git_status.php
+git_commit.php
+post-receive.php
+log.php
+
+# Ignore dev db refresh script
+refresh_dev.php
+
+.DS_Store
+.travis.yml
+.php_cs*
+.htaccess
+.coveralls.yml
+
+# Node modules
+# node_modules

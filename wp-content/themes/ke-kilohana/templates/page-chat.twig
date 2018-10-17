@@ -1,0 +1,166 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+  {% spaceless %}
+
+  <!-- Styles for floating nav -->
+  {% include 'css/floating-nav-active-colors.twig' %}
+  <style>
+  form {font-family: "Gotham A","Gotham B";}
+  @media screen and (min-width: 992px) {
+    .col-md-3 {
+        width: 23%;
+    }
+  }
+  .warning {display:block;}
+
+
+  .container{
+      /*height: 100%;*/
+      font-family: Montserrat, "Helvetica Neue", sans-serif;
+    }
+
+
+
+    .chatbox{
+      width: 100%;
+      /*height: 350px;
+      overflow-y:scroll;*/
+      /*background: rgba(146, 121, 110, 0.26);*/
+      border-radius: 0px;
+      border: solid 0px #BDBDBD;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 15px;
+      margin: 0px !important;
+      /*height: 900px; */
+      /*your fixed height*/
+  -webkit-column-count: 5;
+     -moz-column-count: 5;
+          column-count: 5;
+    }
+    .chatbox li{
+      clear: both;
+      margin-bottom: 1px;
+      text-decoration: none;
+      list-style-type: none;
+      margin: 2px 0px 0px 2px;
+        /*display: inline-block;*/
+    }
+    .actual_msg{
+      float: left;
+      display: inline-block;
+      margin-right: 5px;
+      padding: 5px 5px;
+      min-width: 160px;
+      min-height: 10px;
+      max-width: 510px;
+      border-radius: 5px;
+      box-shadow: 0px 3px 3px rgba(172, 172, 172, 0.73);
+      line-height: 1.4;
+      word-wrap: break-word;
+      color: #1A1A1A;
+      background-color: rgba(0, 0, 0, 0.11);
+    }
+    .lotterytablecontainer {
+    /*height: 100%;*/
+    font-family: Montserrat, "Helvetica Neue", sans-serif;
+  }
+    .lotterytable{
+      width: 100%;
+      /*height: 350px;
+      overflow-y:scroll;*/
+      /*background: rgba(146, 121, 110, 0.26);*/
+      border-radius: 0px;
+      border: solid 0px #BDBDBD;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 15px;
+      margin: 0px !important;
+    }
+    .lotterytable li{
+      clear: both;
+      margin-bottom: 10px;
+      text-decoration: none;
+      list-style-type: none;
+      margin: 20px 0px 0px 20px;
+    }
+    .lotterytablecontaineractual_msg{
+      float: left;
+      display: inline-block;
+      margin-right: 20px;
+      padding: 25px 34px;
+      min-width: 160px;
+      min-height: 10px;
+      max-width: 510px;
+      border-radius: 5px;
+      box-shadow: 0px 3px 3px rgba(172, 172, 172, 0.73);
+      line-height: 1.4;
+      word-wrap: break-word;
+      color: #1A1A1A;
+      background-color: rgba(0, 0, 0, 0.11);
+    }
+
+
+  .date{
+      font-size: 9px;
+      float: left;
+      margin-top: 10px;
+  }
+  </style>
+  <!-- Floating nav -->
+  <div class="floating-nav-container">
+    <ul id="sales-process-nav-ul">
+
+    </ul>
+  </div>
+
+  <div id="sales-process-nav-wrapper">
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="chatbox" id="chatbox">
+          <!-- <p class="current-user-info">{% if (current_user.id == "4") %}
+          Your name is {{current_user.name}}
+          {% else %}
+          <center>Login to join chat room</center
+          {% endif %}
+          </p> -->
+        </ul>
+        <br/>
+        <div id="name-group" class="form-group">
+          {% if (current_user.id == "4") %}
+            <textarea class="form-control msg_box" id="msg_box" placeholder="Type here and check the Title in Tab"></textarea>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
+</div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- <script>
+$( window ).ready( function() { alert('g'); $( "div.breaky" ).replaceWith("</div><div>") ;});
+</script> -->
+  <!-- Script for setting active list items on scroll, jquery only -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/floating-nav-jquery.js"></script>
+  <script>
+    showActiveNav('#sales-process-nav-ul', '#sales-process-nav-wrapper');
+  </script>
+
+  <!-- Script for animating content on scroll -->
+  <script src="{{ function('get_stylesheet_directory_uri') }}/js/animate-content.js"></script>
+
+
+  {% endspaceless %}
+
+  {% endblock %}

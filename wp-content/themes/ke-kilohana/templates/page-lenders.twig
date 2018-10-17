@@ -1,0 +1,390 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+<style type="text/css">
+@media (min-width: 992px){
+.col-md-3 {
+    width: 22%;
+  }
+}
+ a.click-here, a:hover.click-here {
+    border-bottom: solid 2px #f4c350;
+ }
+</style>
+
+    <div class="container-fluid" id="form-bg"><!-- container -->
+      <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+               <h1>{{ post.post_title }}</h1>
+              {{ post.get_content }}
+
+              <p>Contact a Project Lender today! In order to complete the sales application packet and be able to participate in the Ke Kilohana Sales Lottery, a pre-qualification letter labeled "Pre-Qualification– HCDA Housing Unit” will need to be obtained from one of our project lenders.</p>
+
+              <p>Please contact one of the loan officers listed below to schedule a consultation to begin the process and be ready once sales begin. Phone, email or in-person consultations are available for your convenience.</p>
+
+              <p><a class="click-here" href="/wp-content/uploads/2016/02/HHKK-30729-R4_BrandedShell-LenderChecklist_v2-copy.pdf" target="_blank">Click here</a> to download our Lender Checklist.</p>
+
+              <div><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/ehl_logo_solo.png"></div>
+            <h3 class="lender-title" style="margin-top: 50px;">HONOLULU HOMELOANS</h3>
+            </div>
+            <!-- ROW BEGIN ADD col-md-offset-lenders to the first container -->
+            <div class="col-md-3 col-md-offset-lenders col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_tana_f.jpg">
+                </div>
+                 <div class="lender-details">
+                  Tana Feeley<br />
+                  Senior Vice President<br />
+                  <a href="mailto:tfeeley@honhl.com">tfeeley@honhl.com</a><br />
+                  808-366-9300<br />
+                  NMLS #316243<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_wendy_p.jpg">
+                </div>
+                <div class="lender-details">
+                  Wendy Pang<br />
+                  Executive Vice President<br />
+                  <a href="mailto:wpang@honhl.com">wpang@honhl.com</a><br />
+                  808-778-1730<br />
+                  NMLS #318107<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_crystal_p.jpg">
+                </div>
+                <div class="lender-details">
+                  Crystal Acohido<br />
+                  Senior Vice President<br />
+                  <a href="mailto:cacohido@honhl.com">cacohido@honhl.com</a><br />
+                  808-349-3145<br />
+                  NMLS #316238<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_ryan_n.jpg">
+                </div>
+                <div class="lender-details">
+                  Ryan Nakagawa<br />
+                  AVP/Loan Manager<br />
+                  <a href="mailto:rnakagawa@honhl.com">rnakagawa@honhl.com</a><br />
+                  808-551-2929<br />
+                  NMLS #395760<br />
+                </div>
+              </div>
+            </div>
+            <!-- /ROW END-->
+
+            <!-- ROW BEGIN ADD col-md-offset-lenders to the first container -->
+            <div class="col-md-3 col-md-offset-lenders col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_scott_k.jpg">
+                </div>
+                <div class="lender-details">
+                  Scott Kunishima<br />
+                  Senior Loan Officer<br />
+                  <a href="mailto:skunishima@honhl.com">skunishima@honhl.com</a><br />
+                  808-853-7007<br />
+                  NMLS #235181<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_ross_k.jpg">
+                </div>
+                <div class="lender-details">
+                  Ross Komagome<br />
+                  Loan Officer<br />
+                  <a href="mailto:rkomagome@honhl.com">rkomagome@honhl.com</a><br />
+                  808-277-4082<br />
+                  NMLS #690189<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_angela_l.jpg">
+                </div>
+                <div class="lender-details">
+                  Angela Lim<br />
+                  Senior Loan Officer<br />
+                  <a href="mailto:alim@honhl.com">alim@honhl.com</a><br />
+                  808-389-9660<br />
+                  NMLS #674838<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_tom_c.jpg">
+                </div>
+                <div class="lender-details">
+                  Tom Chua<br />
+                  Loan Officer<br />
+                  <a href="mailto:tchua@honhl.com">tchua@honhl.com</a><br />
+                  808-398-3053<br />
+                  NMLS #996217<br />
+                  Cantonese & Mandarin speaking<br />
+                </div>
+              </div>
+            </div>
+            <!-- /ROW END-->
+            
+            <!-- ROW BEGIN ADD col-md-offset-lenders to the first container -->
+            <div class="col-md-3 col-md-offset-lenders col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_brian_m.jpg">
+                </div>
+                <div class="lender-details">
+                  Brian Mano<br />
+                  Loan Officer<br />
+                  <a href="mailto:bmano@honhl.com">bmano@honhl.com</a><br />
+                  808-753-6729<br />
+                  NMLS #1404117<br />
+                  Japanese speaking<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_regan_o.jpg">
+                </div>
+                <div class="lender-details">
+                  Regan Onikama<br />
+                  Senior Vice President<br />
+                  <a href="mailto:ronikama@honhl.com">ronikama@honhl.com</a><br />
+                  808-780-3136<br />
+                  NMLS #349769<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_cary_c.jpg">
+                </div>
+                <div class="lender-details">
+                  Cary Chinn<br />
+                  Senior Loan Officer<br />
+                  <a href="mailto:chin@honhl.com">chin@honhl.com</a><br />
+                  808-469-1314<br />
+                  NMLS #395769<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_tae_k.jpg">
+                </div>
+                <div class="lender-details">
+                  Tae Ho Kim<br />
+                  Loan Officer<br />
+                  <a href="mailto:tkim@honhl.com">tkim@honhl.com</a><br />
+                  808-349-1620<br />
+                  NMLS #910365<br />
+                  Korean speaking<br />
+                </div>
+              </div>
+            </div>
+            <!-- /ROW END-->
+
+            <!-- ROW BEGIN ADD col-md-offset-lenders to the first container -->
+            <div class="col-md-3 col-md-offset-lenders col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_dj_d.jpg">
+                </div>
+                <div class="lender-details">
+                  D.J. Dole<br />
+                  Vice President/Branch Manager<br />
+                  <a href="mailto:djdole@honhl.com">djdole@honhl.com</a><br />
+                  808-853-7007<br />
+                  NMLS #716937<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_erica_d.jpg">
+                </div>
+                <div class="lender-details">
+                  Erica Dzikowski<br />
+                  Senior Loan Officer<br />
+                  <a href="mailto:edzikowski@honhl.com">edzikowski@honhl.com</a><br />
+                  808-284-1888<br />
+                  NMLS #364959<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_shanna_u.jpg">
+                </div>
+                <div class="lender-details">
+                  Shanna Uyeda<br />
+                  Loan Officer<br />
+                  <a href="mailto:suyeda@honhl.com">suyeda@honhl.com</a><br />
+                  808-542-6860<br />
+                  NMLS #1246632<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_susie_b.jpg">
+                </div>
+                <div class="lender-details">
+                  Susie Bass<br />
+                  Vice President<br />
+                  <a href="mailto:sbass@honhl.com">sbass@honhl.com</a><br />
+                  808-780-2871<br />
+                  NMLS #205737<br />
+                </div>
+              </div>
+            </div>
+            <!-- /ROW END-->
+
+            <!-- ROW BEGIN ADD col-md-offset-lenders to the first container -->
+            <div class="col-md-3 col-md-offset-lenders col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_karla_r.jpg">
+                </div>
+                <div class="lender-details">
+                  Karla Redding<br />
+                  Loan Officer<br />
+                  <a href="mailto:kredding@honhl.com">kredding@honhl.com</a><br />
+                  808-780-0460<br />
+                  NMLS #377234<br />
+                </div>
+              </div>
+            </div>
+
+            {# <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_ross_k.jpg">
+                </div>
+                <div class="lender-details">
+                  Ross Komagome<br />
+                  Loan Officer<br />
+                  <a href="mailto:rkomagome@honhl.com">rkomagome@honhl.com</a><br />
+                  808-277-4082<br />
+                  NMLS #690189<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_angela_l.jpg">
+                </div>
+                <div class="lender-details">
+                  Angela Lim<br />
+                  Senior Loan Officer<br />
+                  <a href="mailto:alim@honhl.com">alim@honhl.com</a><br />
+                  808-389-9660<br />
+                  NMLS #674838<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_hhl_tom_c.jpg">
+                </div>
+                <div class="lender-details">
+                  Tom Chua<br />
+                  Loan Officer<br />
+                  <a href="mailto:tchua@honhl.com">tchua@honhl.com</a><br />
+                  808-398-3053<br />
+                  NMLS #996217<br />
+                  Cantonese & Mandarin speaking<br />
+                </div>
+              </div>
+            </div> #}
+            <!-- /ROW END-->
+
+            <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+              <h3 class="lender-title">FIRST HAWAIIAN BANK</h3>
+            </div>
+            <div class="col-md-3 col-md-offset-lenders col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_fhb_stephen_d.jpg">
+                </div>
+                <div class="lender-details">
+                  Stephen Dunn<br />
+                  Sr. Mortgage Loan Officer<br />
+                  532-9856 or 221-2637<br />
+                  <a href="mailto:sdunn@fhb.com">sdunn@fhb.com</a><br />
+                  NMLS ID# 557113<br />
+                </div>
+              </div><!-- /LENDER -->
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_fhb_bernadette_k.jpg">
+                </div>
+                <div class="lender-details">
+                  Bernadette Kaneshiro<br />
+                  Sr. Mortgage Loan Officer<br />
+                  532-9883 or 779-4876<br />
+                  <a href="mailto:bkaneshiro@fhb.com">bkaneshiro@fhb.com</a><br />
+                  NMLS ID# 881938<br />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_fhb_wendy_l.jpg">
+                </div>
+                <div class="lender-details">
+                  Wendy Lum<br />
+                  Sr. Mortgage Loan Officer<br />
+                  532-9863 or 753-7250<br />
+                  <a href="mailto:wlum@fhb.com">wlum@fhb.com</a><br />
+                  NMLS ID# 557123<br />
+                </div>
+              </div>
+            </div> <!-- /INNER COLUMN -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="lender">
+                <div class="lender-thumb">
+                  <img class="clip-circle lenders" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/lender_fhb_elina_g.jpg">
+                </div>
+                <div class="lender-details">
+                  Elina Grugier-Bell<br />
+                  AVP, Dept. Manager<br />
+                  532-9896 or 282-4681<br />
+                  <a href="mailto:egrugier@fhb.com">egrugier@fhb.com</a><br />
+                  NMLS ID# 609941<br />
+                </div>
+              </div>
+            </div>
+
+ {% endblock %}

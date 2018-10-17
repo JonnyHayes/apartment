@@ -1,0 +1,22 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+    <style>
+    #container-faqs {
+      background-image: url({{ TimberImage(post.get_field('faqs_sidebar_image')).src }});
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    </style>
+
+    <div class="container-fluid" id="form-bg"><!-- container -->
+      <div class="row">
+        <div class="col-md-12">
+          <h1>{{ post.post_title }}</h1>
+          {{ post.get_content }}
+        </div>
+      </div>
+    </div>
+ {% endblock %}

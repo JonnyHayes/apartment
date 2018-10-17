@@ -1,0 +1,35 @@
+
+select[aria-invalid='false'],input[aria-invalid='false'] {
+  border: none;
+}
+select[aria-invalid='true'], input[aria-invalid='true'] {
+  border: 2px solid #FB7860;
+}
+
+/* REGISTER NOW FORM */
+
+#container-register-now {
+    // background-image: url(../ke-kilohana/img/optimized/sample-22.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#form-bg {
+    background-image: url(../ke-kilohana/img/optimized/HHKK-pattern-wide.png);
+    background-position: top;
+    background-repeat: repeat-x;
+    padding-bottom: 40px;
+    background-color: #F3F3F3;
+}
+form#contact-form.form {
+    margin-bottom: 30px;
+}
+.has-error input.form-control {
+    border-color: #FB7860;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.help-block {
+    color: #FB7860;
+}

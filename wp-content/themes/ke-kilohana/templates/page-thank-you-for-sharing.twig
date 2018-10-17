@@ -1,0 +1,43 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+    <div id="thank-you" class="bg-image">
+      <div class="container h-center">
+        <div class="row">
+          <div class="content-text-wrapper">
+            <div class="col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1 col-xs-12 title-h1-container" id="title-container-thank-you" style="padding-top: 10px; font-size: 22px;">
+              <div class="heading-bar-top white-text"></div>
+              <h1 class="white-text" id="thank-you-title">{{ post.post_title }}!</h1>
+              <div class="heading-bar-bottom white-text"></div>
+            </div>
+            <div class="col-sm-5 col-md-5 col-xs-12 white-text">
+              {{post.get_field('thank_you_content')}}
+              <a class="button_sliding" href="/">RETURN TO HOMEPAGE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Google Code for Form Lead Conversion Page -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 895749311;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "8L_wCLC21WEQv5mQqwM";
+var google_remarketing_only = false;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/895749311/?label=8L_wCLC21WEQv5mQqwM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+
+ {% endblock %}

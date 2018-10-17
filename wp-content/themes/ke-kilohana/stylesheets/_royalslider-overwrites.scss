@@ -1,0 +1,77 @@
+html,body,div {
+  margin:0; padding:0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  /*overflow: hidden; Causes the no scroll issue not the 100sv*/
+}
+
+.royalSlider {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  width: auto;
+  float: left;
+  margin: 10px auto;
+}
+
+
+.royalSlider {
+ font-size: 100px;
+}
+
+.rsImg {
+  margin-top: 0px;
+}
+.kekilohana {
+  width: 1000px;
+  height: 650px;
+  margin-top: -30px;
+}
+.rsGCaption, figure.rsCaption {
+    position: absolute;
+    left: 20px;
+    font-size: 20px;
+    top: 20px;
+    color: black;
+}
+.kekilohana .rsGCaption {
+    position: absolute;
+    float: none;
+    top: -25px;
+    left: 9px;
+    bottom: auto;
+    text-align: left;
+    background: transparent;
+    color: black;
+    padding: 2px 8px;
+    width: auto;
+    font-size: 15px;
+    border-radius: 0px;
+    font-style: italic;
+    display: none;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .kekilohana {
+    width: 769px;
+    height: 500px;
+  }
+}
+@media only screen and (min-width: 560px) and (max-width: 768px) {
+  .kekilohana {
+    width: 560px;
+    height: 364px;
+  }
+}
+@media only screen and (max-width: 559px) {
+  .kekilohana {
+    width: 320px;
+    height: 208px;
+  }
+}

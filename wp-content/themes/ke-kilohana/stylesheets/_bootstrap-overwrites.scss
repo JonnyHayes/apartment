@@ -1,0 +1,116 @@
+/* BOOTSTRAP OVERWRITES */
+.full-width-container {
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navbar-right {
+    margin-top: 13px;
+}
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.content-text-wrapper {
+    margin-top: auto;
+}
+
+/* Makes a fixed navigation play nice with wordpress admin bar */
+
+.admin-bar .navbar-fixed-top {
+  top: 32px;
+}
+@media screen and (max-width: 782px) {
+  .admin-bar .navbar-fixed-top {
+    top: 46px;
+  }
+}
+
+.form-control { border-radius: 0; border: 1px solid #000; color: #000000;}
+.form-control:focus {
+    border-color: #efc10b;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(244,195,80,.075),0 0 8px rgba(244,195,80,.6);
+    box-shadow: 0 0 5px 0 rgba(244,195,80,.67);
+}
+select {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+    background-image: url(/wp-content/themes/ke-kilohana/img/optimized/form-select-arrow-down.jpg)!important;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 40px;
+}
+a.navbar-brand.mobile {display: none;}
+
+/* Responsive Buttons Controls */
+@media screen and (min-width: 300px) and (max-width: 699px){
+  a.navbar-brand.mobile {display: block; padding: 25px 0px 0px 15px; }
+  a.navbar-brand {display: none;}
+}
+
+@media (min-width: 768px) {
+
+    .navbar-right {
+        margin-right: 0px;
+    }
+    .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 460px) {
+    .col-xs-15 {
+        width: 50%;
+        float: left;
+    }
+}
+@media (max-width: 768px) {
+    .col-sm-15 {
+        width: 50%;
+        float: left;
+    }
+    
+    .nav .nav>li>a {color: #777; }
+
+    .nav>li>a:focus, .nav>li>a:hover {
+        color: #333;
+        border-bottom: 4px solid #000;
+        border-radius: 2px 2px 3px 3px;
+        background-color: transparent;
+        height: 40px;
+    }
+}
+@media (max-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (max-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
+

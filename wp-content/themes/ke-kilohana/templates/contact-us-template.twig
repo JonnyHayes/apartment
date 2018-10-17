@@ -1,0 +1,316 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+  <style>
+    #acf-map {
+      position: relative;
+    }
+    .map-overlay-content {
+      position: absolute;
+      top: 0;
+      /*left: 10px;*/
+      z-index: 100;
+    }
+    .map-overlay-content div.content-text-wrapper {
+      margin-top: -30rem;
+    }
+  </style>
+
+
+  <div id="acf-map" class="bg-image"></div>
+
+    <div class="container h-center map-overlay-content">
+      <div class="row contact-us-content">
+        <div class="col-md-4 col-sm-12">
+          <div class="content-text-wrapper">
+            <h1 class="text-nowrap contact-us-title">{{ contact_us.title }}</h1>
+            <div class="contact-us">
+              <p style="margin-top: 20px;">
+                {{ contact_us.get_field('contact_us_content') }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script>
+  function initializeMap() {
+    var kkMapStyles = [
+        {
+            "featureType": "administrative",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "hue": "#0060ff"
+                },
+                {
+                    "lightness": -100
+                },
+                {
+                    "visibility": "off"
+                },
+                {
+                    "saturation": "-77"
+                }
+            ]
+        },
+        {
+            "featureType": "administrative",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "visibility": "on"
+                },
+                {
+                    "color": "#848ea4"
+                }
+            ]
+        },
+        {
+            "featureType": "landscape",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "hue": "#0060ff"
+                },
+                {
+                    "saturation": "-70"
+                },
+                {
+                    "lightness": "0"
+                },
+                {
+                    "visibility": "on"
+                }
+            ]
+        },
+        {
+            "featureType": "landscape",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "hue": "#0050ff"
+                },
+                {
+                    "saturation": "0"
+                },
+                {
+                    "lightness": "0"
+                }
+            ]
+        },
+        {
+            "featureType": "landscape",
+            "elementType": "labels",
+            "stylers": [
+                {
+                    "hue": "#0060ff"
+                },
+                {
+                    "saturation": "-80"
+                },
+                {
+                    "lightness": "-90"
+                },
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "hue": "#0060ff"
+                },
+                {
+                    "saturation": "-80"
+                },
+                {
+                    "lightness": "-70"
+                },
+                {
+                    "visibility": "off"
+                },
+                {
+                    "gamma": "1"
+                }
+            ]
+        },
+        {
+            "featureType": "road",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "hue": "#0060ff"
+                },
+                {
+                    "saturation": "-85"
+                },
+                {
+                    "lightness": "60"
+                },
+                {
+                    "visibility": "on"
+                }
+            ]
+        },
+        {
+            "featureType": "road",
+            "elementType": "labels",
+            "stylers": [
+                {
+                    "hue": "#0060ff"
+                },
+                {
+                    "saturation": "-70"
+                },
+                {
+                    "lightness": "50"
+                },
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "road.local",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "hue": "#0060ff"
+                },
+                {
+                    "saturation": "0"
+                },
+                {
+                    "lightness": "-11"
+                },
+                {
+                    "visibility": "on"
+                }
+            ]
+        },
+        {
+            "featureType": "transit",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "visibility": "simplified"
+                },
+                {
+                    "hue": "#0060ff"
+                },
+                {
+                    "lightness": "0"
+                },
+                {
+                    "saturation": "0"
+                }
+            ]
+        },
+        {
+            "featureType": "transit",
+            "elementType": "labels",
+            "stylers": [
+                {
+                    "hue": "#0060ff"
+                },
+                {
+                    "lightness": -100
+                },
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "hue": "#0066ff"
+                },
+                {
+                    "saturation": "0"
+                },
+                {
+                    "lightness": 100
+                },
+                {
+                    "visibility": "on"
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "labels",
+            "stylers": [
+                {
+                    "hue": "#000000"
+                },
+                {
+                    "saturation": -100
+                },
+                {
+                    "lightness": -100
+                },
+                {
+                    "visibility": "off"
+                }
+            ]
+        }
+    ];
+
+
+    var kkStyledMap = new google.maps.StyledMapType(kkMapStyles);
+
+    var kkLatLng = { lat: {{ contact_us.get_field('google_map').lat }}, lng: {{ contact_us.get_field('google_map').lng }} };
+
+    var kkMapOptions = {
+      zoom: 15,
+      center: kkLatLng,
+      mapTypeControl: false,
+      scrollwheel: false,
+      streetViewControl: false,
+    };
+
+    var kkMap = new google.maps.Map(document.getElementById('acf-map'), kkMapOptions);
+
+    // var kkMarker = new google.maps.Marker({
+    //   position: kkLatLng,
+    //   map: kkMap,
+    //   icon: {
+    //     fillColor: '#4a5ddd',
+    //     fillOpacity: '0.5',
+    //     strokeColor: '#139687',
+    //     strokeOpacity: '0.8',
+    //   },
+    //   // title: 'test title',
+    // });
+
+    var kkInfoWindow = new google.maps.InfoWindow({
+      // content: '{{ contact_us.location_name }}',
+      // content: 'test content',
+    });
+
+    kkMap.mapTypes.set('map_style', kkStyledMap);
+    kkMap.setMapTypeId('map_style');
+
+    kkMarker.addListener('click', function() {
+      kkInfoWindow.open(kkmap, kkMarker);
+    });
+  }
+
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      initializeMap();
+    });
+  </script>
+
+  {% endblock %}

@@ -1,0 +1,63 @@
+{% block html_head_container %}
+
+{% include 'app-html-header.twig' %}
+  {% block head %}
+  {% endblock %}
+  </head>
+{% endblock %}
+<script>
+    
+    
+    
+ /*   
+(function($, viewport){ 
+    
+
+      // Executes only in xs an sm breakpoint
+    if( viewport.is('<md') ) {
+        
+        $(window).on("orientationchange",function(){
+  alert("The orientation has changed!");
+});
+        
+        
+    }
+
+    
+    
+    
+
+    
+})(jQuery, ResponsiveBootstrapToolkit);
+  */  
+</script>
+  <body class="{{body_class}}" data-template="app.twig">
+  
+
+    <section id="content" role="main" class="content-wrapper">
+      {% if title %}<h1>{{title}}</h1>{% endif %}
+      <div class="wrapper {{sidebar_class}}">
+        {% block content %}
+          Sorry, no content
+        {% endblock %}
+      </div>
+      {% if sidebar %}
+        <aside class="layout-sidebar">
+          {{sidebar}}
+        </aside>
+      {% endif %}
+    </section>
+
+    {% block footer %}
+     
+<script type='text/javascript' src='{{function('get_stylesheet_directory_uri')}}/bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='{{function('get_stylesheet_directory_uri')}}/lib.min.js'></script>
+<script type='text/javascript' src='{{function('get_stylesheet_directory_uri')}}/validation.js'></script>
+<script type='text/javascript' src='{{function('get_stylesheet_directory_uri')}}/main.min.js'></script>
+<script type='text/javascript' src='{{function('get_stylesheet_directory_uri')}}/js/bootstrap-toolkit.js'></script>
+      
+      
+    {% endblock %}
+      <script src="{{function('get_stylesheet_directory_uri')}}/js/bootstrap-validation/base.js"></script>
+  </body>
+</html>

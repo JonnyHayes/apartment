@@ -1,0 +1,21 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+  <h2>Hello inside the finder qualification template</h2>
+
+  <form class="" id='qualification_form' action="{{ finder_qualification.slug }}" method="get">
+    <label for="">household size</label><br>
+    <input type="radio" name="size" value="1">1-3<br>
+    <input type="radio" name="size" value="2">2-4<br>
+    <input type="radio" name="size" value="3">3+<br>
+
+    <label for="">household income</label><br>
+    <input type="radio" name="income" value="85">85<br>
+    <input type="radio" name="income" value="97">97<br>
+    <input type="radio" name="income" value="110">110<br>
+    <input type="radio" name="income" value="122">122<br>
+    <button type="submit">Submit qualification</button>
+  </form>
+
+  {% endblock %}

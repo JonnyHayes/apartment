@@ -1,0 +1,27 @@
+// Phase 2 content layouts
+.content-text-wrapper {
+  margin-top: auto;
+}
+.last-column {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.last-column-wrapper {
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  bottom: 0;
+}
+
+
+// Layouts for sales process, seminars, contact us, thank you pages
+#container-contact-us,
+#container-faqs,
+#container-sales-process,
+#container-thank-you {
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 650px;
+}

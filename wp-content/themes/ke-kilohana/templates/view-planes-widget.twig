@@ -1,0 +1,55 @@
+<script src="{{function('get_stylesheet_directory_uri')}}/panorama-viewer/js/jquery.panorama_viewer.js"></script>
+
+{% spaceless %}
+<div class="container fade-in" style="-webkit-transform: none; transform: none; top: 0;">
+  <div class="row">
+    <div class="col-md-12">
+      <form class="capitalize" id='viewer_planes_form' action="{{ viewer.slug }}" method="POST">
+        <h3 class="floor_plans">Choose View Direction</h3>
+        <div class="btn-group" role="group" id="view_directions_buttons">
+          <button type="button" class="view_direction active" value="Makai">Makai</button>
+          <button type="button" class="view_direction" value="Ewa-Makai">Ewa-Makai</button>
+          <button type="button" class="view_direction" value="Ewa">Ewa</button>
+          <button type="button" class="view_direction" value="Ewa-Mauka">Ewa-Mauka</button>
+          <button type="button" class="view_direction" value="Mauka">Mauka</button>
+          <button type="button" class="view_direction" value="Diamond Head">Diamond Head</button>
+        </div>
+        <h3 class="floor_plans" style="margin-top: 26px;">Choose Floor Elevation</h3>
+        <div class="btn-group" role="group" id="view_elevations_buttons">
+          <button type="button" class="view_elevation active" value="43">43</button>
+          <button type="button" class="view_elevation" value="42">42</button>
+          <button type="button" class="view_elevation" value="38">38</button>
+          <button type="button" class="view_elevation" value="32">32</button>
+          <button type="button" class="view_elevation" value="26">26</button>
+          <button type="button" class="view_elevation" value="20">20</button>
+          <button type="button" class="view_elevation" value="14">14</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="panorama-wrapper">
+  <img src="" alt="" id="panorama-image" />
+</div>
+<div class="col-md-12">
+  <div class="legal-links pano"><a href="/disclaimer"><sup>*</sup>views disclaimer</a></div>
+</div>
+
+{% endspaceless %}
+
+  {% include 'js/view-planes-query.twig' %}
+
+  <script>
+  jQuery(function ($) {
+    $("#panorama-wrapper").panorama_viewer({
+      // repeat: true,
+      // height: '420px',
+      // overlay: false,
+      // width: '1600px'
+    });
+  });
+  </script>
+
+
+<script src="{{function('get_stylesheet_directory_uri')}}/panorama-viewer/js/classie.js"></script>

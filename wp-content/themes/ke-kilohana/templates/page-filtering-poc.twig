@@ -1,0 +1,88 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+    <div class="container-fluid" id="form-bg"><!-- container -->
+      <div class="row">
+        <div class="col-md-12">
+          <h1>{{ post.post_title }}</h1>
+
+          <!-- test isotope only, no acf -->
+          <select class="filters-select">
+            <option value=":not(*)">select</option>
+            <option value=".paramTest1">param1</option>
+            <option value=".paramTest2">param2</option>
+            <option value=".paramTest3">param3</option>
+            <option value=".paramTest4">param4</option>
+            <option value=".paramTest5">param5</option>
+            <option value="*">test all</option>
+            <option value=":not(*)">test none</option>
+            <option value=":not(.paramTest6)">test negate</option>
+          </select>
+          <div class="grid-container">
+            <div class="filter-item paramTest1 paramTest2">
+              <p>first item</p>
+            </div>
+            <div class="filter-item paramTest3 paramTest2">
+              <p>second item</p>
+            </div>
+            <div class="filter-item paramTest4">
+              <p>third item</p>
+            </div>
+            <div class="filter-item paramTest4 paramTest6">
+              <p>fourth item</p>
+            </div>
+          </div>
+          <!-- end test isotope only -->
+
+          <!-- test isotope, with acf -->
+          <select class="filters-select">
+            <option value="mauka">Mauka</option>
+            <option value="makai">Makai</option>
+            <option value="ewa">Ewa</option>
+            <option value="diamondhead">Diamond Head</option>
+          </select>
+          <select class="filters-select">
+            <option value="300">$300,000</option>
+            <option value="500">$500,000</option>
+            <option value="700">$700,000</option>
+          </select>
+          <div class="grid-container">
+            <div class="filter-item">
+              {{ post.test_filter_1 }}
+            </div>
+          </div>
+
+          {{ post | print_r }}
+
+<ul>
+    {% for post in posts %}
+        <li><a href="{{ post.permalink }}">{{ post.title }}</a></li>
+        <p>
+          {{ post.get_field('test_view') }}
+        </p>
+        <p>
+          {{ post.get_field('test_price') | print_r }}
+        </p>
+        <p>
+          {{ post.test_view['label'] | print_r }}
+        </p>
+        <p>
+          {{ post.get_field_object('test_price')['choices'][get_field('select_field')] }}
+        </p>
+    {% else %}
+        <li>Sorry, no posts matched your criteria</li>
+    {% endfor %}
+</ul>
+
+<!-- $field = get_field_object('select_field');
+$value = get_field('select_field');
+$label = $field['choices'][ $value ]; -->
+
+        </div>
+      </div>
+    </div>
+
+    <script src="{{function('get_stylesheet_directory_uri')}}/js/filter-poc.js"></script>
+
+  {% endblock %}

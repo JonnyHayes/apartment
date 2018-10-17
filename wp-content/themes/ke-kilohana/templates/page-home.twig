@@ -1,0 +1,229 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+<style>
+  /*advanced custom field, image url*/
+    body {text-transform: none;}
+   #hero-image {
+
+    background-image: url({{ TimberImage(post.get_field('hero_image')).src }});
+  }
+  #row2_vertical_image {
+    background-image: url({{ TimberImage(post.get_field('row2_vertical_image')).src }});
+  }
+  #right-column-one-row-1 {
+    background-image: url({{ TimberImage(post.get_field('right-column-one-row-1')).src }});
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #right-column-one-row-2 {
+    background-image: url({{ TimberImage(post.get_field('right-column-one-row-2')).src }});
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #row3_vertical_image {
+    background-image: url({{ TimberImage(post.get_field('row3_vertical_image')).src }});
+    min-height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 162px;
+  }
+  #row3_image1 {
+    background-image: url({{ TimberImage(post.get_field('row3_image1')).src }});
+  }
+  #row3_image2 {
+    background-image: url({{ TimberImage(post.get_field('row3_image2')).src }});
+  }
+  #row3_image3 {
+    background-image: url({{ TimberImage(post.get_field('row3_image3')).src }});
+  }
+  #row3_image4 {
+    background-image: url({{ TimberImage(post.get_field('row3_image4')).src }});
+  }
+  #row4_vertical_image1 {
+    background-image: url({{ TimberImage(post.get_field('row4_vertical_image1')).src }});
+  }
+  #row4_vertical_image2 {
+    background-image: url({{ TimberImage(post.get_field('row4_vertical_image2')).src }});
+  }
+  /*h4.count { font-size: 90px; line-height: 90px; }*/
+</style>
+
+<!-- Styles for homepage floating nav -->
+{% include 'css/floating-nav-active-colors.twig' %}
+
+    <div class="floating-nav-container">
+      <ul id="floating-nav-ul">
+        <li class="floating-nav section-content-one"><a href="#section-content-one">One</a></li>
+        <li class="section-content-two floating-nav white"><a href="#section-content-two">ONE</a></li>
+        <li class="section-content-three floating-nav white"><a href="#section-content-three">TWO</a></li>
+        <li class="section-content-four floating-nav white"><a href="#section-content-four">THREE</a></li>
+      </ul>
+    </div>
+<!-- Row 1
+================================================== -->
+<div id="section-content-one">
+<div class="full-background" id="hero-image">
+  <div class="overlay"> <!-- Overlay Color -->
+    <div class="container-fluid"> <!-- container -->
+      <div class="content-heading text-center">
+        <p id="large-logo-img"><img class="img-responsive" style="margin:auto;" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/logo_kk-white-lrg.png" srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/logo_kk-white-lrg@x2.png 2x"></p>
+        <!-- USING AN IMAGE FOR THE LOGO INSTEAD OF TEXT
+        <h1>{{ post.get_field('headline') }}</h1>
+        -->
+        <p class="lead"><img class="img-responsive" id="ward-village-img" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/988-ward-logos.png" srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/988-ward-logos@x2.png 2x" ></p>
+        <a href="#section-content-two" class="scroll no-hover goto-btn text-uppercase minion">SCROLL TO EXPLORE</a>
+        <p><a href="#right-column-one-row-2" id="scroll-down-btn" class="scroll no-hover goto-btn text-uppercase"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-scroll.png"></a></p>
+      </div>
+    </div> <!-- end container -->
+  </div><!-- End Overlay Color -->
+</div>
+</div>
+
+<!-- Wrapper to get element id for Waypoints -->
+<div id="homepage-nav-wrapper">
+<!-- Row 2
+================================================== -->
+<div id="section-content-two" >
+
+  <div class="gray-bg"> <!-- fullwidth gray background -->
+
+    <div id="tf-counter" class="text-center">
+      <div class="">
+        <div class="row"> <!-- Row -->
+          <div class="col-xs-12 col-sm-6 col-md-6 left-column facts" id="left-column-one">
+            <div class="count-box-no-hover full-background" id="row2_vertical_image">
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 facts right-column full-background" id="right-column-one">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-md-12 facts" id="right-column-one-row-1"><!-- counter #1 -->
+              <div class="count-box-absolute">
+                <h4 class="count Gothic821CondensedBT-Regular">{{ post.get_field('row2_headline') }}</h4>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-md-12 facts" id="right-column-one-row-2"><!-- counter #1 -->
+              <div class="count-box">
+                <p class="black-text left">{{ post.get_field('row2_copy') }}</p>
+                  <a id="registernowbtn" class="btn tf-btn color tf-btn-left" href="{{ post.get_field('row2_button_link') }}">
+                    {{ post.get_field('row2_button_text') }}
+                    </a> <!-- REGISTER button -->
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Row -->
+        </div>
+      </div>
+    </div> <!-- end fullwidth gray background -->
+  </div>
+
+  <!-- Row 3
+  ================================================== -->
+  <div id="section-content-three" >
+    <div class="gray-bg"> <!-- fullwidth gray background -->
+      <div id="tf-counter" class="text-center">
+        <div class="">
+          <div class="row"> <!-- Row -->
+            <div class="col-xs-12 col-sm-6 col-md-6 left-column facts" id="left-column-two-container">
+              <div class="count-box-no-hover full-background" id="row3_vertical_image">
+                <div class="bug-overlay"><img class="img-responsive" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/mark_kk_blk.png" srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/mark_kk_blk@x2.png 2x" >
+                  </div>
+                <h2 class="black-text left Gothic821CondensedBT-Regular">{{ post.get_field('row3_title_text') }}</h2>
+                <p class="black-text left">{{ post.get_field('row3_copy') }}</p>
+                <a id="sign-up-now-btn" class="btn tf-btn color tf-btn-left" href="{{ post.get_field('row3_button_link') }}">
+                    {{ post.get_field('row3_button_text') }}
+                    </a> <!-- SIGN UP NOW button -->
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 facts right-column" id="right-column-two">
+              <!-- begin current row 3, previously in row 4 -->
+              <div class="count-box-no-hover full-background" id="row4_vertical_image1">
+              </div>
+              <!-- end current row 3, previously in row 4 -->
+            </div>
+          </div> <!-- End Row -->
+        </div>
+      </div>
+    </div> <!-- end fullwidth gray background -->
+  </div>
+<div class="gotham-book" style="font-size:40px">THIS IS A GOTHAM Book FONT</div>
+<div class="gotham-book-bold" style="font-size:40px">THIS IS GOTHAM Book Bold FONT</div>
+  <!-- Row 4
+  ================================================== -->
+  <div id="section-content-four" data-bottom-center="opacity:0;" data-10p-center-center="opacity:1;">
+    <div class="gray-bg"> <!-- container -->
+      <div id="tf-counter" class="text-center">
+          <div class="row"> <!-- Row -->
+            <div class="col-xs-12 col-sm-6 col-md-6 left-column facts" id="left-column-three">
+              <!-- begin current row 4, previously in row 3-->
+              <!-- begin group of 4 images -->
+              <div class="counter" id="row-4-left-column-inner">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-md-6 facts full-background" id="row3_image1"><!-- counter #1 -->
+                  <div class="count-box">
+                  </div>
+                </div><!-- end counter #1 -->
+                <div class="col-xs-6 col-sm-6 col-md-6 facts full-background" id="row3_image2"><!-- counter #2 -->
+                  <div class="count-box">
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 facts full-background" id="row3_image3"> <!-- counter #3 -->
+                  <div class="count-box">
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 facts full-background" id="row3_image4"> <!-- counter #4 -->
+                  <div class="count-box">
+                  </div>
+                </div>
+              </div><!-- End Counter -->
+              <!-- end goup of 4 images -->
+              <!-- end current row 4, previously in row 3-->
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 facts right-column" id="right-column-three">
+              <div class="count-box-no-hover full-background" id="row4_vertical_image2">
+                <h2 class="black-text left Gothic821CondensedBT-Regular">{{ post.get_field('row4_title_text') }}</h2>
+                <p class="black-text left">{{ post.get_field('row4_copy') }}</p>
+                <p class="black-text left"><a id="viewgallerybtn" class="btn tf-btn color" href="{{ post.get_field('row4_button_link') }}">{{ post.get_field('row4_button_text') }}</a></p><!-- View Gallery Button -->
+              </div>
+            </div>
+          </div> <!-- End Row -->
+      </div>
+    </div> <!-- container -->
+  </div>
+
+</div>
+<!-- End wrapper to get element id for Waypoints -->
+
+<script src="{{function('get_stylesheet_directory_uri')}}/js/resize-homepage.js"></script>
+<script src="{{function('get_stylesheet_directory_uri')}}/js/bootstrap-validation/homepage.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+<script type="text/javascript">
+    skrollr.init({
+      forceHeight: false,
+      easing: {
+        vibrate: function(p) {
+          return Math.sin(p * 10 * Math.PI);
+        }
+      }
+    });
+    </script>
+<script type="text/javascript">
+      if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+          skrollr.init({
+              forceHeight: false
+          });
+      };
+
+</script>
+
+<!-- Script for setting active list items on scroll, jquery only -->
+<script src="{{ function('get_stylesheet_directory_uri')}}/js/floating-nav-jquery.js"></script>
+<script>
+  showActiveNav('#floating-nav-ul', '#homepage-nav-wrapper');
+</script>
+
+{% endblock %}

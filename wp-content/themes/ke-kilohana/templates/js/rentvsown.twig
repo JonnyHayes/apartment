@@ -1,0 +1,399 @@
+<!-- <form id="mortgagecalc"  method="post" action="https://salesforce.ringlead.com/cgi-bin/4762/7/dedup.pl" id="register-form" class="form lowercase" name="register-form" novalidate > -->
+<style type="text/css">
+
+.container {
+  -webkit-transform: none;
+  transform: none;
+}
+.gallery-white-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  background-color: #ffffff;
+  z-index: 1;
+  opacity: 0.75;
+}
+.full-width { padding-left: 0; }
+.full-yellow {
+  width: 100%;
+}
+.full-right {
+  padding-right: 0;
+}
+.yellow-margin {
+  margin: 0 10px;
+}
+/* White bar at the top. */
+@media screen and (min-width: 300px) and (max-width: 699px){
+  .gallery-white-bar {
+    height: 65px;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 1199px){
+  .gallery-white-bar {
+    height: 75px;
+  }
+}
+@media screen and (min-width: 1200px){
+  .gallery-white-bar {
+    height: 75px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .full-width {
+    width: 100%;
+  }
+  .full-left {
+    padding-right: 0;
+  }
+}
+
+.warning {display:block;}
+
+#unit-id-summary {font-weight: bold;}
+
+
+select.bedrooms {
+    text-transform: uppercase;
+    display: block;
+    float: left;
+    background-color: #f4c350;
+    border: none;
+    color: #fff;
+    font-family: "Gotham A","Gotham B";
+    font-style: normal;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+
+ .yellowbg {
+   background-color: #f4c350; color: #fff;
+   display: block;
+   float: left;
+   border: none;
+   color: #fff;
+   font-family: "Gotham A","Gotham B";
+   font-style: normal;
+   font-weight: 400;
+   white-space: nowrap;
+   padding: 10px;
+   font-size: 17px;
+ }
+
+ .serif-text {
+   font-family: minion-pro;
+   font-size: 19px;
+ }
+
+.dark {
+  color: #000;
+}
+
+.gray-bar {
+  border-bottom: 1px solid #aeaeae;
+}
+
+.yellow-span {
+  color: #f4c350;
+}
+
+.white-bar-subheading,
+.white-bar-divider {
+  border-bottom: 1px solid #f7d585;
+}
+.white-bar-subheading {
+  margin: 10px 0;
+}
+.white-bar-divider {
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+
+.line-height-text {
+  line-height: 2rem;
+}
+
+#rent,
+.input-group-addon {
+  border: 1px solid #000;
+}
+#rent {
+  border-left-color: #fff;
+}
+.form-control:focus {
+  /*border-color: #000;*/
+}
+.input-group-addon {
+  background-color: #fff;
+  border-right:: 0;
+  border-radius: 0;
+  font-size: 17px;
+}
+
+</style>
+
+<p>
+  This calculator provides a high level generic simulation of a rent vs. own scenario and should not be relied on to make any financial decisions. These calculations do not factor in loan cost. Speak with a project lender for eligibility and qualification determination based on your specific situation and needs.
+</p>
+
+<div class="row">
+  <div id="pm" class="col-md-6 col-sm-12 full-width full-left calc">
+    <form id="mortgagecalc" id="rentvsown-form" class="form lowercase" name="rentvsown-form" novalidate>
+      <div role="group" id="bedroomsgrp" data-bedroom="">
+        <h3 class="capitalize bold-text">Choose Residence Type</h3>
+        <select class="form-control selectpicker" name="beds" id="bedrooms">
+          <option class="bedrooms" value="300000">1 BEDROOM | 1 BATHROOM</option>
+          <option class="bedrooms"  value="400000">2 BEDROOMS | 2 BATHROOMS</option>
+          <option  class="bedrooms" value="500000">3 BEDROOMS | 2 BATHROOMS</option>
+        </select>
+      </div>
+      <input type="hidden" id="idAnnualInterestRate" value="4.50">
+
+      <input type="hidden" id="idMonths" value="360" disabled="">
+      <input type="hidden" id="idLoanAmount" value="300000">
+
+      <input type="hidden" id="sqft" value="500" disabled="">
+      <input type="hidden" id="idResult" class="calc">
+    </form>
+  </div>
+  <div class="col-md-6 col-sm-12 full-width full-right">
+    <form id="rentecalc" id="rent-form" class="form lowercase" name="rent-form" novalidate>
+      <h3 class="capitalize bold-text">Enter Current Rent</h3>
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon yellow-span">$</span>
+          <input name="rent" type="text" autocomplete="off" class="form-control" placeholder="What are you currently paying for rent?" id="rent" required data-validation-required-message="What are you currently paying for rent?">
+        </div>
+        <p class="help-block text-danger"></p>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12 full-width full-right">
+    <div class="gray-bar"></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-sm-12 full-width full-left">
+    <h3 class="italic-text">Benefits of Owning <span class="yellow-span">&mdash;</span></h3>
+    <div class="yellowbg full-width full-yellow">
+      <div class="capitalize bold-text yellow-margin">
+        Value in 1 Year | <span class="dark" id="added"></span>
+        <div class="white-bar-subheading"></div>
+      </div>
+      <ul class="serif-text bold-text">
+        <li>Fixed housing payment</li>
+        <li>Annual tax benefits as a homeowner</li>
+        <li>Potential home appreciation</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-6 col-sm-12 full-width full-right">
+    <h3 class="italic-text">Drawbacks of Renting <span class="yellow-span">&mdash;</span></h3>
+    <div class="yellowbg full-width full-yellow">
+      <div class="capitalize bold-text yellow-margin">
+        Cost in 1 Year | <span class="dark" id="rentadded"></span>
+        <div class="white-bar-subheading"></div>
+      </div>
+      <ul class="serif-text bold-text">
+        <li>Potential for rent increase</li>
+        <li>No tax benefits</li>
+        <li>Generates $0, equity or appreciation</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-12 full-width">
+    <h3 class="italic-text">Price Breakdown <span class="yellow-span">&mdash;</span></h3>
+  </div>
+</div>
+<div class="row">
+  <div id="pricebreakdown" class="col-md-6 col-sm-12 yellowbg full-width">
+    <div class="capitalize bold-text yellow-margin">
+      Purchase Price | <span id="spanPurchasePrice" class="dark">$300,000</span>
+    </div><br />
+    <div class="white-bar-divider"></div>
+    <div class="capitalize bold-text yellow-margin">
+      Mortgage Term | <span id="spanMonths" class="dark">30 years</span>
+    </div><br />
+    <div class="white-bar-divider"></div>
+    <div class="capitalize bold-text yellow-margin">
+      Loan Amount | <span id="spanLoanAmount" class="dark">$270,000</span>
+    </div>
+    <div id="white-bar-mobile"></div>
+  </div>
+  <div class="col-md-6 col-sm-12 yellowbg full-width">
+    <div class="capitalize bold-text yellow-margin">
+      Interest Rate | <span id="spaninterestrate" class="dark">4.5%</span>
+    </div><br />
+    <div class="white-bar-divider"></div>
+    <div class="capitalize bold-text yellow-margin">
+      Down Payment | <span id="spandownpayment" class="dark">$30,000</span>
+    </div><br />
+    <div class="white-bar-divider"></div>
+    <div class="capitalize bold-text yellow-margin">
+      Estimated Monthly | <span  id="spanestimatedmonthly" class="calc dark"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+  $('#rent').keypress(function(event) {
+    // Disable the enter/return key
+    var returnKey = event.which;
+    if (returnKey == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+  $('#rent').keyup(function() {
+    var renttotal = parseFloat($('#rent').val()*12);
+    // Check that input value is a number
+    if ($.isNumeric(renttotal)) {
+      var annualrent = parseFloat(renttotal);
+      $( "#rentadded" ).text( '$'+annualrent.toLocaleString() );
+    } else {
+      $( "#rentadded" ).text( '$0' );
+    }
+  });
+});
+</script>
+
+<script>
+
+
+
+  function PMT(ir, np, lv,ex) {
+
+    //alert (ex);
+    var q = Math.pow(1 + ir, np);
+    var type = 0;
+    var tot =((  (ir * (0 + (q * lv))) / ((-1 + q ) * (1 + ir * (type) )))   + ex );
+
+    var annualvalue = parseFloat(tot*12).toFixed(2);
+    var annualvalue = parseFloat(annualvalue);
+    //fill in the spans
+    $( "#added" ).text( '$'+annualvalue.toLocaleString() );
+    $( "#spanLoanAmount" ).text( '$'+lv.toLocaleString() );
+
+    return ((  (ir * (0 + (q * lv))) / ((-1 + q ) * (1 + ir * (type) )))   + ex );
+
+
+    // return ir * lv * Math.pow((1 + ir), np) / (1 - Math.pow((1 + ir), np));
+    // return  (ir * ( lv * Math.pow ( (ir+1), np )  ) ) / ( ( ir + 1 ) * ( Math.pow ( (ir+1), np) -1 ));
+
+  }
+
+
+  function CalculatePMTFromForm(idLoanAmount, idAnnualInterestRate, idMonths, idResult) {
+
+    // ir  - interest readyStat
+    // np  - length of loan in months
+    // dp - downpayment (10% of value of home)
+    // lv  - loan value after downpayment
+
+    //  text version DO NOT DELETE
+    // $('#1bed').click(function() {
+    //   var propertyvalue= $( this ).val();
+    //   $( "#idLoanAmount" ).val( propertyvalue );
+    //   var sqft = parseFloat(500);
+    //   $( "#sqft" ).val( sqft );
+    // });
+    //
+    // $('#2bed').click(function() {
+    //   var propertyvalue= $( this ).val();
+    //   $( "#idLoanAmount" ).val( propertyvalue );
+    //   var sqft = parseFloat(750);
+    //   $( "#sqft" ).val( sqft );
+    // });
+    //
+    // $('#3bed').click(function() {
+    //   var propertyvalue= $( this ).val();
+    //   $( "#idLoanAmount" ).val( propertyvalue );
+    //   var sqft = parseFloat(950);
+    //   $( "#sqft" ).val( sqft );
+    // });
+
+
+    $('#bedrooms').change(function() {
+        var propertyvalue = $('#bedrooms').val();
+        var propertyvalue = parseFloat(propertyvalue);
+        // alert( propertyvalue );
+        $( "#idLoanAmount" ).val( propertyvalue);
+
+        $( "#spanPurchasePrice" ).text( '$'+ propertyvalue.toLocaleString());
+
+        if( propertyvalue == '300000') {
+          var sqft = parseFloat(500);
+          $( "#sqft" ).val( sqft );
+
+        }
+        else if (propertyvalue == '400000') {
+          var sqft = parseFloat(750);
+          $( "#sqft" ).val( sqft );
+
+        }
+
+        else if  (propertyvalue == '500000') {
+          var sqft = parseFloat(950);
+          $( "#sqft" ).val( sqft );
+
+        }
+
+      });
+
+    var ir = parseFloat($('#idAnnualInterestRate').val()).toFixed(2) / 1200;
+    var np = parseFloat($('#idMonths').val()).toFixed(2);
+    var propertyvalue  =  parseFloat($('#idLoanAmount').val());
+    var lv = parseFloat($('#idLoanAmount').val());
+    var dp  = parseFloat($('#idLoanAmount').val()* 0.1);
+    $( "#spandownpayment" ).text( '$'+  dp.toLocaleString());
+    var lv = parseFloat(lv-dp);
+    var fv = parseFloat($('#idFutureLoanAmount').val());
+    var sqft = parseFloat($('#sqft').val());
+    var maint = parseFloat(sqft*0.6);
+    //console.log( maint);
+    var tax = parseFloat(((propertyvalue/1000)*3.42)/12);
+    //console.log(tax);
+    var mi  = parseFloat((propertyvalue*0.0044)/12);
+    //console.log(mi);
+    var ex  = parseFloat( maint + tax + mi);
+    var ex = parseFloat(ex);
+    var pmt = PMT(ir, np, lv,ex);
+    //console.log(ex);
+    var payment = parseFloat(pmt.toFixed(2));
+    $('#spanestimatedmonthly').text('$'+payment.toLocaleString());
+    $('#idResult').val(pmt.toFixed(2));
+  }
+  function performCalc() {
+    CalculatePMTFromForm('LoanAmount', 'InterestRate', 'Months', 'Payment','Extras');
+  }
+  $(document).ready(function() { performCalc(); $('.calc').change(performCalc); });
+
+</script>
+
+<script>
+  // Add <br /> for #white-bar-mobile
+  $(function() {
+    // console.log( $(window).width() );
+    if ( $(window).width() <= 992 ) {
+      $('#white-bar-mobile').css({
+        'border-bottom': '1px solid #f7d585',
+        'margin-top': '-15px',
+        'margin-bottom': '-10px',
+      });
+      $('#white-bar-mobile').prepend('<br />');
+    }
+  });
+</script>

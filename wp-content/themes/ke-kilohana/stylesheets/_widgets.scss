@@ -1,0 +1,178 @@
+/* Button Styles */
+
+button.control-button,
+button.floor_plan_button,
+button.bedrooms,
+button.floor_numbers,
+button.view_direction,
+button.view_elevation {
+/* all buttons styles */
+text-transform: uppercase;
+display: block;
+float: left;
+background-color: #6E6E6E;
+border: none;
+color: #ffffff;
+font-family: "Gotham A", "Gotham B";
+font-style: normal;
+font-weight: 400;
+white-space: nowrap;
+}
+
+button.control-button,
+button.floor_plan_button.active,
+button.bedrooms.active,
+button.floor_numbers.active,
+button.view_direction.active,
+button.view_elevation.active,
+button.floor_plan_button:hover,
+button.bedrooms:hover,
+button.floor_numbers:hover,
+button.view_direction:hover,
+button.view_elevation:hover {
+/* all buttons styles */
+background-color: $yellow;
+}
+
+button[disabled=disabled], button:disabled {
+opacity: .3;
+}
+
+/* Responsive Buttons Controls */
+@media screen and (min-width: 300px) and (max-width: 699px){
+  button.control-button { width: 100%; }
+  button.bedrooms { width: 100%; font-size: 13px; }
+  button.floor_plan_button { width: 100%; font-size: 13px; }
+  button.floor_numbers { width: 8.8%; font-size: 13px;}
+  button.view_direction { width: 100%; }
+  button.view_elevation { width: 12.75%; }
+}
+@media screen and (min-width: 700px) and (max-width: 1199px){
+  button.control-button { width: 50%; }
+  button.bedrooms { width: 50%; font-size: 14px; }
+  button.floor_plan_button { width: 50%; font-size: 14px; }
+  button.floor_numbers { width: 8.8%; font-size: 14px; }
+  button.view_direction { width: 50%; }
+  button.view_elevation { width: 12.75%; }
+}
+@media screen and (min-width: 1200px){
+  button.control-button { width: 33.3%; }
+  button.bedrooms { width: 50%; font-size: 15px; }
+  button.floor_plan_button { width: 33.3%; font-size: 15px; }
+  button.floor_numbers { width: 8.8%; font-size: 15px; }
+  button.view_direction { width: 15%; }
+  button.view_elevation { width: 12.75%; }
+}
+
+/* Button overwrites - Unique Buttons */
+button.bedrooms {
+/* bedroom button styles */
+/*width: 33.3%;*/
+padding: 10px 20px;
+min-width: 330px;
+border-left: 1px solid white;
+border-bottom: 1px solid white;
+font-size: 14px;
+transition: all 0.5s ease;
+font-weight: bold;
+}
+button.floor_plan_button {
+/* floor plan button styles */
+/*width: 33.3%;*/
+border-left: 1px solid white;
+border-bottom: 1px solid white;
+min-width: 325px;
+padding: 10px 3px;
+transition: all 0.5s ease;
+font-weight: bold;
+font-size: 14px;
+}
+button.floor_numbers {
+/* floor button styles */
+width: 8.8%;
+background-color: transparent;
+color: #7D7D7F;
+transition: all 0.5s ease;
+font-weight: 900;
+
+&:disabled, &[disabled=disabled]{
+font-weight: 400;
+}
+}
+/* Adjust floor buttons for mobile. */
+@media screen and (min-width: 300px) and (max-width: 699px){
+  button.floor_numbers {
+  /* floor button styles */
+  width: 14.2%;
+  margin-bottom: 10px;
+  }
+}
+
+.floor_plan_result { display: none; }
+
+button.floor_numbers.active,
+button.view_elevation.active {
+color: $yellow;
+background-color: transparent;
+transition: all 0.5s ease;
+}
+
+
+form#finder_number_rooms_form .btn-group,form#finder_number_rooms_form .btn-group-vertical {
+display: block;
+}
+
+img#floor-plan-summary-image { max-width: 100%; }
+img.flex-img {
+max-width: 100%;
+height: auto;
+width: auto\9; /* IE8 */ }
+img.flex-img.half {
+max-width: 50%;
+}
+.warning { display: none; }
+#view-plane-summary-image { cursor: pointer; } /* Add curser to image */
+img:hover#view-plane-summary-image {
+  transition: all 0.5s ease;
+}
+img:hover#view-plane-summary-image {
+-webkit-box-shadow: 0px 0px 30px 0px rgba(51, 51, 51, 0.67);
+-moz-box-shadow:    0px 0px 30px 0px rgba(51, 51, 51, 0.67);
+box-shadow:         0px 0px 30px 0px rgba(51, 51, 51, 0.67);
+}
+
+button.view_direction {
+  display: inline-block;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  font-weight: bold;
+}
+button.view_elevation {
+  display: inline-block;
+  background-color: transparent;
+  color: #7D7D7F;
+}
+#view_directions_buttons,
+#view_elevations_buttons {
+  width: 100%;
+}
+
+#unit-sold{
+  background: #f76464;
+  color: #fff;
+  padding: 3px;
+  text-align: center;
+  font-family: Gothic821CondensedBT-Regular;
+  font-size: 32px;
+  text-transform: uppercase;
+
+  &:before{
+    content: '';
+    display: inline-block;
+    background: url(../ke-kilohana/img/optimized/sold-bug.png) center no-repeat;
+    height: 37px;
+    width: 37px;
+    margin-right: 10px;
+    vertical-align: sub;
+  }
+}

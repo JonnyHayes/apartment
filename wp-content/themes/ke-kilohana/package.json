@@ -1,0 +1,29 @@
+{
+  "name": "ke-kilohana",
+  "version": "1.0.0",
+  "description": "Ke Kilohana",
+  "main": "index.js",
+  "repository": "https://bitbucket.org/mvnp/ke-kilohana/src/master/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MVNP",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "",
+    "gulp-autoprefixer": "",
+    "gulp-clean-css": "",
+    "gulp-coffee": "",
+    "gulp-concat": "",
+    "gulp-imagemin": "",
+    "gulp-lightmin": "",
+    "gulp-rename": "",
+    "gulp-sass": "",
+    "gulp-sourcemaps": "",
+    "gulp-uglify": ""
+  },
+  "dependencies": {
+    "bower": "^1.8.4",
+    "dateformat": ""
+  }
+}

@@ -1,0 +1,398 @@
+/* Home Style */
+#hero-image {
+    background-image: url(/wp-content/themes/ke-kilohana/img/optimized/sample-12.jpg);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+#hero-image .overlay {
+    padding: 5% 0;
+    background-attachment: fixed;
+}
+#hero-image h1 { color: #fff; font-size: 70px; letter-spacing: 25px; margin-bottom: 50px; }
+.content-heading p.lead { margin-bottom: 60px; }
+.content-heading p.lead img{ margin: auto; }
+.content-heading p.lead img#ward-village-img {  width: 250px; }
+#large-logo-img {
+    padding-bottom: 35px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+a.goto-btn {
+    font-size: 15px;
+    font-weight: 700;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0;
+    transition: all 0.5s;
+}
+a#scroll-down-btn:hover {
+    opacity: .3;
+}
+a.no-hover { text-decoration: none; border-bottom: none; color: #fff; }
+
+/* About Us */
+#section-content-one { padding: 0 }
+.gray-bg { background-color: #f3f3f3;/*margin-left: 30px; margin-right: 30px; */}
+
+.social {
+    margin: 15px 10px 0px 10px;;
+}
+#tf-footer .social, #menu-footer .social {
+    margin: 5px auto;
+    text-align: center;
+}
+#tf-footer ul.list-inline.social.pull-right, #tf-footer ul.list-inline.social.pull-left, 
+#menu-footer ul.list-inline.social.pull-right, #menu-footer ul.list-inline.social.pull-left {
+    padding-top: 18px;
+}
+#tf-footer ul.list-inline.social.pull-right, #menu-footer ul.list-inline.social.pull-right {
+    padding-top: 10px;
+}
+#tf-footer ul.list-inline.social.pull-left.nested-list, 
+#menu-footer ul.list-inline.social.pull-left.nested-list { padding-top: 0;}
+
+#menu-footer .fa, #menu-footer .fa a {
+    font: normal normal normal 21px/1 FontAwesome;
+}
+
+
+/* Adjust overall body text for mobile. */
+@media screen and (min-width: 300px) and (max-width: 699px){
+  ul.list-inline.social.pull-right, ul.list-inline.social.pull-left {
+    float:none!important;
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 1199px){
+  ul.list-inline.social.pull-right, ul.list-inline.social.pull-left {
+    float:none!important;
+    }
+}
+@media screen and (min-width: 1200px){
+    ul.list-inline.social.pull-left {
+    float:left;
+    }
+    ul.list-inline.social.pull-right {
+    float:right;
+    }
+}
+
+ul.social li a.fa {
+    background: #f4c350;
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+    text-align: center;
+    margin-right: -5px;
+    font-size: 23px;
+    color: #FFFFFF;
+    margin-bottom: 0;
+    border-radius: 30px;
+    border: 2px solid #FFFFFF;
+    font: normal normal normal 14px/1 FontAwesome!important;
+    font-size: 22px!important;
+
+}
+ul.social li a.fa:hover, ul.social li a.fa:active { background-color: #FFFFFF; color: #f4c350; }
+
+/* Counter */
+
+.facts { padding: 0; }
+.facts .count-box, .facts .count-box-no-hover { position: relative; min-height: 234px; padding-bottom: 50px;}
+.facts .count-box-absolute  {position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+.square-container { height: 24vw; }
+.count-box, .count-box-no-hover, .count-box-absolute {
+    -webkit-backface-visibility: hidden;
+    padding: 40px 0;
+    margin: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+    transform: translateX(0px) translateY(0%);
+    -webkit-transform: translateX(0px) translateY(0%);
+    -moz-transform: translateX(0px) translateY(0%);
+    -ms-transform: translateX(0px) translateY(0%);
+    -o-transform: translateX(0px) translateY(0%);
+}
+
+.counter i.fa {
+    font-size: 40px;
+    color: #000000;
+}
+.count-box p { padding: 0 15%; }
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+}
+
+/* Section Two */
+#section-content-two, #section-content-three { padding: 0px 0px }
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: 0;
+    outline: 0;
+    outline-offset: 0;
+}
+.btn:active,
+.btn.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.tf-btn {
+    font-size: 15px;
+    word-spacing: 2px;
+    font-weight: 700;
+    padding: 6px 16px;
+    color: #000;
+    background-color: #f4c350;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    border-radius: 0;
+    letter-spacing: 1px;
+}
+.tf-btn:focus,
+.tf-btn:hover, .btn:hover, .btn-primary:hover {
+    background-color: #000;
+    color: #f4c350;
+    border-color: transparent;
+}
+.tf-btn-left {
+    float: left;
+    margin-left: 15%;
+}
+
+.color-yellow {
+    background-color: #f4c350;
+    border-color: #f4c350;
+}
+.btn-primary {
+    color: #000;
+    background-color: #f4c350;
+    border-color: #f4c350;
+}
+#row4_vertical_image2 { min-height: 468px; }
+
+#right-column-one-row-1, #right-column-one-row-2 {
+    min-height: 300px;
+}
+.center-img img { margin: auto;}
+
+/* Homepage Sub Hero section - Rise with Ward - */
+.home-sub-hero-left {
+    font-size: 23px;
+    line-height: 36px;
+    transition: all 0.5s;
+}
+.home-sub-hero-right {
+    font-size: 26px;
+    line-height: 40px;
+    font-weight: 500;
+    font-style: italic;
+    font-family: minion-pro;
+    border-left: 2px solid #f4c350;
+    padding-left: 1.5em;
+    transition: all 0.5s;
+}
+.home-sub-hero-right a.button_sliding {
+    font-style: normal;
+}
+/* sub hero sections for mobile. */
+@media screen and (min-width: 300px) and (max-width: 699px){
+  .home-sub-hero-left {
+    font-size: 17px;
+    line-height: 24px;
+    margin-bottom: 0;
+    }
+.home-sub-hero-right {
+        font-size: 20px;
+    line-height: 25px;
+    border-top: solid 2px #f4c350;
+    padding-top: .5em;
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: inherit;
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 990px){
+  .home-sub-hero-left {
+        font-size: 21px;
+        line-height: 32px;
+        margin-bottom: 1.5em;
+    }
+.home-sub-hero-right {
+        font-size: 24px;
+        line-height: 35px;
+        border-top: none;
+        padding-top: 1.5em;
+        border-left: none;
+        padding-left: 0;
+        margin-bottom: inherit;
+    }
+}
+@media screen and (min-width: 991px){
+  .home-sub-hero-left {
+        font-size: 23px;
+        line-height: 36px;
+    }
+.home-sub-hero-right {
+        font-size: 26px;
+        line-height: 40px;
+        border-top: none;
+        padding-top: none;
+        border-left: 2px solid #f4c350;
+        padding-left: 1.5em;
+    }
+}
+/* logo that floats over the textured section */
+.bug-overlay {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.bug-overlay img {
+    opacity: .9;
+    margin-bottom: 0;
+}
+
+/* Footer */
+#tf-footer {
+    padding: 1% 0 1% 0;
+    color: #000;
+    background-image: url("../ke-kilohana/img/optimized/pattern-triangle.png");
+}
+#tf-footer ul li a {
+    font-family: "Gotham A","Gotham B";
+    font-size: 15px;
+    margin-right: 15px;
+}
+.videoWrapper {
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    height: 100vh;
+    /*background: url("/wp-content/uploads/2016/02/poster-01a.jpg") 50% 0% / cover no-repeat transparent;*/
+    background: url(../ke-kilohana/img/optimized/poster-mobile.jpg) 50% 0% no-repeat transparent;
+}
+
+/* Adjust overall body text for mobile. */
+@media screen and (min-width: 300px) and (max-width: 699px){
+  .videoWrapper {
+        background: url(../ke-kilohana/img/optimized/poster-mobile.jpg) 50% 0% no-repeat transparent;
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 1199px){
+  .videoWrapper {
+        background: url(../ke-kilohana/img/optimized/poster-mobile.jpg) 50% 0% no-repeat transparent;
+    }
+}
+@media screen and (min-width: 1200px){
+   .videoWrapper {
+        background: url(../ke-kilohana/img/optimized/poster-mobile.jpg) 50% 0% no-repeat transparent;
+    }
+}
+#video-container {
+  position: absolute;
+}
+#video-container {
+  top:0%;
+  left:0%;
+  height:100%;
+  width:100%;
+  overflow: hidden;
+  z-index:-1;
+}
+video#bg-video {
+  position:absolute;
+  z-index:0;
+  min-height: 100%;
+  background: url(../ke-kilohana/img/optimized/poster-mobile.jpg) 50% 0% no-repeat transparent;
+}
+
+/* Change Video poster for mobile. */
+@media screen and (min-width: 300px) and (max-width: 699px){
+  video#bg-video {
+      background: url(../ke-kilohana/img/optimized/poster-mobile.jpg) 50% 0% no-repeat transparent;
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 1199px){
+  video#bg-video {
+      background: url(../ke-kilohana/img/optimized/poster-mobile.jpg) 50% 0% no-repeat transparent;
+    }
+}
+@media screen and (min-width: 1200px){
+   video#bg-video {
+      background: url(../ke-kilohana/img/optimized/poster-mobile.jpg) 50% 0% no-repeat transparent;
+    }
+}
+video.fillWidth {
+  width: 100%;
+}
+
+/*#video-hp {
+    height: 650px;
+    overflow: hidden;
+    max-height: 650px;
+    background-image: url("../ke-kilohana/img/optimized/HHKK_30745_hp_brochures.jpg");
+    background: url(../ke-kilohana/img/optimized/HHKK_30745_hp_brochures.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}*/
+
+video {
+position: absolute;
+top: 50%;
+left: 50%;
+z-index: 2;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+transform: translate(-50%, -50%);
+}
+video.fillWidth {
+  width: 100%;
+}
+
+
+//@media only screen and (min-width: 1001px)
+.video-iframe.playing {
+    opacity: 1;
+}
+.video-iframe {
+    z-index: 4;
+  
+}
+//@media only screen and (min-width: 1001px)
+.video-iframe, .iframe-cover {
+    display: block;
+    border: none;
+    height: 100%;
+    left: 50%;
+    min-height: 56.25vw;
+
+    top: 50%;
+    width: 177.77777778vh;
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+.video-iframe, .iframe-cover {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 100%;
+    position: absolute;
+}

@@ -1,0 +1,19 @@
+<!--Adobe Edge Runtime-->
+<script type="text/javascript" charset="utf-8" src="//animate.adobe.com/runtime/6.0.0/edge.6.0.0.min.js"></script>
+<style>
+    .edgeLoad-building-overlay { visibility:hidden; }
+</style>
+<script>
+   AdobeEdge.loadComposition('building-overlay', 'building-overlay', {
+    scaleToFit: "width",
+    centerStage: "none",
+    minW: "0px",
+    maxW: "undefined",
+    width: "1314px",
+    height: "860px",
+    htmlRoot: "{{function('get_stylesheet_directory_uri')}}/building-overlay/"
+}, {"dom":{}}, {"dom":{}});
+</script>
+<!--Adobe Edge Runtime End-->
+
+<div id="Stage" class="building-overlay"></div>

@@ -1,0 +1,455 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+{% spaceless %}
+
+<!-- Styles for homepage floating nav -->
+<style type="text/css">
+  div#content.content-wrapper {
+    margin-top: 0px;
+  }
+  .heading-bar-top.big-yellow {
+    margin-top: 10px;
+  }
+</style>
+
+{% include 'css/floating-nav-active-colors.twig' %}
+
+
+    <div class="floating-nav-container">
+      <ul id="homepage-nav-ul">
+        <li class="floating-nav" style="display:none;"></li>
+        <li class="floating-nav"><a href="#kekilohana-hp">Ke Kilohana</a></li>
+        <li class="floating-nav"><a href="#wardvillage-hp">Ward Village</a></li>
+        <li class="floating-nav"><a href="#villagelife-hp">Village Life</a></li>
+        <li class="floating-nav"><a href="#building-hp">Building</a></li>
+        <li class="floating-nav"><a href="#residenceguide-hp">Residence Guide</a></li>
+        <li class="floating-nav"><a href="#availability-hp">Availability</a></li>
+        <li class="floating-nav"><a href="#brochures-hp">Views</a></li>
+        <li class="floating-nav"><a href="#gallery-hp">Gallery</a></li>
+      </ul>
+    </div>
+
+
+  <div id="homepage-nav-wrapper">
+
+  <!-- Landing page section, phase 3 -->
+  <div id="landingpage-hp" class="bg-image">
+    <div id="landingpage-hp-bg" class="fade-in-first"></div>
+    <div class="container h-center">
+      <div class="content-text-wrapper">
+        <div class="row fade-up-intro">
+          <div class="col-xs-12">
+            <h2>Your Ward Village Lifestyle Awaits</h2>
+            <div class="yellow-bar-divider"></div>
+          </div>
+        </div>
+        <div class="row fade-up-intro">
+          <div class="col-md-9 col-xs-12">
+            <div class="home-sub-hero-left">
+              {{ homepage.rise_with_ward_village_left }} <!-- Text on left side of section -->
+              <!-- Button trigger link -->
+              <br />
+              <a class="button_sliding" href="/home-finder">
+                Pricing & Availability
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="row bottom-row down-arrow-container fade-up">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper">
+              <p class="text-center italic-text">
+                <a href="#kekilohana-hp">
+                Ke Kilohana<br />
+                <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+            srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+            {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ke Kilohana section, phase 3 -->
+      <div id="kekilohana-hp" class="bg-image">
+        <div id="kekilohana-hp-bg" class="fade-in-first"></div>
+          <div class="container h-center" >
+            <div class="row fade-up">
+              <div class="content-text-wrapper">
+                <div class="col-sm-3 col-lg-4">
+                  <div class="heading-bar-top big-yellow"></div>
+                    <h1 class="big-yellow">A Higher Level of Style and Comfort</h1>
+                  <div class="heading-bar-bottom big-yellow"></div>
+                  </div>
+                  <div class="col-sm-6 col-lg-5">
+                    <p class="black-text">
+                    {{ homepage.phase3_ke_kilohana }}
+                    </p>
+                    <!-- Button trigger modal -->
+                    <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#phase3KeKilohanaModal">
+                      Explore the details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="row bottom-row down-arrow-container fade-up">
+                <div class="col-md-12 last-column">
+                  <div class="last-column-wrapper">
+                    <p class="text-center black-text italic-text">
+                      <a href="#wardvillage-hp">
+                      Ward Village<br />
+                      <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                        srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                        {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+      </div>
+
+
+  <!-- ward village section-->
+
+  <div id="wardvillage-hp" class="bg-image">
+    <div id="wardvillage-hp-bg" class="fade-in-first"></div>
+      <div class="container h-center">
+        <div class="row fade-up">
+          <div class="content-text-wrapper">
+            <div class="col-sm-3 col-lg-4">
+              <div class="heading-bar-top big-yellow"></div>
+              <h1 class="big-yellow ward-home-title">Ward Village</h1>
+              <div class="heading-bar-bottom big-yellow"></div>
+            </div>
+            <div class="col-sm-6 col-lg-5">
+              <p class="black-text">
+                {{ homepage.ward_village }}
+              </p>
+              <!-- Button Link -->
+              <a href="ward-village" class="button_sliding">
+                Learn More
+              </a>
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="row bottom-row down-arrow-container fade-up">
+        <div class="col-md-12 last-column">
+          <div class="last-column-wrapper">
+            <p class="text-center black-text italic-text">
+              <a href="#villagelife-hp">
+              Village Life<br />
+                <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!--  village life section -->
+
+  <div id="villagelife-hp" class="bg-image">
+    <div id="villagelife-hp-bg" class="fade-in-first" ></div>
+      <div class="container h-center" >
+        <div class="row fade-up">
+          <div class="content-text-wrapper">
+            <div class="col-sm-3 col-lg-4">
+              <div class="heading-bar-top big-yellow"></div>
+              <h1 class="big-yellow">Village Life</h1>
+              <div class="heading-bar-bottom big-yellow"></div>
+            </div>
+            <div class="col-sm-6 col-lg-5">
+              <p class="black-text">
+              {{ homepage.village_life }}
+              </p>
+              <!-- Button -->
+              <a href="village-life" class="button_sliding">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row bottom-row down-arrow-container fade-up">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper">
+              <p class="text-center black-text italic-text">
+                <a href="#building-hp">
+                Building Design & Amenities<br />
+                  <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                  srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                  {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+  <!-- Building Section -->
+
+
+  <div id="building-hp" class="bg-image">
+    <div id="building-hp-bg" class="fade-in-first"></div>
+      <div class="container h-center" >
+        <div class="row fade-up">
+          <div class="content-text-wrapper">
+            <div class="col-sm-3 col-lg-4">
+              <div class="heading-bar-top big-yellow"></div>
+                <h1 class="big-yellow">Building Design & Amenities</h1>
+              <div class="heading-bar-bottom big-yellow"></div>
+              </div>
+              <div class="col-sm-6 col-lg-5">
+
+                <p class="black-text">
+                {{ homepage.building_design_and_amenities }}
+                </p>
+
+                <!-- Button trigger modal -->
+                <a href="building" class="button_sliding">
+                  Learn More
+                </a>
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="row bottom-row down-arrow-container fade-up">
+            <div class="col-md-12 last-column">
+              <div class="last-column-wrapper">
+                <p class="text-center black-text italic-text">
+                  <a href="#residenceguide-hp">
+                  Residence Guide<br />
+                  <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                    srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                    {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+  </div>
+
+
+
+  <!-- Residence Guide Section -->
+
+  <div id="residenceguide-hp" class="bg-image">
+    <div id="residenceguide-hp-bg" class="fade-in-first"></div>
+      <div class="container h-center" >
+        <div class="row fade-up">
+          <div class="content-text-wrapper">
+            <div class="col-sm-3 col-lg-4">
+              <div class="heading-bar-top big-yellow"></div>
+              <h1 class="big-yellow">Residence Guide</h1>
+              <div class="heading-bar-bottom big-yellow"></div>
+            </div>
+            <div class="col-sm-6 col-lg-5">
+
+              <p class="black-text">
+              {{ homepage.residence_guide }}
+              </p>
+
+              <!-- Button trigger modal -->
+              <a href="residence-guide" class="button_sliding">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row bottom-row down-arrow-container fade-up">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper">
+              <p class="text-center black-text italic-text">
+                <a href="#availability-hp">
+                Availability<br />
+                <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                  srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                  {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+  <!--Availability Section -->
+
+  <div id="availability-hp" class="bg-image">
+    <div id="availability-hp-bg" class="fade-in-first" ></div>
+    <div class="container h-center" >
+      <div class="row fade-up">
+        <div class="content-text-wrapper">
+          <div class="col-sm-3 col-lg-4">
+            <div class="heading-bar-top big-yellow"></div>
+            <h1 class="big-yellow">Availability</h1>
+            <div class="heading-bar-bottom big-yellow"></div>
+            </div>
+            <div class="col-sm-6 col-lg-5">
+
+              <p class="black-text">
+              {{ homepage.pricing_and_availability }}
+              </p>
+
+              <!-- Button trigger modal -->
+              <a href="/home-finder" class="button_sliding">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row bottom-row down-arrow-container fade-up">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper">
+              <p class="text-center black-text italic-text">
+                <a href="#brochures-hp">
+                Views<br />
+                <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                  srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                  {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+  <!-- Views Section / OLD Brochures Section  -->
+
+  <div id="brochures-hp" class="bg-image">
+    <div id="brochures-hp-bg" class="fade-in-first" ></div>
+      <div class="container h-center" >
+        <div class="row fade-up">
+          <div class="content-text-wrapper">
+            <div class="col-sm-3 col-lg-4">
+              <div class="heading-bar-top big-yellow"></div>
+              <h1 class="big-yellow">views</h1>
+              <div class="heading-bar-bottom big-yellow"></div>
+            </div>
+            <div class="col-sm-6 col-lg-5">
+              <p class="black-text">
+              {{ homepage.views }}
+              </p>
+              <!-- Button trigger modal -->
+              <a href="residence-guide/#views" class="button_sliding">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row bottom-row down-arrow-container fade-up">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper">
+              <p class="text-center black-text italic-text">
+                <a href="#gallery-hp">
+                Gallery<br />
+                <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+  <!-- Gallery Section -->
+  <div id="gallery-hp" class="bg-image">
+    <div id="gallery-hp-bg" class="fade-in-first" ></div>
+    <div class="container h-center" >
+      <div class="row fade-up">
+        <div class="content-text-wrapper">
+          <div class="col-sm-3 col-lg-4">
+            <div class="heading-bar-top big-yellow"></div>
+            <h1 class="big-yellow">Gallery</h1>
+            <div class="heading-bar-bottom big-yellow"></div>
+          </div>
+          <div class="col-sm-6 col-lg-5">
+
+            <p class="black-text">
+            {{ homepage.gallery }}
+            </p>
+
+            <!-- Button trigger modal -->
+            <a href="gallery" class="button_sliding" >
+              Learn More
+            </a>
+
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+
+</div>
+
+
+<!-- Ke Kilohana Explore Details Gallery Modal -->
+<div class="nav-modal modal modal-fullscreen fade" id="phase3KeKilohanaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+      </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="phase3_ke_kilohana_gallery-modal">
+        <div class="royalSlider kekilohana" id="phase3KeKilohanaModalSlider">
+          {% for image in homepage.phase3_ke_kilohana_gallery %}
+            <img class="rsImg" src="{{ Image(image).src }}" alt="{{ Image(image).title }}" />
+          {% endfor %}
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+  <!-- Script for setting active list items on scroll, jquery only -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/floating-nav-jquery.js"></script>
+  <script>
+    showActiveNav('#homepage-nav-ul', '#homepage-nav-wrapper');
+  </script>
+
+  <!-- Script for animating content on scroll -->
+  <script src="{{ function('get_stylesheet_directory_uri') }}/js/animate-content.js"></script>
+  <script>
+    animateContent('#homepage-nav-wrapper');
+  </script>
+  <!-- Initialize RoyalSlider -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/initialize-royalslider.js"></script>
+
+  <!-- Automatically fade 1st background image, phase 3 -->
+  <script>
+    setTimeout(function() {
+      $('.fade-up-intro').css({
+        'margin-top': '0px',
+        'opacity': '1'
+      });
+      $('#landingpage-hp-bg').css({
+        'opacity': '0.15'
+      });
+    }, 2000);
+  </script>
+
+{% endspaceless %}
+
+{% endblock %}

@@ -1,0 +1,329 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+  {% block head %}
+  {% endblock %}
+  </head>
+{% endblock %}
+
+{% spaceless %}
+
+
+  <body class="{{body_class}}" data-template="base.twig" id="body">
+    <header class="header" id="annomodal">
+      {% block header %}
+        <div class="wrapper">
+          <!-- Main Navigation
+          ================================================== -->
+          <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top navbar-wrapper">
+            <div class="container-fluid full-width-container white-bg">
+
+              <!-- Brand / Logo -->
+              <div class="logo-branding">
+                <a class="navbar-brand" href="/"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/logo-kk-black.png" alt="KE KILOHANA" srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/logo-kk-black@x2.png 2x"></a>
+
+                <a class="navbar-brand mobile" href="/"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/logo_kk-blk-sml-mobile.png" alt="KE KILOHANA" srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/logo_kk-blk-sml-mobile@x2.png 2x"></a>
+
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div>
+                <div class="hamburger pull-right" data-toggle="modal" data-target="#modal-fullscreen">
+                  <span class="line gray"></span>
+                  <span class="line gray"></span>
+                  <span class="line gray"></span>
+                </div>
+
+                <a href="https://owners.kekilohana.com/" class="large-nav-button button_sliding no-arrow pull-right" id="owners-portal-button">OWNER'S PORTAL</a>
+                <a href="{{site.url}}/register-now" class="large-nav-button button_sliding no-arrow pull-right">REGISTER</a>
+                <!-- Nav Links -->
+                <!-- Modal fullscreen -->
+                <div class="nav-modal modal modal-fullscreen fade" id="modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog nav-dialog">
+                    <div class="modal-content">
+
+                      <div class="modal-body" id="main-navigation">
+                        <ul>
+                        {% for item in menu.get_items %}
+                          <li class="{{item.classes | join(' ')}} {% if item.get_children %}dropdown-container{% endif %}">
+                            <a href="{{item.get_link}}">{{item.title}}</a>
+                          </li>
+                        {% endfor %}
+                        </ul>
+                        <div class="yellow-bar-divider nav-bar-top"></div>
+
+                        <!-- Menu Footer -->
+                        <div id="menu-footer">
+                            <div class="container-fluid"><!-- container -->
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <ul class="list-inline social nested-list">
+                                          <li>
+                                              <ul class="list-inline social ">
+                                                  <li><a href="https://www.facebook.com/kekilohana/" class="fa fa-facebook" title="@KeKilohana looks like an amazing opportunity for Hawaii residents to live that @WardVillage life."></a></li> <!-- facebook link here -->
+                                                  <li><a href="https://twitter.com/KeKilohana" class="fa fa-twitter tweet" title="@KeKilohana looks like an amazing opportunity for Hawaii residents to live that @WardVillage life." target="_blank"></a></li> <!-- twitter link here -->
+                                                  <li><a href="https://www.instagram.com/kekilohana/" class="fa fa-instagram" title="@KeKilohana looks like an amazing opportunity for Hawaii residents to live that @WardVillage life." target="_blank"></a></li> <!-- twitter link here -->
+                                                </ul>
+                                          </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <ul class="list-inline social text-link">
+                                          <li><a href="/privacy-policy/">PRIVACY POLICY</a></li>
+                                          <li style="border-left: 1px solid #BCBCBC; padding-left: 8px;"><a href="/disclaimer/">DISCLAIMER</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <ul class="list-inline social text-link">
+                                            <li><a href="http://wardvillage.com/" target="_blank"><img style="margin-right: 10px; margin-bottom: 8px;" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/logo_ward-village.png"></a></li>
+                                          </ul>
+                                        </div>
+                                        <div class="col-md-12">
+                                          <ul class="list-inline social text-link">
+                                            <li><a href="http://www.howardhughes.com/" target="_blank"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/logo_howard-hughes.png"></a></li>
+                                          </ul>
+                                        </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!-- end container -->
+                        </div><!-- END Menu Footer -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </nav><!-- #nav -->
+        </div>
+      {% endblock %}
+    </header>
+
+    <div id="content" role="main" class="content-wrapper">
+
+      {% if title %}<h1>{{title}}</h1>{% endif %}
+      <div class="wrapper {{sidebar_class}}">
+        {% block content %}
+          Sorry, no content
+        {% endblock %}
+      </div>
+      {% if sidebar %}
+        <aside class="layout-sidebar">
+          {{sidebar}}
+        </aside>
+      {% endif %}
+    </div>
+
+
+    <!-- Announcment Modal Example -->
+    <div class="announcement-modal modal fade" id="announcementModalExample" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body" id="announcementModalExample-modal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeannouncements"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+                  srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+                  {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+            </button>
+            <div class="col-xs-12">
+              <h2 class="fade-in">Sales Announcements</h2>
+              <div class="yellow-bar-divider"></div>
+            </div>
+            <div class="col-xs-12">
+              <!--<span class="announcement-date" id="announcement-date"></span>
+              <span class="announcement-divider">|</span>-->
+              <span class="announcement-title" id="announcement-title"></span>
+              <div class="announcement-content" id="announcement-content"></div>
+              <!-- <a href="announcements" class="button_sliding">Learn More</a> -->
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    {% block footer %}
+      <footer id="footer">
+        {% include 'footer.twig' %}
+      </footer>
+      {{ function('wp_footer') }}
+    {% endblock %}
+      <script type="text/javascript">
+        piAId = '141051';
+        piCId = '1233';
+
+        (function() {
+            function async_load(){
+                var s = document.createElement('script'); s.type = 'text/javascript';
+                s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+                var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+            }
+            if(window.attachEvent) { window.attachEvent('onload', async_load); }
+            else { window.addEventListener('load', async_load, false); }
+        })();
+      </script>
+      <script src="{{function('get_stylesheet_directory_uri')}}/js/bootstrap-validation/base.js"></script>
+      <script type="text/javascript">
+        $(window).load(function() {
+          //Availability Widget Tooltip
+          $(".floor").tooltip({
+              selector: "div[rel=tooltip]",
+              html: true
+          });
+        });
+      </script>
+      <script type="text/javascript">
+        // Nav Icon Animation
+          $('.hamburger').click(function(e) {
+            $(this).toggleClass('active');
+          });
+      </script>
+      <!-- Smooth Scroll for the arrows at the bottom of each section. -->
+      <script type="text/javascript">
+      $(function() {
+          $('a[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) {
+                $('html, body').animate({
+                  scrollTop: target.offset().top
+                }, 1000);
+                return false;
+              }
+            }
+          });
+        });
+      </script>
+      <!-- when the page is at the very top, change the color of the nav -->
+      <!-- <script type="text/javascript">
+
+      // var distance = $('#content').offset().top;
+
+      // $(window).scroll(function() {
+      //     if ( $(window).scrollTop() >= distance ) {
+      //       $("li.floating-nav").addClass("black");
+      //       $("li.floating-nav").removeClass("white");
+      //       $("#tf-menu").css("background-color", "#ffffff");
+      //     } else {
+      //       $("li.floating-nav").addClass("white");
+      //       $("li.floating-nav").removeClass("black");
+      //       $("#tf-menu").css("background-color", "transparent");
+      //     }
+      // });
+
+      // </script> -->
+
+      <!-- Polyfill trigger to help scrolling issue -->
+      <script type="text/javascript">window.viewportUnitsBuggyfill.init();</script>
+
+      <!-- Close modal when anchor links are clicked -->
+      <script type="text/javascript">
+        $('#main-navigation a').click(function() {
+          $('#tf-menu').find('div.hamburger').removeClass('active');
+          $('#modal-fullscreen').modal('hide');
+        });
+      </script>
+
+      <!-- Mobile Overwrites -->
+      <script src="{{ function('get_stylesheet_directory_uri') }}/js/mobile-variables.js"></script>
+      <script type="text/javascript">
+
+      if(isMobile.any()) {
+        //$('a.navbar-brand img').attr('src','{{function('get_stylesheet_directory_uri')}}/img/optimized/logo_kk-blk-sml-mobile.png');
+        //$('a.navbar-brand img').attr('srcset','{{function('get_stylesheet_directory_uri')}}/img/optimized/logo_kk-blk-sml-mobile@x2.png 2x');
+        $('video#bg-video').remove();// Strip out the video if mobile
+        $("<br />").insertAfter(".span_spacer");
+      }
+      else {
+
+        //$('a.navbar-brand img').attr('src','{{function('get_stylesheet_directory_uri')}}/img/optimized/logo-kk-black.png');
+        //$('a.navbar-brand img').attr('srcset','{{function('get_stylesheet_directory_uri')}}/img/optimized/logo-kk-black@x2.png 2x');
+      };
+      </script>
+
+      <script type="text/javascript">
+      // Check to see if the videos are playing. Stop them if they are hidden. Put the video back when visible.
+
+      $('#webinarVideoModal').on('hidden.bs.modal', function () {
+        $('iframe#workshop-video-iframe').attr('src','');
+      });
+
+
+      $('#register-form').submit(function(e){
+         Cookies("KeKilohana-Registered", 1, {expires: 100, path:'/'});
+      });
+
+      // search for videoModal anchor in url, set cookie, show video
+      $(document).ready(function() {
+
+        if(window.location.href.indexOf('#webinarVideoModal') != -1) {
+          Cookies("KeKilohana-Registered", 1, {expires: 100, path:"/"});
+
+          $("#webinarVideoModal").modal("show");
+
+          if (Cookies("KeKilohana-Registered") == null) {
+            //Do stuff if cookie doesn't exist like set a cookie with a value of 1
+            // To create a cookie:
+            // Cookies("KeKilohana-Registered", 1, {expires: 100, path:'/'});
+            $("#register-form").css({ "display": "block" });
+            $("#workshop-video.embed-container").css({ "display": "none" });
+          }
+          else {
+            //They have a cookie so do something
+
+            $("#register-form").css({ "display": "none" });
+            $("#workshop-video.embed-container").css({ "display": "block" });
+            $("iframe#workshop-video-iframe").attr("src","//player.vimeo.com/video/155878096?portrait=0&amp;byline=0&amp;title=0&amp;badge=0");
+          }
+          //$('#videoModal').modal('show');
+
+        }
+
+      });
+
+      $("#webinarVideoModal").on("shown.bs.modal", function () {
+          if (Cookies("KeKilohana-Registered") == null) {
+            //Do stuff if cookie doesn't exist like set a cookie with a value of 1
+            // To create a cookie:
+            // Cookies("KeKilohana-Registered", 1, {expires: 100, path:'/'});
+            $("#register-form").css({ "display": "block" });
+            $("#workshop-video.embed-container").css({ "display": "none" });
+          }
+          else {
+            //They have a cookie so do something
+            $("#register-form").css({ "display": "none" });
+            $("#workshop-video.embed-container").css({ "display": "block" });
+            $("iframe#workshop-video-iframe").attr("src","//player.vimeo.com/video/155878096?portrait=0&amp;byline=0&amp;title=0&amp;badge=0");
+
+          }
+      });
+      </script>
+
+      <script type="text/javascript">
+  //changetxt();
+
+if (Cookies("announcementcockie") == null) {
+
+
+  $("#body").ready(function(){
+    changetxt();
+      $('#announcementModalExample').modal('show');
+  });
+}
+else {
+  //They have a cookie so do something
+
+
+}
+
+$('closeannouncements').click(function(){ //alert ('closey');
+  //setCookie('announcementcockie',0);
+
+});
+
+
+      </script>
+  </body>
+  {% endspaceless %}
+</html>

@@ -1,0 +1,202 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+  <div id="brochures" class="bg-image">
+    <!-- Brochures heading -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="content-text-wrapper">
+            <h1 class="white-text page-title text-nowrap brochure-title">{{ brochures.title }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container h-center">
+      <div class="row">
+        <!-- highlights brochure -->
+        <div class="col-md-4 right-border">
+          <h3 class="white-text default">Highlights Brochure</h3>
+          <p class="white-text brochure-paragraph ">
+            {{ brochures.highlights_brochure }}
+          </p>
+          <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#highlightsModal">
+            Email the brochure
+          </a>
+        </div>
+        <!-- lifestyle brochure -->
+        <div class="col-md-4 right-border">
+          <h3 class="white-text default">Lifestyle Brochure</h3>
+          <p class="white-text brochure-paragraph">
+            {{ brochures.lifestyle_brochure }}
+          </p>
+          <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#lifestyleModal">
+            Email the brochure
+          </a>
+        </div>
+        <!-- floor plans -->
+        <div class="col-md-4">
+          <h3 class="white-text default">Floor Plans</h3>
+          <p class="white-text brochure-paragraph">
+            {{ brochures.floor_plans_brochure }}
+          </p>
+          <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#floorPlansModal">
+            Email the brochure
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TODO add pdf to form {{ brochures.get_field('highlights_brochure_pdf') }} -->
+  <!-- TODO add pdf to form {{ brochures.get_field('lifestyle_brochure_pdf') }} -->
+  <!-- TODO add pdf to form {{ brochures.get_field('floor_plans_brochure_pdf') }} -->
+
+
+  <!-- Email Highlights Modal -->
+  <div class="nav-modal modal modal-fullscreen fade" id="highlightsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">
+        <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png" srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x, {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" />
+      </span>
+    </button>
+    <div class="modal-dialog nav-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3>Highlights Brochure</h3>
+          <p>
+            This 80-page editorial brochure gives you a more luxurious look at Ward Village, Ke Kilohana and the lifestyle that comes with it.
+          </p>
+          <form class="" id="highlights-form" action="" method="post" novalidate>
+            <div class="container-fluid">
+              <div class="row">
+                <!-- Input From -->
+                <div class="col-md-6">
+                  <div class="form-group"> <!-- Your salutation selection -->
+                    <input name="from" type="email" autocomplete="off" class="form-control" placeholder="From" id="from" required data-validation-required-message="Please enter your email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <!-- Input To -->
+                <div class="col-md-6">
+                  <div class="form-group"> <!-- Your salutation selection -->
+                    <input name="to" type="email" autocomplete="off" class="form-control" placeholder="To" id="to" required data-validation-required-message="Please enter an email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Input Short Message -->
+                <div class="col-md-12">
+                  <input name="short-message" type="text" autocomplete="off" class="form-control" placeholder="Short Message" id="short-message">
+                </div>
+              </div>
+              <!-- Submit -->
+              <a class="button_sliding" id="highlights-submit">Submit</a>
+            </div>
+          </form>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+  <!-- Email Lifestyle Modal -->
+  <div class="nav-modal modal modal-fullscreen fade" id="lifestyleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">
+        <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png" srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x, {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" />
+      </span>
+    </button>
+    <div class="modal-dialog nav-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3>Lifestyle Brochure</h3>
+          <p>
+            This 80-page editorial brochure gives you a more luxurious look at Ward Village, Ke Kilohana and the lifestyle that comes with it.
+          </p>
+          <form class="" id="highlights-form" action="" method="post" novalidate>
+            <div class="container-fluid">
+              <div class="row">
+                <!-- Input From -->
+                <div class="col-md-6">
+                  <div class="form-group"> <!-- Your salutation selection -->
+                    <input name="from" type="email" autocomplete="off" class="form-control" placeholder="From" id="from" required data-validation-required-message="Please enter your email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <!-- Input To -->
+                <div class="col-md-6">
+                  <div class="form-group"> <!-- Your salutation selection -->
+                    <input name="to" type="email" autocomplete="off" class="form-control" placeholder="To" id="to" required data-validation-required-message="Please enter an email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Input Short Message -->
+                <div class="col-md-12">
+                  <input name="short-message" type="text" autocomplete="off" class="form-control" placeholder="Short Message" id="short-message">
+                </div>
+              </div>
+              <!-- Submit -->
+              <a class="button_sliding" id="highlights-submit">Submit</a>
+            </div>
+          </form>
+        </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <!-- Email Floor Plans Modal -->
+  <div class="nav-modal modal modal-fullscreen fade" id="floorPlansModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">
+        <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png" srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x, {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" />
+      </span>
+    </button>
+    <div class="modal-dialog nav-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3>Highlights Brochure</h3>
+          <p>
+            This 80-page editorial brochure gives you a more luxurious look at Ward Village, Ke Kilohana and the lifestyle that comes with it.
+          </p>
+          <form class="" id="highlights-form" action="" method="post" novalidate>
+            <div class="container-fluid">
+              <div class="row">
+                <!-- Input From -->
+                <div class="col-md-6">
+                  <div class="form-group"> <!-- Your salutation selection -->
+                    <input name="from" type="email" autocomplete="off" class="form-control" placeholder="From" id="from" required data-validation-required-message="Please enter your email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <!-- Input To -->
+                <div class="col-md-6">
+                  <div class="form-group"> <!-- Your salutation selection -->
+                    <input name="to" type="email" autocomplete="off" class="form-control" placeholder="To" id="to" required data-validation-required-message="Please enter an email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Input Short Message -->
+                <div class="col-md-12">
+                  <input name="short-message" type="text" autocomplete="off" class="form-control" placeholder="Short Message" id="short-message">
+                </div>
+              </div>
+              <!-- Submit -->
+              <a class="button_sliding" id="highlights-submit">Submit</a>
+            </div>
+          </form>
+        </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+  {% endblock %}

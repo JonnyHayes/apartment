@@ -1,0 +1,184 @@
+/* CSS Document */
+/*Font*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+/*Main CSS*/
+.fresh_news_wrap {
+	width:100%;
+	overflow:hidden;
+	clear:both;
+	font-family: 'Open Sans Condensed', sans-serif;
+	position:relative;
+}
+.fresh_news_wrap .fresh_news_wrap_inner {
+	margin:0;
+	padding:0;
+	width:9000px;
+}
+.fresh_news_wrap .fresh_news_wrap_inner .fresh_news_item {
+	float:left;
+	list-style:none;
+	text-align:center;
+	cursor:pointer;
+	display:none;
+}
+.fresh_news_item img {
+	padding:0 10px;
+	max-width:95%;
+}
+
+/* Navigation CSS */
+.fresh_news_wrap .fresh_news_navigation {
+	clear:both;
+	width:50%;
+	margin:0 auto;
+	text-align:center;
+	font-size:35px;
+	color:#000;
+	display:none;
+	padding-top: 6px;
+}
+.fresh_news_wrap .fresh_news_navigation a {
+	outline:0;
+	margin:0 5px;
+}
+.fresh_news_wrap .fresh_news_navigation a.navPlay {
+	display:none;
+}
+
+/* Post Slider CSS */
+.fresh_news_item .newswrapper {
+	padding:0px 20px;
+}
+.fresh_news_item .newswrapper img.fullwidth {
+	padding: 0px;
+	width:100%;
+	max-width:100%;
+}
+.fresh_news_item .newswrapper h3 {
+	text-transform:uppercase;
+	margin:10px 0;
+	color: #7F8C8D;
+}
+.fresh_news_item .newswrapper h3 a {
+	text-decoration:none;
+	color:#333;
+}
+.fresh_news_item .newswrapper h3 a:hover {
+	color:#dd3333;
+}
+.fresh_news_item .newswrapper h4 {
+  margin:5px 0;
+  font-size:11px;
+  color:#474747;
+  text-transform:uppercase;
+}
+.fresh_news_item .newswrapper hr{
+	display: block;
+	width: 50%;
+	text-align: center;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #474747;
+    margin: 12px auto;
+    padding: 0;
+}
+.fresh_news_item .newswrapper p {
+	text-align:justify;
+}
+
+
+/* Text Ticker */
+.fresh_text_ticker .fresh_news_wrap .fresh_news_wrap_inner .fresh_news_item {
+	text-align:left;
+}
+.fresh_text_ticker { height:46px; background:#ffffff; border:1px solid #666; line-height:26px; border-radius:35px;}
+
+/* Hide Ticker on devices less than 100px - Things get weird */
+@media screen and (min-width: 300px) and (max-width: 699px){
+  .fresh_text_ticker { display: none; }
+ }
+@media screen and (min-width: 700px) and (max-width: 999px){
+  .fresh_text_ticker { display: none; }
+}
+@media screen and (min-width: 1000px){
+  .fresh_text_ticker { display: block; }
+}
+
+.fresh_text_ticker .fresh_news_wrap { height:100%; }
+.fresh_text_ticker .fresh_news_wrap .fresh_news_wrap_inner { position:absolute; left:10px; }
+.fresh_text_ticker .fresh_news_wrap .fresh_news_item { 
+	padding: 10px 0; 
+	/*font-family: "Gotham A","Gotham B"; */
+	font-weight: 500; 
+	font-size: 20px;
+
+}
+.fresh_text_ticker .fresh_news_wrap .fresh_news_navigation {
+	background: #f5f5f5 none repeat scroll 0 0;
+	clear: both;
+	color: #000;
+	display: none;
+	padding: 6px 5px;
+	position: absolute;
+	right: 0;
+	text-align: right;
+	top: 0;
+	width: auto;
+	z-index:1;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border-right:1px solid #666;
+	border-left:4px solid #666;
+	height:44px;
+}
+.fresh_text_ticker .fresh_news_wrap .fresh_news_navigation_title {
+	clear: both;
+	color: #000;
+	font-size: 18px;
+	padding:10px 15px 10px 10px;
+	position: absolute;
+	font-family: "Gotham A","Gotham B";
+	font-weight: bold;
+	left: 0;
+	text-align: right;
+	top: 0;
+	width: 40px;
+	height: 50px;
+	z-index:1;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	/*background: url(../ke-kilohana/img/optimized/icon-ward-bug.png) 10% 35% no-repeat !important;*/
+	background-image: url("../ke-kilohana/img/optimized/icon-ward-bug.png");
+	background-color: #f5f5f5;
+	background-position: 10% 36%;
+	background-repeat: no-repeat;
+	/* border-left:1px solid #666;
+	border-right:4px solid #666; */
+}
+/* Square */
+.fresh_text_ticker.square {
+	border-radius:0;
+}
+.fresh_text_ticker.square .fresh_news_wrap .fresh_news_navigation, 
+.fresh_text_ticker.square .fresh_news_wrap .fresh_news_navigation_title  {
+	border-radius:0;
+}
+
+/* Default HHKK Skin */
+.fresh_text_ticker.blue {
+	border-color:#0033CC;
+}
+.fresh_text_ticker.blue .fresh_news_wrap .fresh_news_navigation, 
+.fresh_text_ticker.blue .fresh_news_wrap .fresh_news_navigation_title {
+	/*background:#0099FF;*/
+	border-color:#0033CC;
+}
+
+/* CUSTOM CSS OVERWRITES FOR HHKK ONLY */
+.fresh_text_ticker .navPause { display: none; }
+.fresh_text_ticker img.ward-logo {margin-right: 5px;}
+.fresh-news-container, .broadcast-container { padding-left: 0px; }
+.fresh-news-container { padding-top: 15px; }

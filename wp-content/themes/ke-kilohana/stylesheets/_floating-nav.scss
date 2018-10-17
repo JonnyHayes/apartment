@@ -1,0 +1,94 @@
+.floating-nav-wrapper section {
+height: 1500px;
+margin: 1px;
+background: #F9D980;
+}
+div.floating-nav-container ul {
+    position: fixed;
+    display:inline;
+    right: 10px;
+    top: 40%;
+    z-index: 100;
+    text-transform: uppercase;
+    font-family: OpenSansBold,sans-serif;
+    text-align: right;
+}
+div.floating-nav-container li {
+    list-style: none;
+    display:block;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+div.floating-nav-container li a {
+    display: inline;
+    margin: 2px;
+    padding: 10px 40px;
+    font-family: "Gotham A", "Gotham B";
+    font-weight: bold;
+    text-decoration: none;
+    -webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+    -webkit-transition: opacity 1s ease-out;
+    -moz-transition: opacity 1s ease-out;
+    -o-transition: opacity 1s ease-out;
+    opacity: 1;
+    font-size: 16px;
+    transition: all 0.5s;
+}
+div.floating-nav-container li a:hover {
+    font-weight: bold;
+    color: #f4c350;
+}
+div.floating-nav-container li.active a {
+      background-repeat: no-repeat;
+      background-position: right;
+      padding: 10px 40px;
+      color: #f2ba36;
+      font-family: "Gotham A", "Gotham B";
+      font-weight: 700;
+      -webkit-transition: opacity 1s ease-in;
+      -moz-transition: opacity 1s ease-in;
+      -o-transition: opacity 1s ease-in;
+      -webkit-transition: opacity 1s ease-out;
+      -moz-transition: opacity 1s ease-out;
+      -o-transition: opacity 1s ease-out;
+      opacity: 1;
+  }
+.visible { opacity:1; }
+div.floating-nav-wrapper section h1 {
+    margin: 0;
+    padding-top: 20px;
+    color:#1A5D65;
+  }
+div.floating-nav-wrapper section p {
+    color:#3C8E77;
+  }
+.section-content {
+   margin-left:20px;
+  }
+li.floating-nav.black a {
+  color: black;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  text-shadow: none;
+}
+li.floating-nav.white a {
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+}
+/* unique overwrites for each page */
+ul#building-nav-ul {
+  top: 40%;
+}
+ul#villagelife-nav-ul {
+  top: 40%;
+}
+ul#building-nav-ul {
+  top: 40%;
+}

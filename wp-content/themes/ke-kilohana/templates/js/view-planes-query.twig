@@ -1,0 +1,78 @@
+<script>
+  var clickedDirection, clickedElevation;
+
+  function clearActiveClass(btnGroupId) {
+    $(btnGroupId).children().each(function() {
+      $(this).removeClass('active');
+    });
+  }
+
+  function findValues(btnGroupId, storageItem) {
+    $(btnGroupId).children().each(function() {
+      if ( $(this).val() == storageItem) {
+        $(this).addClass('active');
+      }
+    });
+  }
+
+  $('.view_direction').click(function() {
+    clearActiveClass('#view_directions_buttons');
+    if (localStorage.getItem('viewDirectionSlideshow') !== null) {
+      // Remove set item from finder home widget
+      localStorage.removeItem('viewDirectionSlideshow');
+    }
+    $(this).addClass('active');
+    clickedDirection = $(this).val();
+    return clickedDirection;
+  });
+
+  $('.view_elevation').click(function() {
+    clearActiveClass('#view_elevations_buttons');
+    if (localStorage.getItem('viewElevationSlideshow') !== null) {
+      // Remove set item from finder widget
+      localStorage.removeItem('viewElevationSlideshow');
+    }
+    $(this).addClass('active');
+    clickedElevation = $(this).val();
+    return clickedElevation;
+  });
+
+  function getViewPlanesPost(direction, elevation) {
+    {% for view_plane in view_planes %}
+      if ( (direction == '{{ view_plane.view_direction}}') &&
+          (elevation == '{{ view_plane.view_elevation}}') ) {
+        $('#panorama-image').attr({
+          'src': '{{ Image(view_plane.panorama).src }}',
+          'alt': '{{ Image(view_plane.panorama).alt }}',
+        });
+        // Overwrite pano viewer
+        $('.pv-inner').css('backgroundPosition', '-1024px 0');
+        $('.pv-inner').find('.pv-overlay').remove();
+      }
+    {% endfor %}
+  }
+
+  $('#viewer_planes_form .btn-group button').click(function() {
+    getViewPlanesPost(clickedDirection, clickedElevation);
+  });
+
+  // Load view_planes data from home finder widget
+  $(function() {
+    if (localStorage['viewDirectionSlideshow'] && localStorage['viewElevationSlideshow']) {
+      clearActiveClass('#view_directions_buttons');
+      clearActiveClass('#view_elevations_buttons');
+      findValues('#view_directions_buttons', localStorage.getItem('viewDirectionSlideshow'));
+      findValues('#view_elevations_buttons', localStorage.getItem('viewElevationSlideshow'));
+      clickedDirection = localStorage.getItem('viewDirectionSlideshow');
+      clickedElevation = localStorage.getItem('viewElevationSlideshow');
+      getViewPlanesPost(clickedDirection, clickedElevation);
+      localStorage.setItem('viewDirectionSlideshow', 'Makai');
+      localStorage.setItem('viewElevationSlideshow', '42');
+    } else {
+      clickedDirection = 'Makai';
+      clickedElevation = '42';
+      getViewPlanesPost(clickedDirection, clickedElevation);
+    }
+  });
+
+</script>

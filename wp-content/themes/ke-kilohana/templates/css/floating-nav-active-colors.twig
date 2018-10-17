@@ -1,0 +1,24 @@
+<!-- Apply styles for floating nav on the homepage -->
+<!-- Yellow nav icon, global on floating navs -->
+<style>
+  div.floating-nav-container li.active a {
+    background-image: url({{function('get_stylesheet_directory_uri')}}/img/optimized/icon-nav-arrow-ylw.png);
+  }
+</style>
+{% if homepage.post_title == 'Home' %}
+  <style>
+    div.floating-nav-container li:first-of-type {
+      /*display: none;*/
+    }
+  </style>
+{% else %}
+  <style>
+    div.floating-nav-container li a {
+      color: #fff;
+    }
+    div.floating-nav-container li.active:first-of-type a {
+      color: #000;
+      background-image: url({{function('get_stylesheet_directory_uri')}}/img/optimized/icon-nav-arrow-blk.png);
+    }
+  </style>
+{% endif %}

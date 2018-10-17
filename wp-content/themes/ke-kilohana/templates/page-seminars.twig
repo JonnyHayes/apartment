@@ -1,0 +1,41 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+    <style>
+    #container-seminars {
+      background-image: url({{ TimberImage(post.get_field('seminars_sidebar_image')).src }});
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    </style>
+
+
+
+    <!-- Section One
+    ================================================== -->
+    <div id="section-content-four">
+
+      <div class="container-fluid"><!-- container -->
+          
+
+          
+
+        <div class="row text-center">
+             <div class="col-md-3" id="container-seminars"></div>
+        <div class="col-md-9" id="form-bg"><h1> {{ post.seminars_title }}</h1>  
+                
+            {{ post.seminars_content }}
+            </div>
+
+ 
+    </div>
+
+      <!-- / end container -->
+      </div>
+
+<script src="{{function('get_stylesheet_directory_uri')}}/js/bootstrap-validation/seminars.js"></script>
+<script src="{{function('get_stylesheet_directory_uri')}}/js/resize-seminars.js"></script>
+
+ {% endblock %}

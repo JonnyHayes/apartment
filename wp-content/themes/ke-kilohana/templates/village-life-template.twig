@@ -1,0 +1,619 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+{% spaceless %}
+
+<!-- Styles for homepage floating nav -->
+{% include 'css/floating-nav-active-colors.twig' %}
+<style type="text/css">
+  .image-round {
+    position: absolute;
+    top: 17%;
+    left: -200px;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    max-width: 700px;
+    -webkit-animation: spin 30s linear infinite;
+    animation: spin 30s linear infinite;
+}
+@-webkit-keyframes move {
+  0% {
+    margin-left: 0px;
+    rotate: 0deg;
+  }
+  50% {
+    margin-left: 600px;
+    rotate: 900deg;
+  }
+  100% {
+    margin-left:0px;
+    rotate: 0deg;
+  }
+}
+  .move.animated {
+    -webkit-animation-name: move;
+    -webkit-animation-duration: 10800ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+  }
+  .turn.animated {
+    -webkit-animation-name: turn;
+    -webkit-animation-duration: 5800ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+  }
+</style>
+
+
+    <div class="floating-nav-container">
+      <ul id="villagelife-nav-ul">
+        <li class="floating-nav active"><a href="#villagelife">Village Life</a></li>
+        <li class="floating-nav"><a href="#unlimitedfun">Unlimited Fun</a></li>
+        <li class="floating-nav"><a href="#endlessactivities">Endless Activities</a></li>
+        <li class="floating-nav"><a href="#foreveryappetite">For Every Appetite</a></li>
+        <li class="floating-nav"><a href="#hazelgo">Meet Hazel</a></li>
+        <li class="floating-nav"><a href="#anthonyvallejosanderson">Meet Anthony</a></li>
+        <li class="floating-nav"><a href="#glenndelacruz">Meet Glenn</a></li>
+      </ul>
+    </div>
+
+    <div id="villagelife-wrapper">
+      <div id="villagelife" class="bg-image">
+        <div class="container h-center">
+          <div class="row fade-up">
+            <div class="content-text-wrapper">
+              <div class="col-sm-4 col-md-4 col-xs-12 title-h1-container" id="title-container-village-life">
+                <div class="heading-bar-top white-text"></div>
+                <h1 class="white-text" id="village-life-title">{{ villagelife.title }}</h1>
+                <div class="heading-bar-bottom white-text"></div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-xs-12">
+                <h3 class="white-text default">Places, People & Lifestyles</h3>
+                <p class="white-text">
+                {{ villagelife.village_life_intro }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row bottom-row down-arrow-container first-section">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper">
+              <p class="text-center white-text italic-text">
+                <a href="#unlimitedfun">
+                Unlimited Fun<br />
+                <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+<!-- Unlimited Fun section -->
+
+  <div id="unlimitedfun" class="bg-image">
+    <div id="unlimitedfun-bg" class="fade-in-first"></div>
+    <div class="container h-center" >
+      <div class="content-text-wrapper">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="fade-in">Unlimited Fun</h2>
+            <div class="yellow-bar-divider"></div>
+          </div>
+        </div>
+        <div class="row fade-up">
+          <div class="col-md-9 col-xs-12">
+            <div class="columns">
+              {{ villagelife.unlimited_fun }}
+            </div>
+            <!-- Button trigger modal -->
+            <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#unlimitedFunModal">
+              See More Images
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row bottom-row down-arrow-container fade-up">
+        <div class="col-md-12 last-column">
+          <div class="last-column-wrapper">
+            <p class="text-center italic-text">
+              <a href="#endlessactivities">
+              Endless Activities<br />
+              <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+<!-- Endless Activities Section -->
+
+  <div id="endlessactivities" class="bg-image">
+    <div id="endlessactivities-bg" class="fade-in-first"></div>
+    <div class="container h-center" >
+      <div class="content-text-wrapper">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="fade-in">Endless Activities</h2>
+            <div class="yellow-bar-divider"></div>
+          </div>
+        </div>
+        <div class="row fade-up">
+          <div class="col-md-9 col-xs-12">
+            <div class="columns">
+              {{ villagelife.endless_activities }}
+            </div>
+            <!-- Button trigger modal -->
+            <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#endlessActivitiesModal">
+              See More Images
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row bottom-row down-arrow-container fade-up">
+        <div class="col-md-12 last-column">
+          <div class="last-column-wrapper">
+            <p class="text-center italic-text">
+              <a href="#foreveryappetite">
+              For Every Appetite<br />
+              <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- foreveryappetite Section -->
+
+    <div id="foreveryappetite" class="bg-image">
+      <div id="foreveryappetite-bg" class="fade-in-first"></div>
+      <div class="container h-center" >
+        <div class="content-text-wrapper">
+          <div class="row">
+            <div class="col-xs-12">
+              <h2 class="fade-in">For Every Appetite</h2>
+              <div class="yellow-bar-divider"></div>
+            </div>
+          </div>
+          <div class="row fade-up">
+            <div class="col-md-9 col-xs-12">
+              <div class="columns">
+              {{ villagelife.get_field('for_every_appetite_intro') }}
+              </div>
+              <!-- Button trigger modal -->
+              <a type="button" class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#appetiteModal">
+                View the dining list
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bottom-row down-arrow-container fade-up">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper">
+              <p class="text-center italic-text">
+                <a href="#hazelgo">
+                Meet Hazel<br />
+                <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- hazelgo Section -->
+
+    <div id="hazelgo" class="bg-image" style="overflow: hidden;">
+      <div id="hazelgo-bg" class="fade-in-first"></div>
+      <!-- Hidden off screen spinning wheel -->
+      <img id="ant-spin" class="image-round move spin fade-in" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/graphic-hazel-map.png" alt="">
+      <div class="container h-center" >
+        <div class="content-text-wrapper">
+          <div class="row">
+            <div class="col-xs-12 fade-in">
+              <h2>Hazel Go</h2>
+              <div class="yellow-bar-divider"></div>
+            </div>
+          </div>
+          <div class="row fade-up">
+            <div class="col-md-9 col-xs-12">
+              <div class="columns">
+              {{ villagelife.hazel_intro_paragraph }}
+              </div>
+              <!-- Button trigger modal
+              <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#hazelVideoModal">
+                Watch Hazel's Video
+              </a>-->
+              <!-- Button trigger modal -->
+              <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#aboutHazelModal">
+                About Hazel
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bottom-row down-arrow-container fade-up">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper">
+              <p class="text-center italic-text">
+                <a href="#anthonyvallejosanderson">
+                Meet Anthony<br />
+                <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- Anthony's Section -->
+
+    <div id="anthonyvallejosanderson" class="bg-image" style="overflow: hidden;">
+      <div id="anthonyvallejosanderson-bg" class="fade-in-first"></div>
+      <!-- Hidden off screen spinning wheel -->
+      <img id="ant-spin" class="image-round move spin fade-in" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/graphic-anthony-map.png" alt="">
+      <div class="container h-center">
+        <div class="content-text-wrapper">
+          <div class="row">
+            <div class="col-xs-12">
+              <h2 class="fade-in">Anthony Vallejo-Sanderson</h2>
+              <div class="yellow-bar-divider"></div>
+            </div>
+          </div>
+          <div class="row fade-up">
+            <div class="col-md-9 col-xs-12">
+              <div class="columns">
+              {{ villagelife.anthony_intro_paragraph }}
+              </div>
+              <!-- Button trigger modal
+              <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#anthonyVideoModal">
+                Watch Anthony's Video
+              </a>-->
+              <!-- Button trigger modal -->
+              <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#aboutAnthonyModal">
+                About Anthony
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bottom-row down-arrow-container fade-up">
+          <div class="col-md-12 last-column">
+            <div class="last-column-wrapper">
+              <p class="text-center italic-text">
+                <a href="#glenndelacruz">
+                Meet Glenn<br />
+                <img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png"
+                srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw.png 1x,
+                {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-next-ylw@x2.png 2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- Glenn's Section -->
+
+    <div id="glenndelacruz" class="bg-image" style="overflow: hidden;">
+      <div id="glenndelacruz-bg" class="fade-in-first"></div>
+      <!-- Hidden off screen spinning wheel -->
+      <img id="ant-spin" class="image-round move spin fade-in" src="{{function('get_stylesheet_directory_uri')}}/img/optimized/graphic-glenn-map.png" alt="">
+      <div class="container h-center">
+        <div class="content-text-wrapper">
+          <div class="row">
+            <div class="col-xs-12">
+              <h2 class="fade-in">Glenn Dela Cruz</h2>
+              <div class="yellow-bar-divider"></div>
+            </div>
+          </div>
+          <div class="row fade-up">
+            <div class="col-md-9 col-xs-12">
+              <div class="columns">
+              {{ villagelife.glenn_intro_paragraph }}
+              </div>
+              <!-- Button trigger modal
+              <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#glennVideoModal">
+                Watch Glenn's Video
+              </a>-->
+              <!-- Button trigger modal -->
+              <a class="button_sliding" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#aboutGlennModal">
+                About Glenn
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+<!-- Unlimited Fun Images Modal -->
+<div class="nav-modal modal modal-fullscreen fade" id="unlimitedFunModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+      </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="unlimiuted_fun_gallery-modal">
+        <div class="royalSlider kekilohana" id="unlimitedFunModalSlider">
+          {% for image in villagelife.unlimited_fun_gallery %}
+            <img class="rsImg" src="{{ Image(image).src }}" alt="{{ Image(image).title }}" />
+          {% endfor %}
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Endless Activities Images Modal -->
+<div class="nav-modal modal modal-fullscreen fade" id="endlessActivitiesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+      </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="endless_activities_gallery-modal">
+        <div class="royalSlider kekilohana" id="endlessActivitiesModalSlider">
+          {% for image in villagelife.endless_activities_gallery %}
+            <img class="rsImg" src="{{ Image(image).src }}" alt="{{ Image(image).title }}" />
+          {% endfor %}
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- For Every Appetite Images Modal -->
+<div class="nav-modal modal modal-fullscreen fade" id="appetiteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+  </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="for_every_appetite_gallery-modal">
+        <div class="dining-list-divider"></div>
+        <div class="dining-list-container columns-triple">
+          {{ villagelife.for_every_appetite_dining_list }}
+        </div>
+        <div class="dining-list-divider"></div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Hazel Go Video Modal -->
+<div class="nav-modal modal modal-fullscreen fade" id="hazelVideoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+  </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="hazel-video-modal">
+        <!-- ADD VIDEO HERE -->
+        <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/155878096' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Hazel Go About Modal -->
+<div class="nav-modal modal modal-fullscreen fade" id="aboutHazelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+      </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="about-hazel-modal">
+        <!-- About info goes here -->
+        <div class="col-xs-12">
+          <h1 class="big-yellow">HER DREAM LIFE</h1>
+          <div class="yellow-bar-divider"></div>
+          <p>{{ villagelife.get_field('hazel_details') }}</p>
+          <h4 class="persona-title big-yellow">
+            OCCUPATION:
+          </h4>
+          <p>{{ villagelife.hazel_occupation }}</p>
+          <h4 class="persona-title big-yellow">
+            LIFESTYLE:
+          </h4>
+          <p>{{ villagelife.hazel_lifestyle }}</p>
+          <h4 class="persona-title big-yellow">
+            HAPPIEST MOMENT:
+          </h4>
+          <p>{{ villagelife.hazel_happiest_moment }}</p>
+          <h4 class="persona-title big-yellow">
+            INSPRIRED BY:
+          </h4>
+          <p>{{ villagelife.hazel_inspired_by }}</p>
+          <h4 class="persona-title big-yellow">
+            FAVORITE PLACES & EVENTS:
+          </h4>
+          <p>{{ villagelife.hazel_favorite_places_and_events }}</p>
+           <h4 class="persona-title big-yellow">
+            HER IDEAL HOME:
+          </h4>
+          <p>{{ villagelife.hazel_ideal_home }}</p>
+           <h4 class="persona-title big-yellow">
+            WHY KE KILOHANA:
+          </h4>
+          <p>{{ villagelife.hazel_why_ke_kilohana }}</p>
+        </div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Anthony Video Modal -->
+<div class="nav-modal modal modal-fullscreen fade" id="anthonyVideoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+      </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="anthony-video-modal">
+        <!-- ADD VIDEO HERE -->
+        <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/155878096' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Anthony About Modal -->
+<div class="nav-modal modal modal-fullscreen fade" id="aboutAnthonyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+  </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="about-anthony-modal-body">
+        <!-- About info goes here -->
+        <div class="col-xs-12">
+          <h1 class="big-yellow">HIS DREAM LIFE</h1>
+          <div class="yellow-bar-divider"></div>
+          <p>{{ villagelife.get_field('anthony_details') }}</p>
+          <h4 class="persona-title big-yellow">
+            OCCUPATION:
+          </h4>
+          <p>{{ villagelife.anthony_occupation }}</p>
+          <h4 class="persona-title big-yellow">
+            LIFESTYLE:
+          </h4>
+          <p>{{ villagelife.anthony_lifestyle }}</p>
+          <h4 class="persona-title big-yellow">
+            HAPPIEST MOMENT:
+          </h4>
+          <p>{{ villagelife.anthony_happiest_moment }}</p>
+          <h4 class="persona-title big-yellow">
+            INSPRIRED BY:
+          </h4>
+          <p>{{ villagelife.anthony_inspired_by }}</p>
+          <h4 class="persona-title big-yellow">
+            FAVORITE PLACES & EVENTS:
+          </h4>
+          <p>{{ villagelife.anthony_favorite_places_and_events }}</p>
+          <h4 class="persona-title big-yellow">
+            ON LIVING IN WARD VILLAGE:
+          </h4>
+          <p>{{ villagelife.anthony_on_living_in_ward_village }}</p>
+          <h4 class="persona-title big-yellow">
+            ON KE KILOHANA:
+          </h4>
+          <p>{{ villagelife.anthony_on_ke_kilohana }}</p>
+        </div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Glenn Video Modal -->
+<div class="nav-modal modal modal-fullscreen fade" id="glennVideoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+      </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="glenn-video-modal-body">
+        <!-- ADD VIDEO HERE -->
+        <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/155878096' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Glenn About Modal -->
+<div class="nav-modal modal modal-fullscreen fade" id="aboutGlennModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png"
+              srcset="{{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close.png 1x,
+              {{function('get_stylesheet_directory_uri')}}/img/optimized/icon-lightbox-close@x2.png 2x" /></span>
+      </button>
+  <div class="modal-dialog nav-dialog">
+    <div class="modal-content">
+      <div class="modal-body" id="about-glenn-modal">
+        <!-- About info goes here -->
+        <div class="col-xs-12">
+          <h1 class="big-yellow">HIS DREAM LIFE</h1>
+          <div class="yellow-bar-divider"></div>
+          <p>{{ villagelife.get_details('glenn_details') }}</p>
+          <h4 class="persona-title big-yellow">
+            OCCUPATION:
+          </h4>
+          <p>{{ villagelife.glenn_occupation }}</p>
+          <h4 class="persona-title big-yellow">
+            LIFESTYLE:
+          </h4>
+          <p>{{ villagelife.glenn_lifestyle }}</p>
+          <h4 class="persona-title big-yellow">
+            HAPPIEST MOMENT:
+          </h4>
+          <p>{{ villagelife.glenn_happiest_moment }}</p>
+          <h4 class="persona-title big-yellow">
+            FAVORITE MOVIES:
+          </h4>
+          <p>{{ villagelife.glenn_inspired_by }}</p>
+          <h4 class="persona-title big-yellow">
+            FAVORITE PLACES & EVENTS:
+          </h4>
+          <p>{{ villagelife.glenn_favorite_places_and_events }}</p>
+          <h4 class="persona-title big-yellow">
+            ON OWNERSHIP:
+          </h4>
+          <p>{{ villagelife.glenn_home_ownership }}</p>
+          <h4 class="persona-title big-yellow">
+            ON KE KILOHANA:
+          </h4>
+          <p>{{ villagelife.glenn_on_ke_kilohana }}</p>
+        </div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+  <!-- Script for setting active list items on scroll, jquery only -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/floating-nav-jquery.js"></script>
+  <script>
+    showActiveNav('#villagelife-nav-ul', '#villagelife-wrapper');
+  </script>
+
+  <!-- Script for animating content on scroll -->
+  <script src="{{ function('get_stylesheet_directory_uri') }}/js/animate-content.js"></script>
+  <script>
+    animateContent('#villagelife-wrapper');
+  </script>
+
+  <!-- Initialize RoyalSlider -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/initialize-royalslider.js"></script>
+
+{% endspaceless %}
+
+{% endblock %}

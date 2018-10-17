@@ -1,0 +1,49 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+  <!-- Condo Docs Download Section -->
+  <div id="condo-docs" class="bg-pattern" style="min-height: 650px; padding-top: 150px;">
+    <div class="container-fluid">
+      <div class="row fade-up">
+        <div class="content-text-wrapper">
+          <div class="col-md-9 col-md-offset-1 fade-up">
+            <h2>Documents</h2>
+            <div class="yellow-bar-divider"></div>
+          </div>
+          <div class="col-md-9 col-md-offset-1 fade-up">
+            {{ documents.condominium_documents_copy }}<br/>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 col-md-offset-1 col-sm-12">
+          <h3>Market Condo Documents</h3>
+          <ul>
+            {% for item in documents.get_field('market_condo_documents') %}
+            <li><a href="{{ item.document.url }}">{{ item.document.title }}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-5 col-sm-12">
+          <h3>Reserved Condo Documents</h3>
+          <ul>
+            {% for item in documents.get_field('reserved_condo_documents') %}
+            <li><a href="{{ item.document.url }}">{{ item.document.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 last-column">
+          <div class="last-column-wrapper">
+            <p class="text-center italic-text">
+              <br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,174 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+  <!-- Styles for floating nav -->
+  {% include 'css/floating-nav-active-colors.twig' %}
+  <style>
+  form {font-family: "Gotham A","Gotham B";}
+  @media screen and (min-width: 992px) {
+    .col-md-3 {
+        width: 23%;
+    }
+  }
+  .warning {display:block;}
+
+  </style>
+
+  <!-- News Ticker JS -->
+  <script src="{{function('get_stylesheet_directory_uri')}}/js/fresh-ticker.js"></script>
+
+  <!-- Floating nav
+  <div class="floating-nav-container">
+    <ul id="lottery-nav-ul">
+      <li class="floating-nav"><a href="#livebroadcast">Live Broadcast</a></li>
+      <li class="floating-nav"><a href="#lotterysearch">Lottery Search</a></li>
+      <li class="floating-nav"><a href="#results">Results</a></li>
+    </ul>
+  </div>
+-->
+  <div id="lottery-nav-wrapper">
+    <!-- News Ticker -->
+    {% if broadcast_results.broadcast_show %}
+    <div id="livebroadcast" style="min-height: 650px; padding-top: 150px;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-9 col-md-offset-1 fade-up">
+          <h2>Live Lottery Broadcast</h2>
+          <div class="yellow-bar-divider"></div>
+            <div class="col-md-12 broadcast-container">
+              <style>.embed-container {  position: relative; padding-bottom: 0; height: 460px; overflow: hidden; max-width: 810px; max-height: 460px; width: 810px; text-align: center; margin: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+              <div class='embed-container'>
+                <iframe src="http://player.theplatform.com/p/IfSiAC/ta7BBZHucykr/select/T8w_fRfYJfXw?form=html" frameBorder="0" seamless="seamless" webkitAllowFullScreen mozallowfullscreen  allowFullScreen></iframe>
+              </div>
+            </div>
+            <div class="col-md-12 fade-up fresh-news-container">
+              {% if broadcast_results.ticker_show %}
+                <div class="fresh_text_ticker square">
+                  <div id="text_slider1" class="fresh_news_wrap">
+                    <ul class="fresh_news_wrap_inner">
+                      {% for news in broadcast_results.get_field('news_announcements') %}
+                      <li class="fresh_news_item"> {{ news.announcement_message }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <!-- BEFORE BROADCAST SECTION -->
+    {% if broadcast_results.pre_broadcast %}
+    <div id="spacer-section" style="min-height: 650px; padding-top: 150px;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-9 col-md-offset-1">
+          <h2>{{ broadcast_results.pre_broadcast_title }}</h2>
+          <div class="yellow-bar-divider"></div>
+            <div class="col-md-10 col-sm-10 col-xs-12" style="padding-left: 0;">
+              <div class="">
+                <div class="">
+                  <p>{{ broadcast_results.get_field('pre_broadcast_text') }}</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  <!-- AFTER BROADCAST SECTION -->
+    {% if broadcast_results.post_broadcast %}
+    <div id="spacer-section" style="min-height: 650px; padding-top: 110px;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-9 col-md-offset-1">
+          <h2>{{ broadcast_results.post_broadcast_title }}</h2>
+          <div class="yellow-bar-divider"></div>
+            <div class="col-md-10 col-sm-10 col-xs-12" style="padding-left: 0;">
+              <div class="">
+                <div class="">
+                  <p>{{ broadcast_results.get_field('post_broadcast_text') }}</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  <!-- LOTTERY SEARCH SECTION -->
+    {% if broadcast_results.lottery_search %}
+    <div id="lotterysearch" class="bg-pattern" style="min-height: 650px; height: 100vh;">
+      <div class="container h-center">
+        <div class="row">
+          <div class="col-md-5 col-xs-12">
+            <h2>Appointment Finder</h2>
+            <div class="yellow-bar-divider"></div>
+            <div class="input-group">
+              <input type="text" maxlength="4" pattern="\d{4}" class="form-control user_search_box goth" id="user_search_box" data-search="" placeholder="ex: 5****" autocomplete="off">
+              <button type="submit" class="button_sliding" id="user_search_btn">Enter</button>
+            </div>
+          </div>
+          <div class="col-md-6 col-xs-12">
+            <div id="user_search_result"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <!-- LOTTERY RESULTS SECTION -->
+    {% if broadcast_results.lottery_results %}
+    <div id="results">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Results</h2>
+            <div class="yellow-bar-divider"></div>
+            <div class="chatbox-wrapper">
+              <div class="chatbox" id="chatbox">
+              </div>
+              <br/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Initialize news ticker -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#text_slider1').newsTickerSlider({
+        textTicker:true,
+        textTickerConfig: {
+          textTickerTitle:'{{ broadcast_results.ticker_title }}',
+          textTickerSkin:'blue',
+          textTickerBorderColor:'#CCCCCC',
+          labelTextColor: '#fff',
+          labelBackgroundColor: '#f4c350',
+          navigationBorderColor: 'transparent',
+          navigationBackgroundColor:'#ffffff'
+        },
+        visible:1,
+        animationspeed:{{ broadcast_results.ticker_speed }},
+        animationdelay:{{ broadcast_results.ticker_delay }}
+      });
+    });
+  </script>
+
+  <!-- Script for setting active list items on scroll, jquery only -->
+  <script src="{{ function('get_stylesheet_directory_uri')}}/js/floating-nav-jquery.js"></script>
+  <script>
+    showActiveNav('#lottery-nav-ul', '#lottery-nav-wrapper');
+  </script>
+
+  <!-- Script for animating content on scroll -->
+  <script src="{{ function('get_stylesheet_directory_uri') }}/js/animate-content.js"></script>
+
+  {% endblock %}

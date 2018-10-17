@@ -1,0 +1,2 @@
+[07-Apr-2016 13:44:15 America/Los_Angeles] PHP Fatal error:  Call to undefined function add_action() in /home/hhkkmvnpclients/public_html/wp-content/themes/ke-kilohana/functions.php on line 4
+[07-Apr-2016 13:44:24 America/Los_Angeles] PHP Fatal error:  Class 'Timber' not found in /home/hhkkmvnpclients/public_html/wp-content/themes/ke-kilohana/page.php on line 4

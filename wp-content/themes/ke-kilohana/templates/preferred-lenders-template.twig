@@ -1,0 +1,80 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+  <!-- Condo Docs Download Section -->
+  <div id="condo-docs" style="min-height: 325px; padding-top: 150px;">
+    <div class="container-fluid">
+      <div class="row fade-up">
+        <div class="content-text-wrapper">
+          <div class="col-md-9 col-md-offset-1 fade-up">
+            <h2>Preferred Lenders</h2>
+            <div class="yellow-bar-divider"></div>
+          </div>
+          <div class="col-md-9 col-md-offset-1 fade-up">
+            <a href="/wp-content/uploads/2018/08/Owner_Occupant_Affidavit__Lottery__869964.pdf">Download Owner Occupant Affidavit</a><br/>
+            Click on a logo for more lender information.<br/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row logo-lender-row">
+        <div class="col-md-3">
+          <a href="/wp-content/uploads/2018/08/FHB-KK-Flyer.pdf" target="_blank">
+            <img class="logo-lender" src="{{ function('get_stylesheet_directory_uri') }}/img/optimized/logo_lender-fhb.png" alt="first hawaiian bank" />
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="/wp-content/uploads/2018/08/BOH-KK-Flyer.pdf" target="_blank">
+            <img class="logo-lender" src="{{ function('get_stylesheet_directory_uri') }}/img/optimized/logo_lender-boh.png" alt="bank of hawaii" />
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="/wp-content/uploads/2018/08/HonoluluHomeLoans_KeKilohana_Flyer_August2018_Final.pdf" target="_blank">
+            <img class="logo-lender" src="{{ function('get_stylesheet_directory_uri') }}/img/optimized/logo_lender-hhl.png" alt="honolulu homeloans" />
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="/wp-content/uploads/2018/08/CPB-KK-Flyer.pdf" target="_blank">
+            <img class="logo-lender" src="{{ function('get_stylesheet_directory_uri') }}/img/optimized/logo_lender-cpb.png" alt="central pacific bank" />
+          </a>
+        </div>
+      </div>
+      <div class="row logo-lender-row">
+        <div class="col-md-2 col-md-offset-1">
+          <a href="/wp-content/uploads/2018/08/ASB-KK-Flyer.pdf" target="_blank">
+            <img class="logo-lender" src="{{ function('get_stylesheet_directory_uri') }}/img/optimized/logo_lender-asb.png" alt="american savings bank" />
+          </a>
+        </div>
+        <div class="col-md-2">
+          <a href="https://www.wfhm.com/loans/honolulusalesoffice/index.page" target="_blank">
+            <img class="logo-lender" src="{{ function('get_stylesheet_directory_uri') }}/img/optimized/logo_lender-wf.png" alt="wells fargo" />
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="/wp-content/uploads/2018/08/Prime-Lending-KK-Flyer-1.pdf" target="_blank">
+            <img class="logo-lender" src="{{ function('get_stylesheet_directory_uri') }}/img/optimized/logo_lender-pl.png" alt="prime lending" />
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="{{ function('get_stylesheet_directory_uri') }}/doc/Compass_063_Compass_Ke_Kilohana_New_Development_Flyer_JKB_V002.pdf" target="_blank">
+            <img class="logo-lender" src="{{ function('get_stylesheet_directory_uri') }}/img/optimized/logo_lender-comp.jpg" alt="Compass" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row bg-pattern" style="min-height: 325px;">
+        <div class="col-md-12 last-column">
+          <div class="last-column-wrapper">
+            <p class="text-center italic-text">
+              <br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

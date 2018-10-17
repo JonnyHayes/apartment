@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	 <div id="page-not-found" class="bg-image">
+      <div class="container h-center">
+        <div class="row">
+          <div class="content-text-wrapper">
+            <div class="col-sm-4 col-sm-offset-2 col-md-4 col-md-offset-2 col-xs-12 title-h1-container" id="title-container-404" style="padding-top: 10px; font-size: 22px;">
+              <div class="heading-bar-top white-text"></div>
+              <h1 class="white-text" id="404-title">Page Not Found</h1>
+              <div class="heading-bar-bottom white-text"></div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xs-12 white-text">
+              	<h3>404 Page Not Found</h3>
+				<p>The page you are looking can not be found.</p>
+				<a class="button_sliding" href="/">RETURN TO HOMEPAGE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+	  $(document).ready(function() {
+	        $(".navbar-brand img").attr('src','/wp-content/themes/ke-kilohana/img/optimized/logo-kk.png');
+	        $(".navbar-brand img").attr('srcset','/wp-content/themes/ke-kilohana/img/optimized/logo-kk@2.png 2x');
+	  });
+	</script>
+{% endblock %}

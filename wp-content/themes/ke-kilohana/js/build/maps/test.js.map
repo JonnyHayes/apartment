@@ -1,0 +1,1 @@
+{"version":3,"file":"../test.js","sources":["test.coffee"],"names":[],"mappings":"AAAA;AAAA,MAAA;;EAAA,IAAA,GAAO;;EAEP,OAAO,CAAC,GAAR,CAAY,IAAZ;AAFA","sourcesContent":["test = 'Hello CoffeeScript'\n\nconsole.log(test)\n"]}

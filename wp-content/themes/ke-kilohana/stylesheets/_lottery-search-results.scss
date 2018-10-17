@@ -1,0 +1,213 @@
+
+  #livebroadcast {
+    padding-top: 100px;
+  }
+
+  #user_search_result {
+    padding: 5px 20px;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #f4c350;
+    text-transform: uppercase;
+    font-family: "Gotham A","Gotham B";
+    //font-size:16px;
+  }
+  .lotterysearch , .form-control .user_search_box {
+  font-family: "Gotham A","Gotham B";}
+.goth { font-family: "Gotham A","Gotham B";}
+  #lottery-nav-wrapper input:invalid {
+    color: red;
+  }
+  .smbl { font-size: 14px; color: #000000; text-transform: none; letter-spacing:0px;}
+  .nofade a:hover { color:#ffffff; }
+  .container{
+      /*height: 100%;*/
+      /*font-family: Montserrat, "Helvetica Neue", sans-serif;*/
+      /* Don't need Montserrat on this site */
+    }
+
+
+
+    .chatbox-wrapper {
+      width: 1100px;
+    }
+    .chatbox{
+      border-radius: 0px;
+      border: solid 0px #BDBDBD;
+      /*padding-left: 15px;*/
+      /*padding-right: 15px;*/
+      padding-bottom: 15px;
+      padding-top: 80px;
+      /*margin: 0px !important;*/
+      /*height: 900px; */
+      /*your fixed height*/
+  // -webkit-column-count: 8;
+  //    -moz-column-count: 8;
+  //         column-count: 8;
+    }
+
+    .results_box{ padding: 5px 0px 5px 0px;
+      // -webkit-column-count: 8;
+      // -moz-column-count: 8;
+      //       column-count: 8;
+          }
+    .results_table_wrapper{
+      display:inline-block;
+      padding: 0px;
+      margin-bottom: 20px;
+      vertical-align: top;
+    }
+    #user_search_result a.nofade {
+      color: #000000;
+      font-weight: bold;
+    }
+    #user_search_result a:hover.nofade {
+      color: #ffffff;
+    }
+
+    .actual_msg{
+      clear: none;
+      /*margin-bottom: 1px;*/
+      text-decoration: none;
+      list-style-type: none;
+      /*float: left;*/
+      /*width: 120px;*/
+      /*height: 30px;*/
+      display: inline-block;
+      /*margin-bottom: 2px;*/
+      /*padding: 5px 5px;*/
+      /*min-width: 160px;*/
+      /*min-height: 10px;*/
+      /*max-width: 510px;*/
+      line-height: 1.4;
+      word-break: keep-all;
+      color: #1A1A1A;
+      text-align: center;
+    }
+.results_table  {width:130px;}
+.results_table th {
+  font-size:9px;
+  border: 1px solid #cbcbcb;
+  text-align: center;
+  padding:2px;
+  font-family: "Gotham A","Gotham B";
+  background-color: #f4f4f4;
+}
+  .lottery_number,
+  .packet_number {
+    text-align: center;
+    //padding: 0 2px;
+    //display: inline-block;
+    /*float: left;*/
+  }
+  .lottery_number {
+
+    font-family: Gothic821CondensedBT-Regular;
+    color: #fff;
+    background-color: #f4c350;
+    width: 48px;
+    /*border: 1px solid #cbcbcb;*/
+    border: 1px solid #ffffff;
+
+  //  float: left;
+  }
+  .packet_number {
+    font-family: "Gotham A","Gotham B";
+    border: 1px solid #cbcbcb;
+    width: 54px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .5px;
+  //  float: right;
+  }
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    .chatbox-wrapper {
+      width: 992px;
+    }
+    .chatbox {
+      // -webkit-column-count: 6 !important;
+      //    -moz-column-count: 6 !important;
+      //         column-count: 6 !important;
+    }
+    .lottery_number,
+    .packet_number {
+      padding: 0 2px;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    .chatbox-wrapper {
+      width: 100%;
+    }
+    .chatbox {
+      // -webkit-column-count: 5 !important;
+      //    -moz-column-count: 5 !important;
+      //         column-count: 5 !important;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .actual_msg {
+      /*display: block;*/
+    }
+    .lottery_number,
+    .packet_number {
+      padding: 0 2px;
+    }
+    .packet_number {
+      /*margin-left: 0;*/
+    }
+  }
+  @media screen and (min-width: 481px) and (max-width: 767px) {
+    .chatbox-wrapper {
+      width: 100%;
+    }
+    .chatbox {
+      // -webkit-column-count: 4 !important;
+      //    -moz-column-count: 4 !important;
+      //         column-count: 4 !important;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .actual_msg {
+      /*display: block;*/
+    }
+    .lottery_number,
+    .packet_number {
+      padding: 0 2px;
+    }
+    .lottery_number {
+      width: 45px;
+    }
+    .packet_number {
+      /*margin-left: 0;*/
+      width: 50px;
+    }
+  }
+  @media screen and (min-width: 300px) and (max-width: 480px) {
+    .chatbox-wrapper {
+      width: 100%;
+    }
+    .chatbox {
+      // -webkit-column-count: 3 !important;
+      //    -moz-column-count: 3 !important;
+      //         column-count: 3 !important;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .actual_msg {
+      /*display: block;*/
+    }
+
+    .lottery_number,
+    .packet_number {
+      padding: 0 2px;
+    }
+    .lottery_number {
+      width: 40px;
+    }
+    .packet_number {
+      /*margin-left: 0;*/
+      width: 45px;
+    }
+  }

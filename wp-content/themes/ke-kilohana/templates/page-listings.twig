@@ -1,0 +1,50 @@
+{% extends 'base.twig' %}
+
+  {% block content %}
+
+    <div class="container-fluid" id="form-bg"><!-- container -->
+      <div class="row">
+        <div class="col-md-12">
+          <h1>{{ post.post_title }}</h1>
+
+          <select class="filter-select" data-filter-group="view">
+            <option value=":not(*)">None</option>
+            <option value=".mauka">Mauka</option>
+            <option value=".makai">Makai</option>
+            <option value=".ewa">Ewa</option>
+            <option value=".diamond_head">Diamond Head</option>
+          </select>
+          <select class="filter-select" data-filter-group="price">
+            <option value="*">All</option>
+            <option value=".300">$300,000</option>
+            <option value=".500">$500,000</option>
+            <option value=".700">$700,000</option>
+          </select>
+
+          <div class="grid">
+              {% for listing in post.get_field('listing_repeater') %}
+                <div class="filter-item
+                {{listing.view}}
+                {{listing.price}}
+                {{listing.floor_plan}}
+                {{listing.available}}">
+                  <p>{{ listing.view | spaces | title }}</p>
+                  <img src="{{ listing.view | view_url }}"
+                    width="100" height="100" alt="{{ listing.view }} view" />
+                  <p>{{ listing.price | number_format(3, ',') | currency }}</p>
+                  {% if listing.available == 'unavailable' %}
+                    <p>{{ listing.available | capitalize }}</p>
+                  {% endif %}
+                  <img src="{{ listing.floor_plan | floor_plan_url }}"
+                    width="100" height="100" alt="{{ listing.floor_plan }} floor plan" />
+                </div>
+              {% endfor %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="{{function('get_stylesheet_directory_uri')}}/js/filter.js"></script>
+
+  {% endblock %}
